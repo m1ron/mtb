@@ -54,8 +54,8 @@ p,
 ul,
 ol,
 dl {
-  margin-top: 22px;
-  margin-bottom: 22px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 :focus {
   outline: -webkit-focus-ring-color auto 0;
@@ -72,7 +72,7 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 figure {
-  margin: 22px 0;
+  margin: 30px 0;
 }
 figure img {
   max-width: 100%;
@@ -88,42 +88,42 @@ video {
 /*** HEADINGS ***/
 h1,
 .h1 {
-  margin-top: 30px;
+  margin-top: 40px;
   margin-bottom: 16px;
   font: 300 42px/54px Helvetica, Arial, sans-serif;
   color: #183955;
 }
 h2,
 .h2 {
-  margin-top: 30px;
+  margin-top: 40px;
   margin-bottom: 16px;
   font: 300 28px/30px Helvetica, Arial, sans-serif;
   color: #183955;
 }
 h3,
 .h3 {
-  margin-top: 30px;
+  margin-top: 40px;
   margin-bottom: 16px;
   font: 300 24px/26px Helvetica, Arial, sans-serif;
   color: #183955;
 }
 h4,
 .h4 {
-  margin-top: 22px;
+  margin-top: 30px;
   margin-bottom: 0;
   font: 300 18px/21px Helvetica, Arial, sans-serif;
   color: #183955;
 }
 h5,
 .h5 {
-  margin-top: 22px;
+  margin-top: 30px;
   margin-bottom: 0;
   font: 300 14px/21px Helvetica, Arial, sans-serif;
   color: #183955;
 }
 h6,
 .h6 {
-  margin-top: 22px;
+  margin-top: 30px;
   margin-bottom: 0;
   font: 300 12px/16px Helvetica, Arial, sans-serif;
   color: #183955;
@@ -141,6 +141,12 @@ h6 + p,
 .h5 + p,
 .h6 + p {
   margin-top: 0;
+}
+.h-up {
+  font-family: 'Bebas Neue', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .1em;
 }
 /* ==========================================================================
    GENERAL STYLES
@@ -382,6 +388,69 @@ textarea {
   right: 0;
 }
 /* ==========================================================================
+   PAGE-EXCERPT
+   ========================================================================== */
+.page-excerpt {
+  margin: 30px 0 30px;
+  padding: 0 20px;
+  font: 18px/24px 'Bebas Neue', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+/* ==========================================================================
+   TEXT-BLOCK
+   ========================================================================== */
+.text-block {
+  margin: 56px -15px 42px;
+  font: bold 18px/21px 'Bebas Neue', Helvetica, Arial, sans-serif;
+  background: #183955;
+  color: #fff;
+  text-align: center;
+}
+.text-block .image {
+  margin: 0;
+}
+.text-block .text {
+  padding: 15px 30px;
+  min-height: 230px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: .1em;
+}
+/* ==========================================================================
+   ABOUT
+   ========================================================================== */
+.about {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.about ul {
+  margin-bottom: 30px;
+  padding: 0;
+  font-weight: bold;
+  list-style: none;
+}
+.about ul li {
+  padding-left: 40px;
+  position: relative;
+}
+.about ul li:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 3px;
+  height: 3px;
+  background: #f16c00;
+  border-radius: 50%;
+  position: absolute;
+  left: 20px;
+  top: 4px;
+}
+/* ==========================================================================
    RESPONSIVE
    ========================================================================== */
 @media (min-width: 375px) {
@@ -412,6 +481,13 @@ textarea {
     font-size: 14px;
     line-height: 21px;
   }
+  p,
+  ul,
+  ol,
+  dl {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
   h1,
   .h1 {
     font-size: 80px;
@@ -441,6 +517,10 @@ textarea {
   .h6 {
     font-size: 18px;
     line-height: 21px;
+  }
+  .text-block {
+    font-size: 28px;
+    line-height: 32px;
   }
 }
 @media (min-width: 1280px) {

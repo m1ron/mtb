@@ -1,0 +1,27 @@
+/* ==========================================================================
+   ABOUT
+   ========================================================================== */
+.about {
+  padding-left: 20px;
+  padding-right: 20px;
+    ul {
+      margin-bottom: @margin-md;
+        padding: 0;
+        font-weight: bold;
+        list-style: none;
+        li {
+          padding-left: 40px;
+          position: relative;
+          &:before {
+            .pseudo;
+            width: 3px;
+            height: 3px;
+            background: @color-orange;
+            border-radius: 50%;
+            position: absolute;
+            left: 20px;
+            top: 4px;
+          }
+        }
+    }
+}

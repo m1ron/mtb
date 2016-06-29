@@ -36,8 +36,12 @@ body {
    _TEXT STYLES
    ========================================================================== */
 p, ul, ol, dl {
-  margin-top: @margin-md;
-  margin-bottom: @margin-md;
+  margin-top: @margin-sm;
+  margin-bottom: @margin-sm;
+  @media @tablet-sm {
+    margin-top: @margin-md;
+    margin-bottom: @margin-md;
+  }
 }
 :focus { outline: -webkit-focus-ring-color auto 0; }
 a {
@@ -112,6 +116,12 @@ h6, .h6 {
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   & + p { margin-top: 0; }
+}
+.h-up {
+  font-family: @font-bebas;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .1em;
 }
 /* ==========================================================================
    GENERAL STYLES
