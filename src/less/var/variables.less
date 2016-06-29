@@ -11,44 +11,28 @@
 @w-tablet-md: 990px;
 @w-desktop: 1280px;
 
-@max-width: 1340px;
+@max-width: 1400px;
 
-@mobile-xs: ~"(min-width: @{w-mobile-xs})";
-@mobile-sm: ~"(min-width: @{w-mobile-sm})";
-@mobile-md: ~"(min-width: @{w-mobile-md})";
-@mobile-lg: ~"(min-width: @{w-mobile-lg})";
-@tablet-sm: ~"(min-width: @{w-tablet-sm})";
-@tablet-md: ~"(min-width: @{w-tablet-md})";
-@desktop: ~"(min-width: @{w-desktop})";
-@portrait: ~"(orientation: portrait)";
-@landscape: ~"(orientation: landscape)";
+@mobile-xs: e('(min-width: @{w-mobile-xs})');
+@mobile-sm: e('(min-width: @{w-mobile-sm})');
+@mobile-md: e('(min-width: @{w-mobile-md})');
+@mobile-lg: e('(min-width: @{w-mobile-lg})');
+@tablet-sm: e('(min-width: @{w-tablet-sm})');
+@tablet-md: e('(min-width: @{w-tablet-md})');
+@desktop: e('(min-width: @{w-desktop})');
+@portrait: e('(orientation: portrait)');
+@landscape: e('(orientation: landscape)');
 
-@font-default: "Futura New", Helvetica, Arial, sans-serif;
+@font-default: Helvetica, Arial, sans-serif;
 
 @color-black: #000;
 @color-white: #fff;
-@color-white-smoke-light: #f8f8f8;
-@color-white-smoke-light-transparent: rgba(248, 248, 248, 0);
-@color-white-smoke: #f4f4f4;
-@color-gray-light: #c8c8c8;
-@color-gray-lighter: #d0d5db;
-@color-pumice: #b0b8c3;
-@color-platinum: #e5e5e5;
-@color-silver: #a5aeba;
-@color-silver-dark: #777;
-@color-independence: #455762;
-@color-blue-steel: #1d374c;
-@color-blue: #0c66e0;
-@color-brilliant: #408ffa;
-@color-turquoise: #00c9e2;
-@color-azure: #d3e8f4;
-@color-orange: #ff9b0b;
-@color-tangerine: #ffa523;
-@color-topaz: #ffcd84;
+@color-space-cadet: #183955;
+@color-cadet-gray: #91aabf;
 
-@margin-sm: 6px;
-@margin-md: 24px;
-@margin-lg: 36px;
+@margin-sm: 16px;
+@margin-md: 22px;
+@margin-lg: 30px;
 
 @duration-s: .1s ease;
 @duration: .2s ease;

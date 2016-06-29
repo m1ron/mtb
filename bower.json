@@ -22,7 +22,6 @@
     "fastclick": "~1.0.6",
     "jquery": "~2.1.4",
     "slick-carousel": "slick.js#^1.6.0",
-    "font-awesome": "^4.6.3",
     "magnific-popup": "^1.1.0"
   }
 }

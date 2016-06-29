@@ -1,38 +1,24 @@
 /*
- * Project: BoatPilot Charter
+ * Project: MTB
  * File: Main styles
  */
 /* ==========================================================================
    FONTS
    ========================================================================== */
-/* Futura New */
+/*** Bebas Neue ***/
 @font-face {
-  font-family: 'Futura New';
-  src: url('../fonts/futuranew-book-webfont.eot');
-  src: local('☺'), url('../fonts/futuranew-book-webfont.woff') format('woff'), url('../fonts/futuranew-book-webfont.ttf') format('truetype'), url('../fonts/futuranew-book-webfont.svg') format('svg');
+  font-family: 'Bebas Neue';
   font-weight: normal;
   font-style: normal;
+  src: url('../fonts/bebasneue-book-webfont.eot');
+  src: local('☺'), url('../fonts/bebasneue-book-webfont.woff') format('woff'), url('../fonts/bebasneue-book-webfont.ttf') format('truetype'), url('../fonts/bebasneue-book-webfont.svg') format('svg');
 }
 @font-face {
-  font-family: 'Futura New';
-  src: url('../fonts/futuranew-medium-webfont.eot');
-  src: local('☺'), url('../fonts/futuranew-medium-webfont.woff') format('woff'), url('../fonts/futuranew-medium-webfont.ttf') format('truetype'), url('../fonts/futuranew-medium-webfont.svg') format('svg');
-  font-weight: 500;
+  font-family: 'Bebas Neue';
+  font-weight: bold;
   font-style: normal;
-}
-@font-face {
-  font-family: 'Futura New';
-  src: url('../fonts/futuranew-bold-webfont.eot');
-  src: local('☺'), url('../fonts/futuranew-bold-webfont.woff') format('woff'), url('../fonts/futuranew-bold-webfont.ttf') format('truetype'), url('../fonts/futuranew-bold-webfont.svg') format('svg');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Futura New';
-  src: url('../fonts/futuranew-heavy-webfont.eot');
-  src: local('☺'), url('../fonts/futuranew-heavy-webfont.woff') format('woff'), url('../fonts/futuranew-heavy-webfont.ttf') format('truetype'), url('../fonts/futuranew-heavy-webfont.svg') format('svg');
-  font-weight: 900;
-  font-style: normal;
+  src: url('../fonts/bebasneue-bold-webfont.eot');
+  src: local('☺'), url('../fonts/bebasneue-bold-webfont.woff') format('woff'), url('../fonts/bebasneue-bold-webfont.ttf') format('truetype'), url('../fonts/bebasneue-bold-webfont.svg') format('svg');
 }
 /* ==========================================================================
    BASE STYLES
@@ -46,10 +32,9 @@ html {
   height: 100%;
   padding: 0;
   margin: 0;
-  font: 16px/24px "Futura New", Helvetica, Arial, sans-serif;
-  color: #455762;
-  letter-spacing: .03em;
-  background: #f8f8f8;
+  font: 11px/16px Helvetica, Arial, sans-serif;
+  color: #183955;
+  background: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -60,7 +45,7 @@ body {
   min-height: 100%;
   margin: 0 auto;
   position: relative;
-  background: #f8f8f8;
+  background: #fff;
 }
 /* ==========================================================================
    _TEXT STYLES
@@ -69,14 +54,14 @@ p,
 ul,
 ol,
 dl {
-  margin-top: 24px;
-  margin-bottom: 24px;
+  margin-top: 22px;
+  margin-bottom: 22px;
 }
 :focus {
   outline: -webkit-focus-ring-color auto 0;
 }
 a {
-  color: #0c66e0;
+  color: #000;
   outline: none;
   text-decoration: none;
   -webkit-transition: color 0.2s ease;
@@ -87,7 +72,7 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 figure {
-  margin: 24px 0;
+  margin: 22px 0;
 }
 figure img {
   max-width: 100%;
@@ -103,57 +88,45 @@ video {
 /*** HEADINGS ***/
 h1,
 .h1 {
-  margin-top: 36px;
-  margin-bottom: 6px;
-  font: 500 26px/30px "Futura New", Helvetica, Arial, sans-serif;
-  color: #000;
-  text-transform: uppercase;
-  letter-spacing: .03em;
+  margin-top: 30px;
+  margin-bottom: 16px;
+  font: 300 42px/54px Helvetica, Arial, sans-serif;
+  color: #183955;
 }
 h2,
 .h2 {
-  margin-top: 36px;
-  margin-bottom: 6px;
-  font: 500 20px/26px "Futura New", Helvetica, Arial, sans-serif;
-  color: #000;
-  text-transform: uppercase;
-  letter-spacing: .03em;
+  margin-top: 30px;
+  margin-bottom: 16px;
+  font: 300 28px/30px Helvetica, Arial, sans-serif;
+  color: #183955;
 }
 h3,
 .h3 {
-  margin-top: 36px;
-  margin-bottom: 6px;
-  font: 500 18px/24px "Futura New", Helvetica, Arial, sans-serif;
-  color: #000;
-  text-transform: uppercase;
-  letter-spacing: .03em;
+  margin-top: 30px;
+  margin-bottom: 16px;
+  font: 300 24px/26px Helvetica, Arial, sans-serif;
+  color: #183955;
 }
 h4,
 .h4 {
-  margin-top: 24px;
+  margin-top: 22px;
   margin-bottom: 0;
-  font: 500 16px/24px "Futura New", Helvetica, Arial, sans-serif;
-  color: #000;
-  text-transform: uppercase;
-  letter-spacing: .03em;
+  font: 300 18px/21px Helvetica, Arial, sans-serif;
+  color: #183955;
 }
 h5,
 .h5 {
-  margin-top: 24px;
+  margin-top: 22px;
   margin-bottom: 0;
-  font: 500 15px/20px "Futura New", Helvetica, Arial, sans-serif;
-  color: #000;
-  text-transform: uppercase;
-  letter-spacing: .03em;
+  font: 300 14px/21px Helvetica, Arial, sans-serif;
+  color: #183955;
 }
 h6,
 .h6 {
-  margin-top: 24px;
+  margin-top: 22px;
   margin-bottom: 0;
-  font: 500 14px/18px "Futura New", Helvetica, Arial, sans-serif;
-  color: #000;
-  text-transform: uppercase;
-  letter-spacing: .03em;
+  font: 300 12px/16px Helvetica, Arial, sans-serif;
+  color: #183955;
 }
 h1 + p,
 h2 + p,
@@ -193,33 +166,6 @@ h6 + p,
   width: 100%;
   overflow-x: hidden;
 }
-/*** .WRAPPER ***/
-.wrapper {
-  max-width: 1340px;
-  margin-right: 15px;
-  margin-left: 15px;
-}
-.wrapper:after {
-  display: table;
-  content: '\0020';
-  clear: both;
-}
-/*** .CONTAINER ***/
-.container {
-  width: 100%;
-}
-.container > .panel:last-child {
-  margin-bottom: 0;
-}
-/*** .PANEL ***/
-.panel {
-  padding: 25px 15px;
-  margin: 20px 0;
-  background: #fff;
-}
-.panel .heading {
-  margin-top: 0;
-}
 /* ==========================================================================
    FORMS
    ========================================================================== */
@@ -240,14 +186,14 @@ button,
   padding: 10px 16px;
   border: none;
   border-radius: 17px;
-  font: 16px/16px "Futura New", Helvetica, Arial, sans-serif;
+  font: 16px/16px Helvetica, Arial, sans-serif;
   color: #000;
   text-align: center;
   text-decoration: none;
   letter-spacing: .03em;
   white-space: nowrap;
   display: inline-block;
-  background: #ff9b0b;
+  background: #fff;
   -webkit-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
@@ -278,7 +224,7 @@ button:active,
 button:focus,
 .button:focus {
   text-decoration: none;
-  background: #ffa523;
+  background: #fff;
 }
 /*** FIELDS ***/
 [type="text"],
@@ -288,11 +234,11 @@ textarea {
   width: 100%;
   max-width: 200px;
   padding: 12px 15px;
-  border: 1px solid #a5aeba;
+  border: 1px solid #fff;
   border-radius: 3px;
   display: inline-block;
   vertical-align: middle;
-  font: 16px "Futura New", Helvetica, Arial, sans-serif;
+  font: 16px Helvetica, Arial, sans-serif;
   color: #000;
   background: #fff;
   /*user-select: none;*/
@@ -304,125 +250,20 @@ textarea {
 }
 /* noinspection CssInvalidPseudoSelector */
 ::-webkit-input-placeholder {
-  color: #455762;
+  color: #000;
   opacity: 1;
 }
 ::-moz-placeholder {
-  color: #455762;
+  color: #000;
   opacity: 1;
 }
 :-ms-input-placeholder {
-  color: #455762;
+  color: #000;
   opacity: 1;
 }
 ::placeholder {
-  color: #455762;
-  opacity: 1;
-}
-/*** SELECTBOX ***/
-select {
-  font: 16px "Futura New", Helvetica, Arial, sans-serif;
-}
-.selectric {
-  width: 100%;
-  max-width: 200px;
-  min-width: 200px;
-  border-radius: 3px;
-  background: #fff;
-  opacity: 0;
-  -webkit-transition: background-color 0.2s ease;
-  transition: background-color 0.2s ease;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-.selectric-wrapper {
-  display: inline-block;
-  vertical-align: middle;
-}
-.selectric-wrapper .selectric {
-  opacity: 1;
-}
-.selectric,
-.selectric-hover .selectric,
-.selectric-open .selectric {
-  border: 1px solid #a5aeba;
-}
-.selectric-hover .selectric,
-.selectric-open .selectric {
-  background: #f4f4f4;
-}
-.selectric .label {
-  height: 33px;
-  margin-right: 26px;
-  margin-left: 15px;
-  font-size: 14px;
-  line-height: 34px;
-  color: #455762;
-  letter-spacing: .03em;
-  -webkit-transition: color 0.2s ease;
-  transition: color 0.2s ease;
-}
-.selectric-hover .selectric .label,
-.selectric-open .selectric .label {
   color: #000;
-}
-.selectric .button {
-  width: 26px;
-  height: auto;
-  padding: 0;
-  background: transparent;
-  box-shadow: none;
-  border: none;
-  border-radius: 0;
-  bottom: 0;
   opacity: 1;
-}
-.selectric .button:after,
-.selectric-hover .selectric .button:after {
-  border-width: 6px 3px 0 3px;
-  border-color: #455762 transparent transparent transparent;
-  top: 2px;
-  left: 2px;
-}
-.selectric-open .selectric .button:after,
-.selectric-open .selectric-hover .selectric .button:after {
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
-.selectric-items {
-  margin-top: 2px;
-  box-shadow: none;
-  border: 1px solid #a5aeba;
-  border-radius: 3px;
-  overflow: hidden;
-  background: #fff;
-}
-.selectric-items ul {
-  padding: 2px 0;
-  font-size: 14px;
-}
-.selectric-items li {
-  padding: 7px 15px;
-  border: none;
-  font-size: 14px;
-  color: #455762;
-  letter-spacing: .03em;
-  -webkit-transition: color 0.1s ease, background-color 0.1s ease;
-  transition: color 0.1s ease, background-color 0.1s ease;
-}
-.selectric-items li.disabled {
-  display: none;
-}
-.selectric-items li.selected,
-.selectric-items li:hover,
-.selectric-items li:focus {
-  color: #000;
-  background: #f4f4f4;
 }
 /*** DEFAULT ***/
 .form-group {
@@ -442,359 +283,73 @@ select {
   font-weight: 500;
   letter-spacing: .08em;
 }
-/*** CHECKBOX, RADIO ***/
-.checkbox,
-.radiobox {
-  padding-left: 30px;
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-}
-.checkbox input,
-.radiobox input {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.checkbox input:checked + .square:before,
-.radiobox input:checked + .square:before {
-  opacity: 1;
-}
-.checkbox .square,
-.radiobox .square {
-  width: 16px;
-  height: 16px;
-  border: 1px solid #b0b8c3;
-  position: absolute;
-  top: 3px;
-  left: 0;
-}
-.checkbox .square:before,
-.radiobox .square:before {
-  display: block;
-  content: '\0020';
-  overflow: hidden;
-  margin: auto auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0;
-}
-.checkbox {
-  border-radius: 2px;
-}
-.checkbox .square:before {
-  width: 22px;
-  height: 22px;
-  background: url("../img/icons/check-orange.png") center center;
-  background-size: 100% 100%;
-  top: -6px;
-  right: -2px;
-  left: -2px;
-  bottom: -2px;
-}
-.radiobox .square {
-  border-radius: 50%;
-}
-.radiobox .square:before {
-  width: 8px;
-  height: 8px;
-  background: #ff9b0b;
-  border-radius: 50%;
-}
-/*** DATEPICKER ***/
-.datepicker {
-  background: url("../img/icons/calendar.png") 92% center no-repeat;
-  background-size: 20px 20px;
-}
 /* ==========================================================================
    HEADER
    ========================================================================== */
 .header {
-  width: 100%;
-  height: 50px;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
-  background: #fff;
-  cursor: default;
-}
-.header > .wrapper {
-  height: 100%;
+  height: 60px;
+  padding: 0 15px;
+  background: #183955;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .header .logo {
-  height: 30px;
-  padding: 5px;
-  margin: 10px -5px;
-  font: 16px/20px "Futura New", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  float: left;
-  position: relative;
+  width: 108px;
+  height: 46px;
+  margin: 0;
 }
-.header .logo a {
+.header .logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.header .toggle {
+  width: 24px;
   height: 20px;
-  display: block;
-  color: #000;
-  text-decoration: none;
-}
-.header .logo a:hover span, .header .logo a:focus span {
-  border-bottom-color: transparent;
-}
-.header .logo span {
-  border-bottom: 3px solid #0c66e0;
-  color: #0c66e0;
-  font-weight: 900;
-  -webkit-transition: border-color 0.2s ease;
-  transition: border-color 0.2s ease;
-}
-.header .language {
-  width: 74px;
-  height: 35px;
-  padding: 0;
-  border: 1px solid #777;
-  border-radius: 17px;
-  margin: 7px 0;
-  font-size: 14px;
-  line-height: 23px;
-  letter-spacing: .03em;
-  list-style: none;
-  overflow: hidden;
-  position: relative;
-  z-index: 99;
-  float: right;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  background: #fff;
-}
-.header .language li {
-  height: 35px;
-  border: 1px solid #a5aeba;
-  border-top: none;
-  display: none;
-  background: #fff;
-}
-.header .language li a {
-  padding: 5px 10px 5px 37px;
-  display: block;
-  position: relative;
-  color: #455762;
-  -webkit-transition: color 0.1s ease, background-color 0.1s ease;
-  transition: color 0.1s ease, background-color 0.1s ease;
-}
-.header .language li a:hover, .header .language li a:focus {
-  color: #000;
-  text-decoration: none;
-  background: #f4f4f4;
-}
-.header .language li a:before {
-  display: block;
-  content: '\0020';
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
-  margin: auto;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 9px;
-  bottom: 0;
-  background: no-repeat center center;
-  background-size: contain;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
-.header .language li a[data-icon="us"]:before {
-  background-image: url('../img/language/us.png');
-}
-.header .language li a[data-icon="de"]:before {
-  background-image: url('../img/language/de.png');
-}
-.header .language li a[data-icon="ru"]:before {
-  background-image: url('../img/language/ru.png');
-}
-.header .language li.active {
-  height: 34px;
-  border-color: transparent;
-  border-radius: 17px;
   margin: 0;
   display: block;
+  text-indent: -1000px;
   overflow: hidden;
-  position: absolute;
-  top: 0;
-  right: -1px;
-  left: -1px;
-  background: none;
-}
-.header .language li.active a {
-  border-radius: 17px;
-  overflow: hidden;
+  border-top: 4px solid #91aabf;
+  border-bottom: 4px solid #91aabf;
   position: relative;
+  left: 50px;
 }
-.header .language li.active a:after {
+.header .toggle:before {
   display: block;
   content: '\0020';
   overflow: hidden;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 6px 3px 0 3px;
-  border-color: #455762 transparent transparent transparent;
-  margin: auto 0;
+  height: 4px;
+  background: #91aabf;
   position: absolute;
-  top: 2px;
-  right: 11px;
-  bottom: 0;
-  -webkit-transition: border-color 0.2s ease;
-  transition: border-color 0.2s ease;
-}
-.header .language li.active a:hover:after, .header .language li.active a:focus:after {
-  border-top-color: #000;
-}
-.header .language li.active + li {
-  border-top: 1px solid #a5aeba;
-  border-radius: 3px 3px 0 0;
-  margin-top: 4px;
-}
-.header .language li:last-child {
-  border-radius: 0 0 3px 3px;
-}
-.header .language.open {
-  padding-top: 33px;
-  overflow: visible;
-}
-.header .language.open li {
-  display: block;
-}
-.header .language.open li.active a:after {
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-.header .features {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  font-size: 14px;
-  line-height: 16px;
-  color: #000;
-  text-align: center;
-  position: absolute;
-  top: 24px;
-  right: 110px;
-  display: none;
-}
-.header .features li {
-  width: 116px;
-  float: left;
-  padding: 0 0 0 40px;
-  margin: 0 5px;
-  position: relative;
-  text-align: left;
-}
-.header .features li .icon {
-  width: 30px;
-  height: 30px;
-  margin: auto;
-  display: block;
-  position: absolute;
-  top: 0;
+  top: 4px;
   left: 0;
-  bottom: 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  right: 0;
+}
+.header .tel {
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  text-indent: -1000px;
+  overflow: hidden;
+  display: block;
+  background: url('../img/icons/phone.png') center center no-repeat;
+  background-size: 22px 22px;
+  position: relative;
+  left: 66px;
 }
 /* ==========================================================================
    PAGE-HEADER
    ========================================================================== */
-.page-header {
-  padding: 10px 15px;
-  margin: 0 -15px 20px;
-  position: relative;
-  z-index: 10;
-  cursor: default;
-  background: #408ffa no-repeat -500px -500px;
-  background-size: 1px 1px;
-}
-.page-header:before {
-  display: block;
-  content: '\0020';
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-  background: #408ffa no-repeat 50% 50%;
-  background-image: inherit !important;
-  background-size: cover;
-}
-.page-header .heading {
-  margin: 10px 0;
-  display: block;
-  position: relative;
-  z-index: 5;
-  font: 500 26px/30px "Futura New", Helvetica, Arial, sans-serif;
-  color: #fff;
-  text-transform: none;
-  letter-spacing: 0.001em;
-}
-.page-header .heading .color {
-  font-weight: inherit;
-  color: #ff9b0b;
-}
-.page-header .breadcrumbs {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  color: #ff9b0b;
-}
-.page-header .breadcrumbs li {
-  display: inline-block;
-}
-.page-header .breadcrumbs li a {
-  color: #ff9b0b;
-}
-.page-header .breadcrumbs li a:after {
-  margin-left: 6px;
-  content: '\0203A';
-  display: inline-block;
-  vertical-align: top;
-}
-.page-header.page-inner-header {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.page-header.page-inner-header .heading {
-  margin: 0 0 -2px 0;
-}
 /* ==========================================================================
    RESPONSIVE
    ========================================================================== */
 @media (min-width: 375px) {
-  h1,
-  .h1 {
-    font-size: 30px;
-    line-height: 36px;
-  }
-  h2,
-  .h2 {
-    font-size: 25px;
-    line-height: 32px;
-    letter-spacing: .08em;
-  }
-  h3,
-  .h3 {
-    font-size: 20px;
-    line-height: 28px;
-  }
   .page {
     overflow-x: visible;
   }
@@ -816,189 +371,46 @@ select {
     padding-bottom: 15px;
     border-radius: 24px;
   }
-  .selectric .label {
-    height: 43px;
-    margin-right: 25px;
-    margin-left: 15px;
-    font-size: 16px;
-    line-height: 44px;
-  }
-  .selectric .button {
-    width: 30px;
-  }
-  .selectric-items ul {
-    font-size: 16px;
-  }
-  .selectric-items li {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 16px;
-  }
-  .header {
-    height: 76px;
-  }
-  .header .logo {
-    height: 40px;
-    margin-top: 18px;
-    margin-bottom: 18px;
-    font-size: 20px;
-    line-height: 30px;
-    left: -1px;
-  }
-  .header .logo a {
-    height: 30px;
-  }
-  .header .logo span {
-    border-bottom-width: 4px;
-  }
-  .header .language {
-    width: 81px;
-    margin: 20px 0;
-    font-size: 16px;
-  }
-  .header .language li.active a:after {
-    top: 1px;
-    right: 14px;
-  }
-  .page-header {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  .page-header .heading {
-    margin: 20px 4px;
-    font-size: 30px;
-    line-height: 36px;
-  }
-}
-@media (min-width: 667px) {
-  .page-header .heading {
-    text-align: center;
-  }
-  .page-header.page-inner-header .heading {
-    text-align: left;
-  }
 }
 @media (min-width: 750px) {
-  .container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+  html {
+    font-size: 14px;
+    line-height: 21px;
   }
-  .panel {
-    padding: 45px 30px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  h1,
+  .h1 {
+    font-size: 80px;
+    line-height: 80px;
   }
-  .panel.left {
-    width: 365px;
-    margin-right: 15px;
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
+  h2,
+  .h2 {
+    font-size: 48px;
+    line-height: 50px;
   }
-  .panel.right {
-    width: 340px;
-    -ms-flex-preferred-size: 340px;
-    flex-basis: 340px;
-    -webkit-box-flex: 0;
-    -ms-flex-positive: 0;
-    flex-grow: 0;
+  h3,
+  .h3 {
+    font-size: 38px;
+    line-height: 40px;
   }
-  .panel.panel-catalog {
-    position: relative;
-    z-index: 20;
+  h4,
+  .h4 {
+    font-size: 28px;
+    line-height: 32px;
   }
-  .page-header {
-    padding-bottom: 140px;
+  h5,
+  .h5 {
+    font-size: 24px;
+    line-height: 28px;
   }
-  .page-header .heading {
-    width: 50%;
-    margin-left: 0;
-    margin-right: 0;
-    text-align: left;
-    font-size: 40px;
-    line-height: 44px;
-  }
-  .page-header.page-inner-header .heading {
-    width: auto;
-  }
-}
-@media (min-width: 990px) {
-  .page-header {
-    padding-bottom: 110px;
+  h6,
+  .h6 {
+    font-size: 18px;
+    line-height: 21px;
   }
 }
 @media (min-width: 1280px) {
   body {
     overflow-x: hidden;
-  }
-  .wrapper {
-    padding-right: 20px;
-    padding-left: 20px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .container {
-    padding: 0 0 20px;
-    margin: -20px 0 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-  }
-  .panel {
-    margin: 20px 0;
-  }
-  .panel.left {
-    margin-right: 30px;
-  }
-  .selectric .button {
-    width: 34px;
-  }
-  .selectric-items li {
-    padding: 10px 20px;
-  }
-  .header > .wrapper {
-    position: relative;
-  }
-  .header .features {
-    display: block;
-  }
-  .page-header {
-    padding: 0 50vw 90px;
-    margin: 0 -50vw 40px;
-  }
-  .page-header:before {
-    width: 100vw;
-    margin: auto;
-  }
-  .page-header:after {
-    display: table;
-    content: '\0020';
-    clear: both;
-  }
-  .page-header .heading {
-    width: 50%;
-    padding: 60px 0 0 0;
-    margin: 0 0 63px -4px;
-    font: 500 56px/67px "Futura New", Helvetica, Arial, sans-serif;
-  }
-  .page-header.page-inner-header {
-    margin-bottom: 24px;
-    padding-bottom: 30px;
-  }
-  .page-header.page-inner-header .breadcrumbs,
-  .page-header.page-inner-header .heading {
-    margin-left: -3px;
-  }
-  .page-header.page-inner-header .heading {
-    padding: 40px 0 0 0;
   }
 }
 
