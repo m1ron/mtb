@@ -2,4 +2,30 @@
    PAGE-HEADER
    ========================================================================== */
 .page-header {
+  height: 184px;
+  margin: 0 -15px;
+  padding: 0 15px;
+  background: @color-cadet-gray no-repeat -500px -500px;
+  background-size: 1px 1px;
+  color: @color-white;
+  display: flex;
+  align-items: flex-end;
+  .heading {
+    margin: 5px 0;
+    color: @color-white;
+    position: relative;
+    z-index: 2;
+  }
+  &:before {
+    .pseudo;
+    height: inherit;
+    background-image: inherit;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .15;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
 }
