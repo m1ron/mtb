@@ -1,0 +1,223 @@
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.header {
+  width: 100%;
+  height: 50px;
+  .color-black(.2);
+  box-shadow: 0 0 2px @color;
+  background: @color-white;
+  cursor: default;
+  @media @mobile-xs {
+    height: 76px;
+  }
+
+  > .wrapper {
+    height: 100%;
+    @media @desktop {
+      position: relative;
+    }
+  }
+
+  .logo {
+    height: 30px;
+    padding: 5px;
+    margin: 10px -5px;
+    font: 16px/20px @font-default;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    float: left;
+    position: relative;
+    @media @mobile-xs {
+      height: 40px;
+      margin-top: 18px;
+      margin-bottom: 18px;
+      font-size: 20px;
+      line-height: 30px;
+      left: -1px;
+    }
+
+    a {
+      height: 20px;
+      display: block;
+      color: @color-black;
+      text-decoration: none;
+      &:hover {
+        span { border-bottom-color: transparent; }
+      }
+      @media @mobile-xs {
+        height: 30px;
+      }
+    }
+
+    span {
+      border-bottom: 3px solid @color-blue;
+      color: @color-blue;
+      font-weight: 900;
+      transition: border-color @duration;
+      @media @mobile-xs {
+        border-bottom-width: 4px;
+      }
+    }
+  }
+
+  .language {
+    width: 74px;
+    height: 35px;
+    padding: 0;
+    border: 1px solid @color-silver-dark;
+    border-radius: 17px;
+    margin: 7px 0;
+    font-size: 14px;
+    line-height: 23px;
+    letter-spacing: .03em;
+    list-style: none;
+    overflow: hidden;
+    position: relative;
+    z-index: 99;
+    float: right;
+    user-select: none;
+    background: @color-white;
+    @media @mobile-xs {
+      width: 81px;
+      margin: 20px 0;
+      font-size: 16px;
+    }
+
+    li {
+      height: 35px;
+      border: 1px solid @color-silver;
+      border-top: none;
+      display: none;
+      background: @color-white;
+
+      a {
+        padding: 5px 10px 5px 37px;
+        display: block;
+        position: relative;
+        color: @color-independence;
+        transition: color @duration-s, background-color @duration-s;
+
+        &:hover {
+          color: @color-black;
+          text-decoration: none;
+          background: @color-white-smoke;
+        }
+
+        &:before {
+          .pseudo;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          box-shadow: 0 0 1px rgba(0, 0, 0, .5);
+          margin: auto;
+          overflow: hidden;
+          position: absolute;
+          top: 0;
+          left: 9px;
+          bottom: 0;
+          background: no-repeat center center;
+          background-size: contain;
+          backface-visibility: hidden;
+        }
+
+        // Make sure that country flag image exists in 'img/language/'
+        @countries: 'us', 'de', 'ru';
+        .for(@countries, { &[data-icon="@{value}"]:before { background-image: url('@{images}/language/@{value}.png'); } });
+      }
+
+      &.active {
+        height: 34px;
+        border-color: transparent;
+        border-radius: 17px;
+        margin: 0;
+        display: block;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        right: -1px;
+        left: -1px;
+        background: none;
+
+        a {
+          border-radius: 17px;
+          overflow: hidden;
+          position: relative;
+
+          &:after {
+            .pseudo;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 6px 3px 0 3px;
+            border-color: @color-independence transparent transparent transparent;
+            margin: auto 0;
+            position: absolute;
+            top: 2px;
+            right: 11px;
+            bottom: 0;
+            transition: border-color @duration;
+            @media @mobile-xs {
+              top: 1px;
+              right: 14px;
+            }
+          }
+          &:hover {
+            &:after { border-top-color: @color-black; }
+          }
+        }
+        & + li { border-top: 1px solid @color-silver; border-radius: 3px 3px 0 0; margin-top: 4px; }
+      }
+      &:last-child { border-radius: 0 0 3px 3px; }
+    }
+
+    &.open {
+      padding-top: 33px;
+      overflow: visible;
+      li {
+        display: block;
+        &.active {
+          a:after { transform: rotate(180deg); }
+        }
+      }
+    }
+  }
+
+  .features {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 14px;
+    line-height: 16px;
+    color: @color-black;
+    text-align: center;
+    position: absolute;
+    top: 24px;
+    right: 110px;
+    display: none;
+
+    li {
+      width: 116px;
+      float: left;
+      padding: 0 0 0 40px;
+      margin: 0 5px;
+      position: relative;
+      text-align: left;
+
+      .icon {
+        width: 30px;
+        height: 30px;
+        margin: auto;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        user-select: none;
+      }
+    }
+    @media @desktop {
+      display: block;
+    }
+  }
+}

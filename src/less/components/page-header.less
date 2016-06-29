@@ -1,0 +1,117 @@
+/* ==========================================================================
+   PAGE-HEADER
+   ========================================================================== */
+.page-header {
+  padding: 10px 15px;
+  margin: 0 -15px 20px;
+  position: relative;
+  z-index: 10;
+  cursor: default;
+  background: @color-brilliant no-repeat -500px -500px;
+  background-size: 1px 1px;
+  @media @mobile-xs {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  @media @tablet-sm {
+    padding-bottom: 140px;
+  }
+  @media @tablet-md {
+    padding-bottom: 110px;
+  }
+
+  &:before {
+    .pseudo;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background: @color-brilliant no-repeat 50% 50%;
+    background-image: inherit !important;
+    background-size: cover;
+  }
+
+  .heading {
+    margin: 10px 0;
+    display: block;
+    position: relative;
+    z-index: 5;
+    font: 500 26px/30px "Futura New", Helvetica, Arial, sans-serif;
+    color: #fff;
+    text-transform: none;
+    letter-spacing: 0.001em;
+    .color { font-weight: inherit; color: @color-orange; }
+    @media @mobile-xs {
+      margin: 20px 4px;
+      font-size: 30px;
+      line-height: 36px;
+    }
+    @media @mobile-lg {
+      text-align: center;
+    }
+    @media @tablet-sm {
+      width: 50%;
+      margin-left: 0;
+      margin-right: 0;
+      text-align: left;
+      font-size: 40px;
+      line-height: 44px;
+    }
+  }
+
+  .breadcrumbs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: @color-orange;
+    li {
+      display: inline-block;
+      a {
+        color: @color-orange;
+        &:after {
+          margin-left: 6px;
+          content: '\0203A';
+          display: inline-block;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+
+  @media @desktop {
+    & {
+      padding: 0 50vw 90px; margin: 0 -50vw 40px;
+      &:before { width: 100vw; margin: auto; }
+      &:after {.clearfix;}
+    }
+    .heading {
+      width: 50%;
+      padding: 60px 0 0 0;
+      margin: 0 0 63px -4px;
+      font: 500 56px/67px @font-default;
+    }
+
+  }
+
+  &.page-inner-header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .heading { margin: 0 0 -2px 0; }
+    @media @mobile-lg {
+      .heading { text-align: left; }
+    }
+    @media @tablet-sm {
+      .heading { width: auto; }
+    }
+    @media @desktop {
+      margin-bottom: 24px;
+      padding-bottom: 30px;
+      .breadcrumbs, .heading {
+        margin-left: -3px;
+      }
+      .heading { padding: 40px 0 0 0; }
+    }
+  }
+}

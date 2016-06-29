@@ -17,6 +17,7 @@ _Responsive markup_
 - jQuery
 - Font Awesome
 - Slick Carousel
+- Magnific Popup
 
 ## Installation
 
