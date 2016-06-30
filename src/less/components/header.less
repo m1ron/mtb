@@ -2,20 +2,46 @@
    HEADER
    ========================================================================== */
 .header {
+  max-width: @max-width;
   height: 60px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 15px;
-  background: @color-space-cadet;
   color: @color-white;
   display: flex;
   align-items: center;
+  background: @color-space-cadet;
+  @media @tablet-sm {
+    height: 126px;
+  }
+  &:after {
+    .clearfix;
+  }
+  &:before {
+    .pseudo;
+    height: inherit;
+    background: @color-space-cadet;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 0;
+  }
+  > * {
+    position: relative;
+    z-index: 1;
+  }
   .logo {
     width: 108px;
     height: 46px;
     margin: 0;
-    img {
+    a, img {
       width: 100%;
       height: auto;
       display: block;
+    }
+    @media @tablet-sm {
+      width: 230px;
+      height: 98px;
     }
   }
   .toggle {

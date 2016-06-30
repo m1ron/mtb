@@ -1,0 +1,44 @@
+/* ==========================================================================
+   CALL-TO-ACTION
+   ========================================================================== */
+.call-to-action {
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 0 15px;
+    background: @color-orange no-repeat -500px -500px;
+    background-size: 1px 1px;
+    text-align: center;
+    color: @color-white;
+    font-size: 28px;
+    line-height: 30px;
+    position: relative;
+    @media @tablet-sm {
+      margin-left: -50vw;
+      margin-right: -50vw;
+      padding-left: 50vw;
+      padding-right: 50vw;
+    }
+    &:before {
+      .pseudo;
+      height: inherit;
+      background-image: inherit;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: .25;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+    .space {
+      padding: 44px 15px 50px;
+      position: relative;
+      z-index: 2;
+    }
+    .text {
+      margin: 0 0 28px 0;
+    }
+}

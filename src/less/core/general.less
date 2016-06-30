@@ -45,7 +45,7 @@ p, ul, ol, dl {
 }
 :focus { outline: -webkit-focus-ring-color auto 0; }
 a {
-  color: @color-black; outline: none; text-decoration: none; transition: color @duration;
+  color: @color-space-cadet; outline: none; text-decoration: none; transition: color @duration;
   &:hover { outline: none; text-decoration: underline; }
 }
 figure {
@@ -135,8 +135,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 /*** .PAGE ***/
 .page {
   width: 100%;
+  max-width: @max-width;
+  margin-left: auto;
+  margin-right: auto;
   overflow-x: hidden;
   padding: 0 15px;
+  &:after {
+    .clearfix;
+  }
   @media @mobile-xs {
     overflow-x: visible;
   }

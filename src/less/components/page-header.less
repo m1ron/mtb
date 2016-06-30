@@ -10,11 +10,23 @@
   color: @color-white;
   display: flex;
   align-items: flex-end;
+  position: relative;
+  @media @tablet-sm {
+    height: 300px;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding-left: 50vw;
+    padding-right: 50vw;
+  }
   .heading {
-    margin: 5px 0;
+    margin: 0;
     color: @color-white;
     position: relative;
+    bottom: 5px;
     z-index: 2;
+    @media @tablet-sm {
+      bottom: 44px;
+    }
   }
   &:before {
     .pseudo;
@@ -27,5 +39,12 @@
     position: absolute;
     left: 0;
     right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  > * {
+    position: relative;
+    z-index: 2;
   }
 }

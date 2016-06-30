@@ -61,7 +61,7 @@ dl {
   outline: -webkit-focus-ring-color auto 0;
 }
 a {
-  color: #000;
+  color: #183955;
   outline: none;
   text-decoration: none;
   -webkit-transition: color 0.2s ease;
@@ -170,8 +170,16 @@ h6 + p,
 /*** .PAGE ***/
 .page {
   width: 100%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
   overflow-x: hidden;
   padding: 0 15px;
+}
+.page:after {
+  display: table;
+  content: '\0020';
+  clear: both;
 }
 /* ==========================================================================
    FORMS
@@ -190,20 +198,19 @@ legend {
 [type="button"],
 button,
 .button {
-  padding: 10px 16px;
+  padding: 10px 10px 5px;
   border: none;
   border-radius: 17px;
-  font: 16px/16px Helvetica, Arial, sans-serif;
+  font: bold 18px/18px 'Bebas Neue', Helvetica, Arial, sans-serif;
   color: #000;
   text-align: center;
   text-decoration: none;
-  letter-spacing: .03em;
   white-space: nowrap;
   display: inline-block;
   background: #fff;
+  border-radius: 14px;
   -webkit-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -232,6 +239,15 @@ button:focus,
 .button:focus {
   text-decoration: none;
   background: #fff;
+}
+[type="submit"].button-bordered-white,
+[type="reset"].button-bordered-white,
+[type="button"].button-bordered-white,
+button.button-bordered-white,
+.button.button-bordered-white {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
 }
 /*** FIELDS ***/
 [type="text"],
@@ -294,9 +310,11 @@ textarea {
    HEADER
    ========================================================================== */
 .header {
+  max-width: 1170px;
   height: 60px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 15px;
-  background: #183955;
   color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -304,12 +322,34 @@ textarea {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: #183955;
+}
+.header:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+.header:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  height: inherit;
+  background: #183955;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+.header > * {
+  position: relative;
+  z-index: 1;
 }
 .header .logo {
   width: 108px;
   height: 46px;
   margin: 0;
 }
+.header .logo a,
 .header .logo img {
   width: 100%;
   height: auto;
@@ -351,6 +391,90 @@ textarea {
   left: 66px;
 }
 /* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer {
+  max-width: 1170px;
+  margin: 30px auto 0;
+  padding: 0 15px;
+}
+.footer .links {
+  margin: 0 0 26px 0;
+  padding: 0;
+  list-style: none;
+  font: bold 12px/12px 'Bebas Neue', Helvetica, Arial, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  letter-spacing: .1em;
+}
+.footer .links li a {
+  color: #91aabf;
+}
+.footer .contacts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: bold;
+}
+.footer .contacts li {
+  margin-bottom: 18px;
+  padding-left: 50px;
+  position: relative;
+}
+.footer .contacts li:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 23px;
+  height: 23px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.footer .contacts li.adr:before {
+  background-image: url('../img/icons/pin.png');
+  top: 4px;
+}
+.footer .contacts li.tel:before {
+  background-image: url('../img/icons/tel.png');
+  top: -2px;
+}
+.footer .contacts li.mail:before {
+  background-image: url('../img/icons/mail.png');
+}
+.footer .contacts a[href^="mailto:"],
+.footer .contacts a[href^="tel:"] {
+  color: #183955;
+}
+.footer .contacts a[href^="mailto:"][href^="tel:"],
+.footer .contacts a[href^="tel:"][href^="tel:"] {
+  cursor: default;
+}
+.footer .contacts a[href^="mailto:"][href^="tel:"],
+.footer .contacts a[href^="tel:"][href^="tel:"],
+.footer .contacts a[href^="mailto:"][href^="tel:"]:hover,
+.footer .contacts a[href^="tel:"][href^="tel:"]:hover,
+.footer .contacts a[href^="mailto:"][href^="tel:"]:focus,
+.footer .contacts a[href^="tel:"][href^="tel:"]:focus {
+  text-decoration: none;
+}
+.footer .fb-widget {
+  display: none;
+}
+.footer .copyright {
+  margin: 0;
+  font-size: 10px;
+}
+/* ==========================================================================
    PAGE-HEADER
    ========================================================================== */
 .page-header {
@@ -366,11 +490,13 @@ textarea {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  position: relative;
 }
 .page-header .heading {
-  margin: 5px 0;
+  margin: 0;
   color: #fff;
   position: relative;
+  bottom: 5px;
   z-index: 2;
 }
 .page-header:before {
@@ -386,6 +512,13 @@ textarea {
   position: absolute;
   left: 0;
   right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.page-header > * {
+  position: relative;
+  z-index: 2;
 }
 /* ==========================================================================
    PAGE-EXCERPT
@@ -403,7 +536,6 @@ textarea {
 .text-block {
   margin: 56px -15px 42px;
   font: bold 18px/21px 'Bebas Neue', Helvetica, Arial, sans-serif;
-  background: #183955;
   color: #fff;
   text-align: center;
 }
@@ -420,6 +552,7 @@ textarea {
       -ms-flex-align: center;
           align-items: center;
   letter-spacing: .1em;
+  background: #183955;
 }
 /* ==========================================================================
    ABOUT
@@ -449,6 +582,46 @@ textarea {
   position: absolute;
   left: 20px;
   top: 4px;
+}
+/* ==========================================================================
+   CALL-TO-ACTION
+   ========================================================================== */
+.call-to-action {
+  margin-right: -15px;
+  margin-left: -15px;
+  padding: 0 15px;
+  background: #f16c00 no-repeat -500px -500px;
+  background-size: 1px 1px;
+  text-align: center;
+  color: #fff;
+  font-size: 28px;
+  line-height: 30px;
+  position: relative;
+}
+.call-to-action:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  height: inherit;
+  background-image: inherit;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: .25;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.call-to-action .space {
+  padding: 44px 15px 50px;
+  position: relative;
+  z-index: 2;
+}
+.call-to-action .text {
+  margin: 0 0 28px 0;
 }
 /* ==========================================================================
    RESPONSIVE
@@ -518,9 +691,58 @@ textarea {
     font-size: 18px;
     line-height: 21px;
   }
+  .header {
+    height: 126px;
+  }
+  .header .logo {
+    width: 230px;
+    height: 98px;
+  }
+  .page-header {
+    height: 300px;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding-left: 50vw;
+    padding-right: 50vw;
+  }
+  .page-header .heading {
+    bottom: 44px;
+  }
+  .page-excerpt {
+    padding-left: 290px;
+    padding-right: 290px;
+    font-size: 32px;
+    line-height: 42px;
+    position: relative;
+  }
+  .page-excerpt:before,
+  .page-excerpt:after {
+    display: block;
+    content: '\0020';
+    overflow: hidden;
+    width: 290px;
+    height: 5px;
+    margin: auto 0;
+    background: #91aabf;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+  .page-excerpt:before {
+    left: 0;
+  }
+  .page-excerpt:after {
+    right: 0;
+  }
   .text-block {
     font-size: 28px;
     line-height: 32px;
+  }
+  .call-to-action {
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding-left: 50vw;
+    padding-right: 50vw;
   }
 }
 @media (min-width: 1280px) {
