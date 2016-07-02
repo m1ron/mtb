@@ -3,14 +3,53 @@
    ========================================================================== */
 .works {
     .item {
+        margin: 36px 0;
         text-align: center;
+        padding-bottom: 18px;
+        border-bottom: 1px solid @color-cadet-gray;
+    }
+    .title {
+        &:extend(.h4, .h-up);
+        margin-top: 0;
+        margin-bottom: 12px;
     }
     .photos {
+      margin: 0 0 22px;
         padding: 0;
         list-style: none;
         display: flex;
         overflow: hidden;
-        li {
+        &.slick-initialized {
+          display: block;
+          overflow: visible;
+          .entry {
+            max-width: none;
+            min-width: 0;
+          }
+          .slick-dots {
+            padding: 0;
+            li {
+              padding: 0 8px;
+              display: inline-block;
+              .dot {
+                width: 15px;
+                height: 15px;
+                display: block;
+                border-radius: 50%;
+                background: @color-space-cadet;
+              }
+              &.slick-active {
+                .dot {
+                  cursor: pointer;
+                  background: transparent;
+                  border: 2px solid @color-space-cadet;
+                }
+              }
+            }
+
+          }
+        }
+        .entry {
             min-width: 100%;
             max-width: 100%;
             flex-basis: 100%;
@@ -19,5 +58,26 @@
                 height: auto;
             }
         }
+    }
+    .quote {
+      margin: 16px 0;
+      p {
+        color: @color-cadet-gray;
+        font-style: italic;
+      }
+      &:before {
+        .pseudo;
+        content: '\201C';
+        height: 32px;
+        font-size: 82px;
+        line-height: 75px;
+        font-weight: bold;
+        color: @color-orange;
+      }
+      .author {
+        color: @color-orange;
+        font-weight: bold;
+        font-style: normal;
+      }
     }
 }

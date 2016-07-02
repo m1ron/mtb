@@ -108,7 +108,8 @@ h3,
   color: #183955;
 }
 h4,
-.h4 {
+.h4,
+.works .title {
   margin-top: 30px;
   margin-bottom: 0;
   font: 300 18px/21px Helvetica, Arial, sans-serif;
@@ -142,7 +143,8 @@ h6 + p,
 .h6 + p {
   margin-top: 0;
 }
-.h-up {
+.h-up,
+.works .title {
   font-family: 'Bebas Neue', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: bold;
@@ -670,9 +672,17 @@ textarea {
    WORKS
    ========================================================================== */
 .works .item {
+  margin: 36px 0;
   text-align: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #91aabf;
+}
+.works .title {
+  margin-top: 0;
+  margin-bottom: 12px;
 }
 .works .photos {
+  margin: 0 0 22px;
   padding: 0;
   list-style: none;
   display: -webkit-box;
@@ -680,15 +690,65 @@ textarea {
   display: flex;
   overflow: hidden;
 }
-.works .photos li {
+.works .photos.slick-initialized {
+  display: block;
+  overflow: visible;
+}
+.works .photos.slick-initialized .entry {
+  max-width: none;
+  min-width: 0;
+}
+.works .photos.slick-initialized .slick-dots {
+  padding: 0;
+}
+.works .photos.slick-initialized .slick-dots li {
+  padding: 0 8px;
+  display: inline-block;
+}
+.works .photos.slick-initialized .slick-dots li .dot {
+  width: 15px;
+  height: 15px;
+  display: block;
+  border-radius: 50%;
+  background: #183955;
+}
+.works .photos.slick-initialized .slick-dots li.slick-active .dot {
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid #183955;
+}
+.works .photos .entry {
   min-width: 100%;
   max-width: 100%;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }
-.works .photos li img {
+.works .photos .entry img {
   width: 100%;
   height: auto;
+}
+.works .quote {
+  margin: 16px 0;
+}
+.works .quote p {
+  color: #91aabf;
+  font-style: italic;
+}
+.works .quote:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  content: '\201C';
+  height: 32px;
+  font-size: 82px;
+  line-height: 75px;
+  font-weight: bold;
+  color: #f16c00;
+}
+.works .quote .author {
+  color: #f16c00;
+  font-weight: bold;
+  font-style: normal;
 }
 /* ==========================================================================
    RESPONSIVE
@@ -765,7 +825,8 @@ textarea {
     line-height: 40px;
   }
   h4,
-  .h4 {
+  .h4,
+  .works .title {
     margin-top: 46px;
     margin-bottom: 30px;
     font-size: 28px;

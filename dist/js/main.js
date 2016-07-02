@@ -13,6 +13,21 @@ FastClick.attach(document.body);
  */
 $(document).ready(function () {
 
+	$('.works').each(function() {
+		$('.item', this).each(function(){
+			$('.photos', this).slick({
+			  infinite: true,
+			  slidesToShow: 1,
+			  slidesToScroll: 1,
+				arrows: false,
+				dots: true,
+				customPaging : function(slider, i) {
+        return '<span class="dot"></span>';
+    		}
+			});
+		});
+	});
+
 });
 
 $.extend(true, $.magnificPopup.defaults, {
