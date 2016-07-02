@@ -423,82 +423,89 @@ textarea {
   max-width: 1170px;
   margin: 30px auto 0;
   padding: 0 15px;
+  border-top: 1px solid #91aabf;
 }
 .footer .links {
-  margin: 0 0 26px 0;
-  padding: 0;
-  list-style: none;
   font: bold 12px/12px 'Bebas Neue', Helvetica, Arial, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin: 0 0 26px 0;
+  padding: 0;
+  list-style: none;
+  letter-spacing: .1em;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  letter-spacing: .1em;
 }
 .footer .links li a {
   color: #91aabf;
 }
 .footer .contacts {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 18px;
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: bold;
 }
 .footer .contacts li {
+  position: relative;
   margin-bottom: 18px;
   padding-left: 50px;
-  position: relative;
 }
 .footer .contacts li:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 23px;
+  height: 23px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   display: block;
   content: '\0020';
   overflow: hidden;
-  width: 23px;
-  height: 23px;
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: absolute;
-  left: 0;
-  top: 0;
 }
 .footer .contacts li.adr:before {
-  background-image: url('../img/icons/pin.png');
   top: 4px;
+  background-image: url('../img/icons/pin.png');
 }
 .footer .contacts li.tel:before {
-  background-image: url('../img/icons/tel.png');
   top: -2px;
+  background-image: url('../img/icons/tel.png');
 }
 .footer .contacts li.mail:before {
   background-image: url('../img/icons/mail.png');
 }
-.footer .contacts a[href^="mailto:"],
-.footer .contacts a[href^="tel:"] {
+.footer .contacts a[href^='mailto:'],
+.footer .contacts a[href^='tel:'] {
   color: #183955;
 }
-.footer .contacts a[href^="mailto:"][href^="tel:"],
-.footer .contacts a[href^="tel:"][href^="tel:"] {
+.footer .contacts a[href^='mailto:'][href^='tel:'],
+.footer .contacts a[href^='tel:'][href^='tel:'] {
   cursor: default;
 }
-.footer .contacts a[href^="mailto:"][href^="tel:"],
-.footer .contacts a[href^="tel:"][href^="tel:"],
-.footer .contacts a[href^="mailto:"][href^="tel:"]:hover,
-.footer .contacts a[href^="tel:"][href^="tel:"]:hover,
-.footer .contacts a[href^="mailto:"][href^="tel:"]:focus,
-.footer .contacts a[href^="tel:"][href^="tel:"]:focus {
+.footer .contacts a[href^='mailto:'][href^='tel:'],
+.footer .contacts a[href^='tel:'][href^='tel:'],
+.footer .contacts a[href^='mailto:'][href^='tel:']:hover,
+.footer .contacts a[href^='tel:'][href^='tel:']:hover,
+.footer .contacts a[href^='mailto:'][href^='tel:']:focus,
+.footer .contacts a[href^='tel:'][href^='tel:']:focus {
   text-decoration: none;
 }
 .footer .fb-widget {
   display: none;
 }
 .footer .copyright {
-  margin: 0;
   font-size: 10px;
+  margin: 0;
+}
+/* ==========================================================================
+   NAV
+   ========================================================================== */
+.nav {
+  display: none;
 }
 /* ==========================================================================
    PAGE-HEADER

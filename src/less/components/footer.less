@@ -2,85 +2,87 @@
    FOOTER
    ========================================================================== */
 .footer {
-  max-width: @max-width;
-  margin: 30px auto 0;
-  padding: 0 15px;
-  .links {
-    margin: 0 0 26px 0;
-    padding: 0;
-    list-style: none;
-    font: bold 12px/12px @font-bebas;
-    display: flex;
-    justify-content: space-between;
-    letter-spacing: .1em;
-    li {
-      a {
-        color: @color-cadet-gray;
-      }
-    }
-  }
-  .contacts {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-size: 14px;
-    line-height: 18px;
-    font-weight: bold;
-    li {
-      margin-bottom: 18px;
-      padding-left: 50px;
-      position: relative;
-      &:before {
-        .pseudo;
-        width: 23px;
-        height: 23px;
-        background-position: center center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        position: absolute;
-        left: 0;
-        top: 0;
-      }
-      &.adr {
-        &:before {
-          background-image: url('@{images}/icons/pin.png');
-          top: 4px;
-        }
-      }
-      &.tel {
-        &:before {
-          background-image: url('@{images}/icons/tel.png');
-          top: -2px;
-        }
-      }
-      &.mail {
-        &:before {
-          background-image: url('@{images}/icons/mail.png');
-        }
-      }
-    }
-    a {
-      &[href^="mailto:"], &[href^="tel:"] {
-        color: @color-space-cadet;
-        &[href^="tel:"] {
-          cursor: default;
-          &, &:hover {
-            text-decoration: none;
-          }
-        }
-      }
-    }
-  }
-  .fb-widget {
-    display: none;
-  }
-  .copyright {
-    margin: 0;
-    font-size: 10px;
-    .lic {
-    }
-  }
-  .social {
+    max-width: @max-width;
+    border-top: 1px solid @color-cadet-gray;
+    margin: 30px auto 0;
+    padding: 0 15px;
 
-  }
+    .links {
+        margin: 0 0 26px 0;
+        padding: 0;
+        list-style: none;
+        font: bold 12px/12px @font-bebas;
+        display: flex;
+        justify-content: space-between;
+        letter-spacing: .1em;
+        li {
+            a {
+                color: @color-cadet-gray;
+            }
+        }
+    }
+
+    .contacts {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: bold;
+        li {
+            margin-bottom: 18px;
+            padding-left: 50px;
+            position: relative;
+            &:before {
+                .pseudo;
+                width: 23px;
+                height: 23px;
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            &.adr {
+                &:before {
+                    background-image: url('@{images}/icons/pin.png');
+                    top: 4px;
+                }
+            }
+            &.tel {
+                &:before {
+                    background-image: url('@{images}/icons/tel.png');
+                    top: -2px;
+                }
+            }
+            &.mail {
+                &:before {
+                    background-image: url('@{images}/icons/mail.png');
+                }
+            }
+        }
+        a {
+            &[href^='mailto:'], &[href^='tel:'] {
+                color: @color-space-cadet;
+                &[href^='tel:'] {
+                    cursor: default;
+                    &, &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+    .fb-widget {
+        display: none;
+    }
+    .copyright {
+        margin: 0;
+        font-size: 10px;
+        .lic {
+        }
+    }
+    .social {
+    }
 }
