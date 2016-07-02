@@ -209,8 +209,8 @@ button,
   display: inline-block;
   background: #fff;
   border-radius: 14px;
-  -webkit-transition: background-color 0.2s ease;
-  transition: background-color 0.2s ease;
+  -webkit-transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -248,6 +248,29 @@ button.button-bordered-white,
   background: transparent;
   color: #fff;
   border: 2px solid #fff;
+}
+[type="submit"].button-bordered-white:hover,
+[type="reset"].button-bordered-white:hover,
+[type="button"].button-bordered-white:hover,
+button.button-bordered-white:hover,
+.button.button-bordered-white:hover,
+[type="submit"].button-bordered-white:focus,
+[type="reset"].button-bordered-white:focus,
+[type="button"].button-bordered-white:focus,
+button.button-bordered-white:focus,
+.button.button-bordered-white:focus,
+[type="submit"].button-bordered-white:active,
+[type="reset"].button-bordered-white:active,
+[type="button"].button-bordered-white:active,
+button.button-bordered-white:active,
+.button.button-bordered-white:active,
+[type="submit"].button-bordered-white:focus,
+[type="reset"].button-bordered-white:focus,
+[type="button"].button-bordered-white:focus,
+button.button-bordered-white:focus,
+.button.button-bordered-white:focus {
+  background-color: #fff;
+  color: #183955;
 }
 /*** FIELDS ***/
 [type="text"],
@@ -594,8 +617,6 @@ textarea {
   background-size: 1px 1px;
   text-align: center;
   color: #fff;
-  font-size: 28px;
-  line-height: 30px;
   position: relative;
 }
 .call-to-action:before {
@@ -622,6 +643,9 @@ textarea {
 }
 .call-to-action .text {
   margin: 0 0 28px 0;
+  font-size: 28px;
+  line-height: 30px;
+  font-weight: 300;
 }
 /* ==========================================================================
    RESPONSIVE
@@ -658,38 +682,71 @@ textarea {
   ul,
   ol,
   dl {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   h1,
   .h1 {
+    margin-top: 46px;
+    margin-bottom: 30px;
     font-size: 80px;
     line-height: 80px;
   }
   h2,
   .h2 {
+    margin-top: 46px;
+    margin-bottom: 30px;
     font-size: 48px;
     line-height: 50px;
   }
   h3,
   .h3 {
+    margin-top: 46px;
+    margin-bottom: 30px;
     font-size: 38px;
     line-height: 40px;
   }
   h4,
   .h4 {
+    margin-top: 46px;
+    margin-bottom: 30px;
     font-size: 28px;
     line-height: 32px;
   }
   h5,
   .h5 {
+    margin-top: 46px;
+    margin-bottom: 30px;
     font-size: 24px;
     line-height: 28px;
   }
   h6,
   .h6 {
+    margin-top: 46px;
+    margin-bottom: 30px;
     font-size: 18px;
     line-height: 21px;
+  }
+  .page {
+    padding-top: 24px;
+  }
+  [type="submit"],
+  [type="reset"],
+  [type="button"],
+  button,
+  .button {
+    height: 62px;
+    font-size: 28px;
+    line-height: 28px;
+    padding: 18px 70px 10px;
+    border-radius: 26px;
+  }
+  [type="submit"].button-bordered-white,
+  [type="reset"].button-bordered-white,
+  [type="button"].button-bordered-white,
+  button.button-bordered-white,
+  .button.button-bordered-white {
+    border-width: 3px;
   }
   .header {
     height: 126px;
@@ -700,27 +757,31 @@ textarea {
   }
   .page-header {
     height: 300px;
+    margin-bottom: 80px;
     margin-left: -50vw;
     margin-right: -50vw;
     padding-left: 50vw;
     padding-right: 50vw;
   }
   .page-header .heading {
-    bottom: 44px;
+    bottom: 34px;
   }
   .page-excerpt {
+    margin-top: 80px;
+    margin-bottom: 80px;
     padding-left: 290px;
     padding-right: 290px;
     font-size: 32px;
     line-height: 42px;
     position: relative;
+    letter-spacing: .05em;
   }
   .page-excerpt:before,
   .page-excerpt:after {
     display: block;
     content: '\0020';
     overflow: hidden;
-    width: 290px;
+    width: 264px;
     height: 5px;
     margin: auto 0;
     background: #91aabf;
@@ -735,14 +796,49 @@ textarea {
     right: 0;
   }
   .text-block {
+    margin: 30px 0 30px;
     font-size: 28px;
     line-height: 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .text-block .image {
+    -webkit-box-ordinal-group: 21;
+    -ms-flex-order: 20;
+    order: 20;
+  }
+  .about {
+    max-width: 940px;
+    margin: 80px auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .about ul {
+    margin-bottom: 44px;
+    padding-left: 32px;
+    font-size: 16px;
+  }
+  .about ul li {
+    margin-bottom: 11px;
+  }
+  .about ul li:before {
+    left: 6px;
+    top: 6px;
   }
   .call-to-action {
     margin-left: -50vw;
     margin-right: -50vw;
     padding-left: 50vw;
     padding-right: 50vw;
+  }
+  .call-to-action .space {
+    padding: 104px 74px;
+  }
+  .call-to-action .text {
+    margin-bottom: 44px;
+    font-size: 48px;
+    line-height: 52px;
   }
 }
 @media (min-width: 1280px) {
