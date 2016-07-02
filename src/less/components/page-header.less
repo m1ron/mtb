@@ -5,7 +5,9 @@
   height: 184px;
   margin: 0 -15px;
   padding: 0 15px;
-  background: @color-cadet-gray no-repeat -500px -500px;
+  background-color: @color-cadet-gray;
+  background-repeat: no-repeat;
+  background-position: -500px -500px;
   background-size: 1px 1px;
   color: @color-white;
   display: flex;
@@ -13,11 +15,13 @@
   position: relative;
   @media @tablet-sm {
     height: 300px;
-    margin-bottom: 80px;
     margin-left: -50vw;
     margin-right: -50vw;
     padding-left: 50vw;
     padding-right: 50vw;
+  }
+  &.page-about {
+    background-image: url('@{images}/page-header/about-us.jpg');
   }
   .heading {
     margin: 0;

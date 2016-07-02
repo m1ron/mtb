@@ -507,7 +507,9 @@ textarea {
   height: 184px;
   margin: 0 -15px;
   padding: 0 15px;
-  background: #91aabf no-repeat -500px -500px;
+  background-color: #91aabf;
+  background-repeat: no-repeat;
+  background-position: -500px -500px;
   background-size: 1px 1px;
   color: #fff;
   display: -webkit-box;
@@ -517,6 +519,9 @@ textarea {
       -ms-flex-align: end;
           align-items: flex-end;
   position: relative;
+}
+.page-header.page-about {
+  background-image: url('../img/page-header/about-us.jpg');
 }
 .page-header .heading {
   margin: 0;
@@ -779,7 +784,6 @@ textarea {
   }
   .page-header {
     height: 300px;
-    margin-bottom: 80px;
     margin-left: -50vw;
     margin-right: -50vw;
     padding-left: 50vw;
