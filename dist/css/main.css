@@ -108,8 +108,7 @@ h3,
   color: #183955;
 }
 h4,
-.h4,
-.works .title {
+.h4 {
   margin-top: 30px;
   margin-bottom: 0;
   font: 300 18px/21px Helvetica, Arial, sans-serif;
@@ -143,8 +142,7 @@ h6 + p,
 .h6 + p {
   margin-top: 0;
 }
-.h-up,
-.works .title {
+.h-up {
   font-family: 'Bebas Neue', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: bold;
@@ -536,6 +534,9 @@ textarea {
 .page-header.page-work {
   background-image: url('../img/page-header/our-work.jpg');
 }
+.page-header.page-contacts {
+  background-image: url('../img/page-header/contacts.jpg');
+}
 .page-header .heading {
   margin: 0;
   color: #fff;
@@ -679,8 +680,19 @@ textarea {
   border-bottom: 1px solid #91aabf;
 }
 .works .title {
+  margin-top: 30px;
+  margin-bottom: 0;
+  font: 300 18px/21px Helvetica, Arial, sans-serif;
+  color: #183955;
+  font-family: 'Bebas Neue', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .1em;
   margin-top: 0;
   margin-bottom: 12px;
+}
+.works .title + p {
+  margin-top: 0;
 }
 .works .photos {
   margin: 0 0 22px;
@@ -827,8 +839,7 @@ textarea {
     line-height: 40px;
   }
   h4,
-  .h4,
-  .works .title {
+  .h4 {
     margin-top: 46px;
     margin-bottom: 30px;
     font-size: 28px;
@@ -962,6 +973,12 @@ textarea {
     margin: 80px 0;
     padding-bottom: 24px;
     text-align: left;
+  }
+  .works .title {
+    margin-top: 46px;
+    margin-bottom: 30px;
+    font-size: 28px;
+    line-height: 32px;
   }
   .works .title {
     margin-top: 0;
