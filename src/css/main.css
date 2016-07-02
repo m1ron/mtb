@@ -523,6 +523,9 @@ textarea {
 .page-header.page-about {
   background-image: url('../img/page-header/about-us.jpg');
 }
+.page-header.page-work {
+  background-image: url('../img/page-header/our-work.jpg');
+}
 .page-header .heading {
   margin: 0;
   color: #fff;
@@ -655,6 +658,30 @@ textarea {
   font-size: 28px;
   line-height: 30px;
   font-weight: 300;
+}
+/* ==========================================================================
+   WORKS
+   ========================================================================== */
+.works .item {
+  text-align: center;
+}
+.works .photos {
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+.works .photos li {
+  min-width: 100%;
+  max-width: 100%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+.works .photos li img {
+  width: 100%;
+  height: auto;
 }
 /* ==========================================================================
    RESPONSIVE
