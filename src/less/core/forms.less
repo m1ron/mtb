@@ -2,93 +2,103 @@
    FORMS
    ========================================================================== */
 form, fieldset, legend {
-  padding: 0;
-  border: none;
-  margin: 0;
-  display: block;
+    padding: 0;
+    border: none;
+    margin: 0;
+    display: block;
 }
 /*** BUTTONS ***/
-[type="submit"], [type="reset"], [type="button"], button, .button {
-      padding: 10px 10px 5px;
-  border: none;
-  border-radius: 17px;
-  font: bold 18px/18px @font-bebas;
-  color: @color-black;
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-  display: inline-block;
-  background: @color-white;
-  border-radius: 14px;
-  transition: background-color @duration, color @duration;
-  user-select: none;
-  cursor: pointer;
-  &:hover, &:focus, &:active { text-decoration: none; background: @color-white; }
-  &.button-bordered-white {
-    background: transparent;
-    color: @color-white;
-    border: 2px solid @color-white;
+[type='submit'], [type='reset'], [type='button'], button, .button {
+    padding: 10px 10px 5px;
+    border: none;
+    border-radius: 17px;
+    font: bold 18px/18px @font-bebas;
+    color: @color-black;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    display: inline-block;
+    background: @color-white;
+    border-radius: 14px;
+    transition: background-color @duration, color @duration;
+    user-select: none;
+    cursor: pointer;
     &:hover, &:focus, &:active {
-      background-color: @color-white;
-      color: @color-space-cadet;
+        text-decoration: none;
+        background: @color-white;
     }
-  }
-  @media @mobile-xs {
-    height: 35px;
-    padding-right: 26px;
-    padding-left: 26px;
-  }
-  @media @tablet-sm {
-    height: 62px;
-    font-size: 28px;
-    line-height: 28px;
-    padding: 18px 70px 10px;
-    border-radius: 26px;
     &.button-bordered-white {
-      border-width: 3px;
+        background: transparent;
+        color: @color-white;
+        border: 2px solid @color-white;
+        &:hover, &:focus, &:active {
+            background-color: @color-white;
+            color: @color-space-cadet;
+        }
     }
-  }
+    @media @mobile-xs {
+        height: 35px;
+        padding-right: 26px;
+        padding-left: 26px;
+    }
+    @media @tablet-sm {
+        height: 62px;
+        font-size: 28px;
+        line-height: 28px;
+        padding: 18px 70px 10px;
+        border-radius: 26px;
+        &.button-bordered-white {
+            border-width: 3px;
+        }
+    }
 }
-[type="submit"], [type="reset"], [type="button"], button {
-  @media @mobile-xs {
-    height: 45px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-radius: 24px;
-  }
+[type='submit'], [type='reset'], [type='button'], button {
+    @media @mobile-xs {
+        height: 45px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-radius: 24px;
+    }
 }
 /*** FIELDS ***/
-[type="text"], [type="tel"], [type="email"], textarea {
-  width: 100%;
-  max-width: 200px;
-  padding: 12px 15px;
-  border: 1px solid @color-white;
-  border-radius: 3px;
-  display: inline-block;
-  vertical-align: middle;
-  font: 16px @font-default;
-  color: @color-black;
-  background: @color-white;
-  /*user-select: none;*/
+[type='text'], [type='tel'], [type='email'], textarea {
+    width: 100%;
+    max-width: 200px;
+    padding: 12px 15px;
+    border: 1px solid @color-white;
+    border-radius: 3px;
+    display: inline-block;
+    vertical-align: middle;
+    font: 16px @font-default;
+    color: @color-black;
+    background: @color-white;
+    /*user-select: none;*/
 }
 textarea {
-  max-width: 550px;
-  height: 170px;
-  resize: none;
+    max-width: 550px;
+    height: 170px;
+    resize: none;
 }
 /* noinspection CssInvalidPseudoSelector */
-::placeholder { color: @color-black; opacity: 1; }
+::placeholder {
+    color: @color-black;
+    opacity: 1;
+}
 /*** DEFAULT ***/
 .form {
-  &-group {
-    margin-bottom: 20px;
-    &:after { .clearfix; }
-    &:last-child { margin-bottom: 0; }
-  }
-  &-label {
-    margin-bottom: 10px;
-    display: block;
-    font-weight: 500;
-    letter-spacing: .08em;
-  }
+    &-group {
+        margin-bottom: 20px;
+        &:after {
+            .clearfix;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &-label {
+        margin-bottom: 10px;
+        display: block;
+        font-weight: 500;
+        letter-spacing: .08em;
+    }
 }

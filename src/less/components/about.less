@@ -2,44 +2,44 @@
    ABOUT
    ========================================================================== */
 .about {
-  padding-left: 20px;
-  padding-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     ul {
         margin-bottom: @margin-md;
         padding: 0;
         font-weight: bold;
         list-style: none;
         li {
-          padding-left: 40px;
-          position: relative;
-          &:before {
-            .pseudo;
-            width: 3px;
-            height: 3px;
-            background: @color-orange;
-            border-radius: 50%;
-            position: absolute;
-            left: 20px;
-            top: 4px;
-          }
+            padding-left: 40px;
+            position: relative;
+            &:before {
+                .pseudo;
+                width: 3px;
+                height: 3px;
+                background: @color-orange;
+                border-radius: 50%;
+                position: absolute;
+                left: 20px;
+                top: 4px;
+            }
         }
     }
     @media @tablet-sm {
-      max-width: 940px;
-      margin: 80px auto;
-      padding-left: 0;
-      padding-right: 0;
-      ul {
-        margin-bottom: 44px;
-        padding-left: 32px;
-        font-size: 16px;
-        li {
-          margin-bottom: 11px;
-          &:before {
-            left: 6px;
-            top: 6px;
-          }
+        max-width: 940px;
+        margin: 80px auto;
+        padding-left: 0;
+        padding-right: 0;
+        ul {
+            margin-bottom: 44px;
+            padding-left: 32px;
+            font-size: 16px;
+            li {
+                margin-bottom: 11px;
+                &:before {
+                    left: 6px;
+                    top: 6px;
+                }
+            }
         }
-      }
     }
 }

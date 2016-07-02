@@ -2,57 +2,57 @@
    PAGE-HEADER
    ========================================================================== */
 .page-header {
-  height: 184px;
-  margin: 0 -15px;
-  padding: 0 15px;
-  background-color: @color-cadet-gray;
-  background-repeat: no-repeat;
-  background-position: -500px -500px;
-  background-size: 1px 1px;
-  color: @color-white;
-  display: flex;
-  align-items: flex-end;
-  position: relative;
-  @media @tablet-sm {
-    height: 300px;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    padding-left: 50vw;
-    padding-right: 50vw;
-  }
-  &.page-about {
-    background-image: url('@{images}/page-header/about-us.jpg');
-  }
-  &.page-work {
-    background-image: url('@{images}/page-header/our-work.jpg');
-  }
-  .heading {
-    margin: 0;
-    color: @color-white;
-    position: relative;
-    bottom: 5px;
-    z-index: 2;
-    @media @tablet-sm {
-      bottom: 34px;
-    }
-  }
-  &:before {
-    .pseudo;
-    height: inherit;
-    background-image: inherit;
-    background-position: center center;
+    height: 184px;
+    margin: 0 -15px;
+    padding: 0 15px;
+    background-color: @color-cadet-gray;
     background-repeat: no-repeat;
-    background-size: cover;
-    opacity: .15;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 1;
-  }
-  > * {
+    background-position: -500px -500px;
+    background-size: 1px 1px;
+    color: @color-white;
+    display: flex;
+    align-items: flex-end;
     position: relative;
-    z-index: 2;
-  }
+    @media @tablet-sm {
+        height: 300px;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        padding-left: 50vw;
+        padding-right: 50vw;
+    }
+    &.page-about {
+        background-image: url('@{images}/page-header/about-us.jpg');
+    }
+    &.page-work {
+        background-image: url('@{images}/page-header/our-work.jpg');
+    }
+    .heading {
+        margin: 0;
+        color: @color-white;
+        position: relative;
+        bottom: 5px;
+        z-index: 2;
+        @media @tablet-sm {
+            bottom: 34px;
+        }
+    }
+    &:before {
+        .pseudo;
+        height: inherit;
+        background-image: inherit;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: .15;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+    > * {
+        position: relative;
+        z-index: 2;
+    }
 }

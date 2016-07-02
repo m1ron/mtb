@@ -2,14 +2,18 @@
 // MIXINS
 // ========================================================================== */
 // COLORS
-.color-white(@opacity) { @color: rgba(255, 255, 255, @opacity); }
-.color-black(@opacity) { @color: rgba(0, 0, 0, @opacity); }
+.color-white(@opacity) {
+    @color: rgba(255, 255, 255, @opacity);
+}
+.color-black(@opacity) {
+    @color: rgba(0, 0, 0, @opacity);
+}
 // ROTATE
 .rotate(@deg) {
-  -webkit-transform: rotate(@deg);
-  -moz-transform: rotate(@deg);
-  -ms-transform: rotate(@deg);
-  -o-transform: rotate(@deg);
-  transform: rotate(@deg);
-  -webkit-backface-visibility: hidden;
+    -webkit-transform: rotate(@deg);
+       -moz-transform: rotate(@deg);
+        -ms-transform: rotate(@deg);
+         -o-transform: rotate(@deg);
+            transform: rotate(@deg);
+    -webkit-backface-visibility: hidden;
 }

@@ -196,9 +196,9 @@ legend {
   display: block;
 }
 /*** BUTTONS ***/
-[type="submit"],
-[type="reset"],
-[type="button"],
+[type='submit'],
+[type='reset'],
+[type='button'],
 button,
 .button {
   padding: 10px 10px 5px;
@@ -220,65 +220,65 @@ button,
           user-select: none;
   cursor: pointer;
 }
-[type="submit"]:hover,
-[type="reset"]:hover,
-[type="button"]:hover,
+[type='submit']:hover,
+[type='reset']:hover,
+[type='button']:hover,
 button:hover,
 .button:hover,
-[type="submit"]:focus,
-[type="reset"]:focus,
-[type="button"]:focus,
+[type='submit']:focus,
+[type='reset']:focus,
+[type='button']:focus,
 button:focus,
 .button:focus,
-[type="submit"]:active,
-[type="reset"]:active,
-[type="button"]:active,
+[type='submit']:active,
+[type='reset']:active,
+[type='button']:active,
 button:active,
 .button:active,
-[type="submit"]:focus,
-[type="reset"]:focus,
-[type="button"]:focus,
+[type='submit']:focus,
+[type='reset']:focus,
+[type='button']:focus,
 button:focus,
 .button:focus {
   text-decoration: none;
   background: #fff;
 }
-[type="submit"].button-bordered-white,
-[type="reset"].button-bordered-white,
-[type="button"].button-bordered-white,
+[type='submit'].button-bordered-white,
+[type='reset'].button-bordered-white,
+[type='button'].button-bordered-white,
 button.button-bordered-white,
 .button.button-bordered-white {
   background: transparent;
   color: #fff;
   border: 2px solid #fff;
 }
-[type="submit"].button-bordered-white:hover,
-[type="reset"].button-bordered-white:hover,
-[type="button"].button-bordered-white:hover,
+[type='submit'].button-bordered-white:hover,
+[type='reset'].button-bordered-white:hover,
+[type='button'].button-bordered-white:hover,
 button.button-bordered-white:hover,
 .button.button-bordered-white:hover,
-[type="submit"].button-bordered-white:focus,
-[type="reset"].button-bordered-white:focus,
-[type="button"].button-bordered-white:focus,
+[type='submit'].button-bordered-white:focus,
+[type='reset'].button-bordered-white:focus,
+[type='button'].button-bordered-white:focus,
 button.button-bordered-white:focus,
 .button.button-bordered-white:focus,
-[type="submit"].button-bordered-white:active,
-[type="reset"].button-bordered-white:active,
-[type="button"].button-bordered-white:active,
+[type='submit'].button-bordered-white:active,
+[type='reset'].button-bordered-white:active,
+[type='button'].button-bordered-white:active,
 button.button-bordered-white:active,
 .button.button-bordered-white:active,
-[type="submit"].button-bordered-white:focus,
-[type="reset"].button-bordered-white:focus,
-[type="button"].button-bordered-white:focus,
+[type='submit'].button-bordered-white:focus,
+[type='reset'].button-bordered-white:focus,
+[type='button'].button-bordered-white:focus,
 button.button-bordered-white:focus,
 .button.button-bordered-white:focus {
   background-color: #fff;
   color: #183955;
 }
 /*** FIELDS ***/
-[type="text"],
-[type="tel"],
-[type="email"],
+[type='text'],
+[type='tel'],
+[type='email'],
 textarea {
   width: 100%;
   max-width: 200px;
@@ -421,59 +421,59 @@ textarea {
    ========================================================================== */
 .footer {
   max-width: 1170px;
+  border-top: 1px solid #91aabf;
   margin: 30px auto 0;
   padding: 0 15px;
-  border-top: 1px solid #91aabf;
 }
 .footer .links {
+  margin: 0 0 26px 0;
+  padding: 0;
+  list-style: none;
   font: bold 12px/12px 'Bebas Neue', Helvetica, Arial, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 26px 0;
-  padding: 0;
-  list-style: none;
-  letter-spacing: .1em;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  letter-spacing: .1em;
 }
 .footer .links li a {
   color: #91aabf;
 }
 .footer .contacts {
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 18px;
   margin: 0;
   padding: 0;
   list-style: none;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: bold;
 }
 .footer .contacts li {
-  position: relative;
   margin-bottom: 18px;
   padding-left: 50px;
+  position: relative;
 }
 .footer .contacts li:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 23px;
-  height: 23px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
   display: block;
   content: '\0020';
   overflow: hidden;
+  width: 23px;
+  height: 23px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 .footer .contacts li.adr:before {
-  top: 4px;
   background-image: url('../img/icons/pin.png');
+  top: 4px;
 }
 .footer .contacts li.tel:before {
-  top: -2px;
   background-image: url('../img/icons/tel.png');
+  top: -2px;
 }
 .footer .contacts li.mail:before {
   background-image: url('../img/icons/mail.png');
@@ -498,8 +498,8 @@ textarea {
   display: none;
 }
 .footer .copyright {
-  font-size: 10px;
   margin: 0;
+  font-size: 10px;
 }
 /* ==========================================================================
    NAV
@@ -694,18 +694,18 @@ textarea {
    RESPONSIVE
    ========================================================================== */
 @media (min-width: 375px) {
-  [type="submit"],
-  [type="reset"],
-  [type="button"],
+  [type='submit'],
+  [type='reset'],
+  [type='button'],
   button,
   .button {
     height: 35px;
     padding-right: 26px;
     padding-left: 26px;
   }
-  [type="submit"],
-  [type="reset"],
-  [type="button"],
+  [type='submit'],
+  [type='reset'],
+  [type='button'],
   button {
     height: 45px;
     padding-top: 15px;
@@ -791,9 +791,9 @@ textarea {
   .page {
     padding-top: 24px;
   }
-  [type="submit"],
-  [type="reset"],
-  [type="button"],
+  [type='submit'],
+  [type='reset'],
+  [type='button'],
   button,
   .button {
     height: 62px;
@@ -802,9 +802,9 @@ textarea {
     padding: 18px 70px 10px;
     border-radius: 26px;
   }
-  [type="submit"].button-bordered-white,
-  [type="reset"].button-bordered-white,
-  [type="button"].button-bordered-white,
+  [type='submit'].button-bordered-white,
+  [type='reset'].button-bordered-white,
+  [type='button'].button-bordered-white,
   button.button-bordered-white,
   .button.button-bordered-white {
     border-width: 3px;

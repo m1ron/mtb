@@ -2,79 +2,79 @@
    HEADER
    ========================================================================== */
 .header {
-  max-width: @max-width;
-  height: 60px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 15px;
-  color: @color-white;
-  display: flex;
-  align-items: center;
-  background: @color-space-cadet;
-  @media @tablet-sm {
-    height: 126px;
-  }
-  &:after {
-    .clearfix;
-  }
-  &:before {
-    .pseudo;
-    height: inherit;
+    max-width: @max-width;
+    height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+    color: @color-white;
+    display: flex;
+    align-items: center;
     background: @color-space-cadet;
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: 0;
-  }
-  > * {
-    position: relative;
-    z-index: 1;
-  }
-  .logo {
-    width: 108px;
-    height: 46px;
-    margin: 0;
-    a, img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
     @media @tablet-sm {
-      width: 230px;
-      height: 98px;
+        height: 126px;
     }
-  }
-  .toggle {
-    width: 24px;
-    height: 20px;
-    margin: 0;
-    display: block;
-    text-indent: -1000px;
-    overflow: hidden;
-    border-top: 4px solid @color-cadet-gray;
-    border-bottom: 4px solid @color-cadet-gray;
-    position: relative;
-    left: 50px;
+    &:after {
+        .clearfix;
+    }
     &:before {
-      .pseudo;
-      height: 4px;
-      background: @color-cadet-gray;
-      position: absolute;
-      top: 4px;
-      left: 0;
-      right: 0;
+        .pseudo;
+        height: inherit;
+        background: @color-space-cadet;
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 0;
     }
-  }
-  .tel {
-    width: 22px;
-    height: 22px;
-    margin: 0;
-    text-indent: -1000px;
-    overflow: hidden;
-    display: block;
-    background: url('@{images}/icons/phone.png') center center no-repeat;
-    background-size: 22px 22px;
-    position: relative;
-    left: 66px;
-  }
+    > * {
+        position: relative;
+        z-index: 1;
+    }
+    .logo {
+        width: 108px;
+        height: 46px;
+        margin: 0;
+        a, img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        @media @tablet-sm {
+            width: 230px;
+            height: 98px;
+        }
+    }
+    .toggle {
+        width: 24px;
+        height: 20px;
+        margin: 0;
+        display: block;
+        text-indent: -1000px;
+        overflow: hidden;
+        border-top: 4px solid @color-cadet-gray;
+        border-bottom: 4px solid @color-cadet-gray;
+        position: relative;
+        left: 50px;
+        &:before {
+            .pseudo;
+            height: 4px;
+            background: @color-cadet-gray;
+            position: absolute;
+            top: 4px;
+            left: 0;
+            right: 0;
+        }
+    }
+    .tel {
+        width: 22px;
+        height: 22px;
+        margin: 0;
+        text-indent: -1000px;
+        overflow: hidden;
+        display: block;
+        background: url('@{images}/icons/phone.png') center center no-repeat;
+        background-size: 22px 22px;
+        position: relative;
+        left: 66px;
+    }
 }
