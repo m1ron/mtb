@@ -729,6 +729,7 @@ textarea {
 }
 .works .quote {
   margin: 16px 0;
+  position: relative;
 }
 .works .quote p {
   color: #91aabf;
@@ -953,10 +954,59 @@ textarea {
     font-size: 48px;
     line-height: 52px;
   }
+  .works {
+    margin-bottom: 100px;
+  }
+  .works .item {
+    margin: 80px 0;
+    padding-bottom: 24px;
+    text-align: left;
+  }
+  .works .title {
+    margin-top: 0;
+    margin-bottom: 26px;
+    text-align: center;
+  }
+  .works .photos {
+    margin-bottom: 44px;
+  }
+  .works .photos.slick-initialized .slick-dots {
+    margin: 22px -9px 0;
+  }
+  .works .photos.slick-initialized .slick-dots li {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+  .works .quote {
+    margin: 44px 0;
+    padding-left: 108px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .works .quote:before {
+    height: 60px;
+    font-size: 175px;
+    line-height: 142px;
+    position: absolute;
+    left: -14px;
+    top: 0;
+  }
+  .works .quote .author {
+    margin-top: 24px;
+  }
+}
+@media (min-width: 990px) {
+  .works .item {
+    padding-left: 94px;
+    padding-right: 94px;
+  }
 }
 @media (min-width: 1280px) {
   body {
     overflow-x: hidden;
+  }
+  .page {
+    overflow-x: visible;
   }
 }
 
