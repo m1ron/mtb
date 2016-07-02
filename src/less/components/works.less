@@ -2,52 +2,79 @@
    WORKS
    ========================================================================== */
 .works {
+    @media @tablet-sm {
+        margin-bottom: 100px;
+    }
     .item {
         margin: 36px 0;
         text-align: center;
         padding-bottom: 18px;
         border-bottom: 1px solid @color-cadet-gray;
+        @media @tablet-sm {
+            margin: 80px 0;
+            padding-bottom: 24px;
+            text-align: left;
+        }
+        @media @tablet-md {
+          padding-left: 94px;
+          padding-right: 94px;
+        }
     }
     .title {
         &:extend(.h4, .h-up);
         margin-top: 0;
         margin-bottom: 12px;
+        @media @tablet-sm {
+            margin-top: 0;
+            margin-bottom: 26px;
+            text-align: center;
+        }
     }
     .photos {
-      margin: 0 0 22px;
+        margin: 0 0 22px;
         padding: 0;
         list-style: none;
         display: flex;
         overflow: hidden;
+        @media @tablet-sm {
+            margin-bottom: 44px;
+        }
         &.slick-initialized {
-          display: block;
-          overflow: visible;
-          .entry {
-            max-width: none;
-            min-width: 0;
-          }
-          .slick-dots {
-            padding: 0;
-            li {
-              padding: 0 8px;
-              display: inline-block;
-              .dot {
-                width: 15px;
-                height: 15px;
-                display: block;
-                border-radius: 50%;
-                background: @color-space-cadet;
-              }
-              &.slick-active {
-                .dot {
-                  cursor: pointer;
-                  background: transparent;
-                  border: 2px solid @color-space-cadet;
-                }
-              }
+            display: block;
+            overflow: visible;
+            .entry {
+                max-width: none;
+                min-width: 0;
             }
+            .slick-dots {
+                padding: 0;
+                @media @tablet-sm {
+                    margin: 22px -9px 0;
+                }
+                li {
+                    padding: 0 8px;
+                    display: inline-block;
+                    @media @tablet-sm {
+                        padding-left: 9px;
+                        padding-right: 9px;
+                    }
+                    .dot {
+                        width: 15px;
+                        height: 15px;
+                        display: block;
+                        border-radius: 50%;
+                        background: @color-space-cadet;
+                    }
+                    &.slick-active {
+                        .dot {
+                            cursor: pointer;
+                            background: transparent;
+                            border: 2px solid @color-space-cadet;
+                        }
+                    }
+                }
 
-          }
+            }
         }
         .entry {
             min-width: 100%;
@@ -60,24 +87,42 @@
         }
     }
     .quote {
-      margin: 16px 0;
-      p {
-        color: @color-cadet-gray;
-        font-style: italic;
-      }
-      &:before {
-        .pseudo;
-        content: '\201C';
-        height: 32px;
-        font-size: 82px;
-        line-height: 75px;
-        font-weight: bold;
-        color: @color-orange;
-      }
-      .author {
-        color: @color-orange;
-        font-weight: bold;
-        font-style: normal;
-      }
+        margin: 16px 0;
+        position: relative;
+        @media @tablet-sm {
+            margin: 44px 0;
+            padding-left: 108px;
+            font-size: 16px;
+            line-height: 24px;
+        }
+        p {
+            color: @color-cadet-gray;
+            font-style: italic;
+        }
+        &:before {
+            .pseudo;
+            content: '\201C';
+            height: 32px;
+            font-size: 82px;
+            line-height: 75px;
+            font-weight: bold;
+            color: @color-orange;
+            @media @tablet-sm {
+                height: 60px;
+                font-size: 175px;
+                line-height: 142px;
+                position: absolute;
+                left: -14px;
+                top: 0;
+            }
+        }
+        .author {
+            color: @color-orange;
+            font-weight: bold;
+            font-style: normal;
+            @media @tablet-sm {
+                margin-top: 24px;
+            }
+        }
     }
 }
