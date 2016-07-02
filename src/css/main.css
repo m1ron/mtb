@@ -338,6 +338,7 @@ textarea {
    HEADER
    ========================================================================== */
 .header {
+  display: none;
   max-width: 1170px;
   height: 60px;
   margin-left: auto;
