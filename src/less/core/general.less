@@ -141,6 +141,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .hidden { display: none; }
 .pseudo { display: block; content: '\0020'; overflow: hidden; }
 .clearfix { display: table; content: '\0020'; clear: both; }
+.mobile-hidden-inline {
+  display: none;
+  @media @tablet-sm {
+    display: inline;
+  }
+}
 /* ==========================================================================
    CONTAINERS
    ========================================================================== */
@@ -154,9 +160,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   padding: 0 15px;
   &:after {
     .clearfix;
-  }
-  @media @mobile-xs {
-    overflow-x: visible;
   }
   @media @tablet-sm {
     padding-top: 24px;
