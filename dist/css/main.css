@@ -585,6 +585,9 @@ textarea {
 .page-header.page-contacts {
   background-image: url('../img/page-header/contacts.jpg');
 }
+.page-header.page-services {
+  background-image: url('../img/page-header/services.jpg');
+}
 .page-header .heading {
   margin: 0;
   color: #fff;
@@ -904,6 +907,57 @@ textarea {
   display: block;
 }
 /* ==========================================================================
+   SERVICES
+   ========================================================================== */
+.services {
+  margin: 0 -15px;
+}
+.services + .call-to-action {
+  margin-top: 0;
+}
+.services .item:nth-of-type(3n+2) .text {
+  background: #183955;
+  color: #fff;
+}
+.services .item:nth-of-type(3n+2) .title {
+  color: #fff;
+}
+.services .item:nth-of-type(3n) .text {
+  background: #91aabf;
+  color: #fff;
+}
+.services .item:nth-of-type(3n) .title {
+  color: #fff;
+}
+.services .image {
+  margin: 0;
+  overflow: hidden;
+}
+.services .text {
+  padding: 40px 36px;
+  text-align: center;
+}
+.services .text p {
+  margin-top: 0;
+}
+.services .text p:last-of-type {
+  margin-bottom: 0;
+}
+.services .title {
+  margin-top: 30px;
+  margin-bottom: 0;
+  font: 300 18px/21px Helvetica, Arial, sans-serif;
+  color: #183955;
+  font-family: 'Bebas Neue', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .1em;
+  margin: 0 0 15px 0;
+}
+.services .title + p {
+  margin-top: 0;
+}
+/* ==========================================================================
    RESPONSIVE
    ========================================================================== */
 @media (min-width: 375px) {
@@ -942,6 +996,51 @@ textarea {
     width: 50%;
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
+  }
+  .services .item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .services .image {
+    max-width: 50%;
+    min-width: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    position: relative;
+  }
+  .services .image img {
+    max-width: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+  }
+  .services .image img.portrait {
+    width: 101%;
+    height: auto;
+  }
+  .services .image img.landscape {
+    width: auto;
+    height: 101%;
+  }
+  .services .text {
+    max-width: 50%;
+    min-width: 50%;
+    min-height: 260px;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
 }
 @media (min-width: 750px) {
@@ -1235,6 +1334,33 @@ textarea {
     float: none;
     right: 0;
   }
+  .services {
+    margin: 90px -50vw 0;
+  }
+  .services .item {
+    width: 100vw;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .services .item:nth-of-type(2n) .image {
+    -webkit-box-ordinal-group: 21;
+    -ms-flex-order: 20;
+    order: 20;
+  }
+  .services .text {
+    min-height: 496px;
+  }
+  .services .title {
+    margin-top: 46px;
+    margin-bottom: 30px;
+    font-size: 28px;
+    line-height: 32px;
+  }
+  .services .title {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
 }
 @media (min-width: 990px) {
   .works .item {
@@ -1254,13 +1380,27 @@ textarea {
     padding-left: 23px;
     padding-right: 23px;
   }
+  .services .image img.portrait {
+    width: 105% !important;
+    height: auto !important;
+  }
+  .services .image img.landscape {
+    width: auto !important;
+    height: 105% !important;
+  }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1170px) {
   body {
     overflow-x: hidden;
   }
   .page {
     overflow-x: visible;
+  }
+}
+@media (min-width: 1280px) {
+  .services .text {
+    padding-left: 100px;
+    padding-right: 100px;
   }
 }
 

@@ -1,0 +1,119 @@
+/* ==========================================================================
+   SERVICES
+   ========================================================================== */
+.services {
+    margin: 0 -15px;
+    + .call-to-action {
+        margin-top: 0;
+    }
+    @media @tablet-sm {
+      margin: 90px -50vw 0;
+    }
+    .item {
+      &:nth-of-type(3n+2) {
+          .text {
+              background: @color-space-cadet;
+              color: @color-white;
+          }
+          .title {
+              color: @color-white;
+          }
+      }
+      &:nth-of-type(3n) {
+          .text {
+              background: @color-cadet-gray;
+              color: @color-white;
+          }
+          .title {
+              color: @color-white;
+          }
+      }
+        @media @mobile-lg {
+            display: flex;
+        }
+        @media @tablet-sm {
+            width: 100vw;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            &:nth-of-type(2n) {
+              .image {
+                order: 20;
+              }
+            }
+        }
+    }
+    .image {
+        margin: 0;
+        overflow: hidden;
+        @media @mobile-lg {
+            max-width: 50%;
+            min-width: 50%;
+            flex-basis: 50%;
+            position: relative;
+            img {
+              max-width: none;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate3d(-50%,-50%,0);
+                &.portrait {
+                    width: 101%;
+                    height: auto;
+                }
+                &.landscape {
+                    width: auto;
+                    height: 101%;
+                }
+            }
+        }
+        @media @tablet-md {
+            img {
+                &.portrait {
+                    width: 105% !important;
+                    height: auto !important;
+                }
+                &.landscape {
+                    width: auto !important;
+                    height: 105% !important;
+                }
+            }
+        }
+    }
+    .text {
+        padding: 40px 36px;
+        text-align: center;
+        @media @mobile-lg {
+            max-width: 50%;
+            min-width: 50%;
+            min-height: 260px;
+            flex-basis: 50%;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+        }
+        @media @tablet-sm {
+          min-height: 496px;
+        }
+        @media @desktop-md {
+          padding-left: 100px;
+          padding-right: 100px;
+        }
+        p {
+          margin-top: 0;
+          &:last-of-type {
+              margin-bottom: 0;
+          }
+        }
+    }
+    .title {
+        .h4;
+        .h-up;
+        margin: 0 0 15px 0;
+        @media @tablet-sm {
+          margin-top: 0;
+          margin-bottom: 20px;
+        }
+    }
+}

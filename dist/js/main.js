@@ -13,6 +13,7 @@ FastClick.attach(document.body);
  */
 $(document).ready(function () {
 
+/* Works carousel */
 	$('.works').each(function() {
 		$('.item', this).each(function(){
 			$('.photos', this).slick({
@@ -25,6 +26,17 @@ $(document).ready(function () {
         return '<span class="dot"></span>';
     		}
 			});
+		});
+	});
+
+	/* Services images type */
+	$('.services').each(function () {
+		$('.image img', this).each(function () {
+			if ($(this).width() * 0.8 >= $(this).height()) {
+				$(this).addClass('landscape');
+			} else {
+				$(this).addClass('portrait');
+			}
 		});
 	});
 
