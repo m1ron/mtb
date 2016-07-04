@@ -2,11 +2,37 @@
    CONTACT-US
    ========================================================================== */
 .contact-us {
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+    @media @tablet-sm {
+      max-width: none;
+      margin-bottom: 46px;
+      padding-bottom: 100px;
+        display: flex;
+    }
     .info {
-      margin-bottom: 34px;
+        margin-bottom: 34px;
         padding: 15px 35px 35px;
         background: @color-space-cadet;
         color: @color-white;
+        @media @tablet-sm {
+            min-width: 50%;
+            max-width: 50%;
+            margin-right: 30px;
+            margin-bottom: 0;
+            padding-top: 26px;
+            padding-bottom: 54px;
+            flex-basis: 50%;
+        }
+        @media @tablet-md {
+          min-width: 425px;
+          max-width: 425px;
+          margin-right: 64px;
+          flex-basis: 425px;
+          padding-left: 50px;
+          padding-right: 50px;
+        }
         .list {
             margin: 0 0 18px;
             padding: 0;
@@ -15,6 +41,11 @@
             font-size: 14px;
             line-height: 16px;
             font-weight: bold;
+            @media @tablet-sm {
+              margin-bottom: 28px;
+              font-size: 21px;
+              line-height: 23px;
+            }
             li {
                 padding: 18px;
                 border-bottom: 1px solid @color-cadet-gray;
@@ -26,6 +57,7 @@
                     background-position: center center;
                     background-size: cover;
                     background-repeat: no-repeat;
+
                 }
                 &.adr {
                     &:before {
@@ -35,49 +67,91 @@
                 }
                 &.tel {
                     &:before {
-                        margin-bottom: 8px;
                         background-image: url('@{images}/icons/tel-white.png');
                     }
                 }
                 &.mail {
                     &:before {
+                      margin-bottom: 8px;
                         background-image: url('@{images}/icons/mail-white.png');
                     }
+                }
+                @media @tablet-sm {
+                  padding: 23px 10px;
+                  &:before {
+                    width: 30px;
+                    height: 30px;
+                  }
+                  &:before, &.mail:before, &.adr::before {
+                      margin-bottom: 14px;
+                  }
+                }
+                @media @tablet-md {
+                  padding-left: 23px;
+                  padding-right: 23px;
                 }
                 a {
                     color: @color-white;
                 }
             }
             a {
-              &[href^="tel:"] {
-                cursor: default;
-                text-decoration: none;
-              }
+                &[href^='tel:'] {
+                    cursor: default;
+                    text-decoration: none;
+                }
             }
         }
         .social {
-          margin: 0;
-          padding: 0;
-          list-style: none;
-          text-align: center;
-          li {
-            padding: 0 4px;
-            display: inline-block;
-            a {
-              width: 36px;
-              height: 36px;
-              display: flex;
-              background: @color-white;
-              border-radius: 50%;
-              justify-content: center;
-              align-items: center;
-              img {
-                width: 20px;
-                height: 20px;
-                display: block;
-              }
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            li {
+                padding: 0 4px;
+                display: inline-block;
+                @media @tablet-sm {
+                  padding-left: 8px;
+                  padding-right: 8px;
+                }
+                a {
+                    width: 36px;
+                    height: 36px;
+                    display: flex;
+                    background: @color-white;
+                    border-radius: 50%;
+                    justify-content: center;
+                    align-items: center;
+                    transition: box-shadow @duration;
+                    &:hover {
+                      .color-white(.8);
+                      box-shadow: 0 0 8px @color;
+                    }
+                    img {
+                        width: 20px;
+                        height: 20px;
+                        display: block;
+                    }
+                    @media @tablet-sm {
+                      width: 52px;
+                      height: 52px;
+                      img {
+                          width: 28px;
+                          height: 28px;
+                      }
+                    }
+                }
             }
-          }
+        }
+    }
+    .form-feedback {
+        @media @tablet-sm {
+            flex-grow: 1;
+            position: relative;
+            .button {
+              position: absolute;
+              float: none;
+              right: 0;
+            }
         }
     }
 }

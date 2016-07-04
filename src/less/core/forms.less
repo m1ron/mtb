@@ -48,6 +48,7 @@ form, fieldset, legend {
         line-height: 28px;
         padding: 18px 70px 10px;
         border-radius: 26px;
+        border-width: 2px;
         &.button-bordered-white {
             border-width: 3px;
         }
@@ -66,22 +67,34 @@ form, fieldset, legend {
     width: 100%;
     max-width: 200px;
     padding: 10px 12px;
-    border: 1px solid @color-space-cadet;
+    border: 1px solid @color-cadet-gray;
     display: inline-block;
     vertical-align: middle;
     font: 14px/14px @font-default;
     color: @color-space-cadet;
     background: @color-white;
+    transition: border-color @duration;
     /*user-select: none;*/
+    &:focus {
+      border-color: @color-space-cadet;
+    }
     .form-group & {
         width: 100%;
         max-width: 100%;
+    }
+    @media @tablet-sm {
+      font-size: 18px;
+      line-height: 18px;
+      padding: 18px;
     }
 }
 textarea {
     max-width: 550px;
     height: 118px;
     resize: none;
+    @media @tablet-sm {
+      height: 180px;
+    }
 }
 /* noinspection CssInvalidPseudoSelector */
 ::placeholder {
@@ -98,12 +111,19 @@ textarea {
         &:last-child {
             margin-bottom: 0;
         }
+        @media @tablet-sm {
+          margin-bottom: 30px;
+        }
     }
     &-label {
         display: block;
         font: 14px/20px @font-bebas;
         color: @color-cadet-gray;
         letter-spacing: .1em;
+        @media @tablet-sm {
+          margin-bottom: 5px;
+          font-size: 21px;
+        }
     }
 }
 /*** FORM-FEEDBACK ***/
@@ -116,6 +136,7 @@ textarea {
     .button {
         width: 54px;
         height: 54px;
+        padding: 0;
         border-radius: 50%;
         text-indent: -1000px;
         overflow: hidden;
@@ -129,6 +150,13 @@ textarea {
         z-index: 2;
         &:hover, &:focus, &:active {
             background-image: url('@{images}/icons/letter.png');
+        }
+        @media @tablet-sm {
+          width: 100px;
+          height: 100px;
+          margin: -18px 16px 0 0;
+          background-size: 44px 44px;
+          background-position: 40% 50%;
         }
     }
 }

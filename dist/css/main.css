@@ -291,13 +291,21 @@ textarea {
   width: 100%;
   max-width: 200px;
   padding: 10px 12px;
-  border: 1px solid #183955;
+  border: 1px solid #91aabf;
   display: inline-block;
   vertical-align: middle;
   font: 14px/14px Helvetica, Arial, sans-serif;
   color: #183955;
   background: #fff;
+  -webkit-transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease;
   /*user-select: none;*/
+}
+[type='text']:focus,
+[type='tel']:focus,
+[type='email']:focus,
+textarea:focus {
+  border-color: #183955;
 }
 .form-group [type='text'],
 .form-group [type='tel'],
@@ -353,6 +361,7 @@ textarea {
 .form-feedback .button {
   width: 54px;
   height: 54px;
+  padding: 0;
   border-radius: 50%;
   text-indent: -1000px;
   overflow: hidden;
@@ -806,6 +815,11 @@ textarea {
 /* ==========================================================================
    CONTACT-US
    ========================================================================== */
+.contact-us {
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .contact-us .info {
   margin-bottom: 34px;
   padding: 15px 35px 35px;
@@ -841,16 +855,16 @@ textarea {
   background-image: url('../img/icons/pin-white.png');
 }
 .contact-us .info .list li.tel:before {
-  margin-bottom: 8px;
   background-image: url('../img/icons/tel-white.png');
 }
 .contact-us .info .list li.mail:before {
+  margin-bottom: 8px;
   background-image: url('../img/icons/mail-white.png');
 }
 .contact-us .info .list li a {
   color: #fff;
 }
-.contact-us .info .list a[href^="tel:"] {
+.contact-us .info .list a[href^='tel:'] {
   cursor: default;
   text-decoration: none;
 }
@@ -878,6 +892,11 @@ textarea {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease;
+}
+.contact-us .info .social li a:hover, .contact-us .info .social li a:focus {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 }
 .contact-us .info .social li a img {
   width: 20px;
@@ -995,6 +1014,7 @@ textarea {
     line-height: 28px;
     padding: 18px 70px 10px;
     border-radius: 26px;
+    border-width: 2px;
   }
   [type='submit'].button-bordered-white,
   [type='reset'].button-bordered-white,
@@ -1002,6 +1022,31 @@ textarea {
   button.button-bordered-white,
   .button.button-bordered-white {
     border-width: 3px;
+  }
+  [type='text'],
+  [type='tel'],
+  [type='email'],
+  textarea {
+    font-size: 18px;
+    line-height: 18px;
+    padding: 18px;
+  }
+  textarea {
+    height: 180px;
+  }
+  .form-group {
+    margin-bottom: 30px;
+  }
+  .form-label {
+    margin-bottom: 5px;
+    font-size: 21px;
+  }
+  .form-feedback .button {
+    width: 100px;
+    height: 100px;
+    margin: -18px 16px 0 0;
+    background-size: 44px 44px;
+    background-position: 40% 50%;
   }
   .header {
     height: 126px;
@@ -1132,11 +1177,82 @@ textarea {
   .works .quote .author {
     margin-top: 24px;
   }
+  .contact-us {
+    max-width: none;
+    margin-bottom: 46px;
+    padding-bottom: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .contact-us .info {
+    min-width: 50%;
+    max-width: 50%;
+    margin-right: 30px;
+    margin-bottom: 0;
+    padding-top: 26px;
+    padding-bottom: 54px;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+  }
+  .contact-us .info .list {
+    margin-bottom: 28px;
+    font-size: 21px;
+    line-height: 23px;
+  }
+  .contact-us .info .list li {
+    padding: 23px 10px;
+  }
+  .contact-us .info .list li:before {
+    width: 30px;
+    height: 30px;
+  }
+  .contact-us .info .list li:before,
+  .contact-us .info .list li.mail:before,
+  .contact-us .info .list li.adr::before {
+    margin-bottom: 14px;
+  }
+  .contact-us .info .social li {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .contact-us .info .social li a {
+    width: 52px;
+    height: 52px;
+  }
+  .contact-us .info .social li a img {
+    width: 28px;
+    height: 28px;
+  }
+  .contact-us .form-feedback {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    position: relative;
+  }
+  .contact-us .form-feedback .button {
+    position: absolute;
+    float: none;
+    right: 0;
+  }
 }
 @media (min-width: 990px) {
   .works .item {
     padding-left: 94px;
     padding-right: 94px;
+  }
+  .contact-us .info {
+    min-width: 425px;
+    max-width: 425px;
+    margin-right: 64px;
+    -ms-flex-preferred-size: 425px;
+    flex-basis: 425px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .contact-us .info .list li {
+    padding-left: 23px;
+    padding-right: 23px;
   }
 }
 @media (min-width: 1280px) {
