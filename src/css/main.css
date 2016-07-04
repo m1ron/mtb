@@ -8,10 +8,17 @@
 /*** Bebas Neue ***/
 @font-face {
   font-family: 'Bebas Neue';
-  font-weight: normal;
+  font-weight: 300;
   font-style: normal;
   src: url('../fonts/bebasneue-book-webfont.eot');
   src: local('☺'), url('../fonts/bebasneue-book-webfont.woff') format('woff'), url('../fonts/bebasneue-book-webfont.ttf') format('truetype'), url('../fonts/bebasneue-book-webfont.svg') format('svg');
+}
+@font-face {
+  font-family: 'Bebas Neue';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../fonts/bebasneue-regular-webfont.eot');
+  src: local('☺'), url('../fonts/bebasneue-regular-webfont.woff') format('woff'), url('../fonts/bebasneue-regular-webfont.ttf') format('truetype'), url('../fonts/bebasneue-regular-webfont.svg') format('svg');
 }
 @font-face {
   font-family: 'Bebas Neue';
@@ -205,15 +212,16 @@ button,
   border: none;
   border-radius: 17px;
   font: bold 18px/18px 'Bebas Neue', Helvetica, Arial, sans-serif;
-  color: #000;
+  color: #fff;
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
   display: inline-block;
-  background: #fff;
+  background: #183955;
+  border: 1px solid #183955;
   border-radius: 14px;
-  -webkit-transition: background-color 0.2s ease, color 0.2s ease;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  -webkit-transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -272,7 +280,7 @@ button.button-bordered-white:active,
 [type='button'].button-bordered-white:focus,
 button.button-bordered-white:focus,
 .button.button-bordered-white:focus {
-  background-color: #fff;
+  background: #fff;
   color: #183955;
 }
 /*** FIELDS ***/
@@ -282,19 +290,25 @@ button.button-bordered-white:focus,
 textarea {
   width: 100%;
   max-width: 200px;
-  padding: 12px 15px;
-  border: 1px solid #fff;
-  border-radius: 3px;
+  padding: 10px 12px;
+  border: 1px solid #183955;
   display: inline-block;
   vertical-align: middle;
-  font: 16px Helvetica, Arial, sans-serif;
-  color: #000;
+  font: 14px/14px Helvetica, Arial, sans-serif;
+  color: #183955;
   background: #fff;
   /*user-select: none;*/
 }
+.form-group [type='text'],
+.form-group [type='tel'],
+.form-group [type='email'],
+.form-group textarea {
+  width: 100%;
+  max-width: 100%;
+}
 textarea {
   max-width: 550px;
-  height: 170px;
+  height: 118px;
   resize: none;
 }
 /* noinspection CssInvalidPseudoSelector */
@@ -327,10 +341,35 @@ textarea {
   margin-bottom: 0;
 }
 .form-label {
-  margin-bottom: 10px;
   display: block;
-  font-weight: 500;
-  letter-spacing: .08em;
+  font: 14px/20px 'Bebas Neue', Helvetica, Arial, sans-serif;
+  color: #91aabf;
+  letter-spacing: .1em;
+}
+/*** FORM-FEEDBACK ***/
+.form-feedback .form-group:last-of-type {
+  margin-bottom: 0;
+}
+.form-feedback .button {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  text-indent: -1000px;
+  overflow: hidden;
+  background-image: url('../img/icons/letter-white.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  float: right;
+  margin-top: -14px;
+  position: relative;
+  z-index: 2;
+}
+.form-feedback .button:hover,
+.form-feedback .button:focus,
+.form-feedback .button:active,
+.form-feedback .button:focus {
+  background-image: url('../img/icons/letter.png');
 }
 /* ==========================================================================
    HEADER
@@ -571,7 +610,7 @@ textarea {
 .page-excerpt {
   margin: 30px 0 30px;
   padding: 0 20px;
-  font: 18px/24px 'Bebas Neue', Helvetica, Arial, sans-serif;
+  font: 300 18px/24px 'Bebas Neue', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   text-align: center;
 }
@@ -763,6 +802,87 @@ textarea {
   color: #f16c00;
   font-weight: bold;
   font-style: normal;
+}
+/* ==========================================================================
+   CONTACT-US
+   ========================================================================== */
+.contact-us .info {
+  margin-bottom: 34px;
+  padding: 15px 35px 35px;
+  background: #183955;
+  color: #fff;
+}
+.contact-us .info .list {
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: bold;
+}
+.contact-us .info .list li {
+  padding: 18px;
+  border-bottom: 1px solid #91aabf;
+}
+.contact-us .info .list li:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto 2px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.contact-us .info .list li.adr:before {
+  margin-bottom: 8px;
+  background-image: url('../img/icons/pin-white.png');
+}
+.contact-us .info .list li.tel:before {
+  margin-bottom: 8px;
+  background-image: url('../img/icons/tel-white.png');
+}
+.contact-us .info .list li.mail:before {
+  background-image: url('../img/icons/mail-white.png');
+}
+.contact-us .info .list li a {
+  color: #fff;
+}
+.contact-us .info .list a[href^="tel:"] {
+  cursor: default;
+  text-decoration: none;
+}
+.contact-us .info .social {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+.contact-us .info .social li {
+  padding: 0 4px;
+  display: inline-block;
+}
+.contact-us .info .social li a {
+  width: 36px;
+  height: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.contact-us .info .social li a img {
+  width: 20px;
+  height: 20px;
+  display: block;
 }
 /* ==========================================================================
    RESPONSIVE

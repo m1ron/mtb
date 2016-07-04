@@ -45,36 +45,34 @@
 			<div class="contact-us">
 				<div class="info">
 					<ul class="list">
-						<li><a href="tel:+61-0410 491 080">0410 491 080</a></li>
-						<li><a href="mailto:mtbcarpentry@outlook.com">mtbcarpentry@outlook.com</a></li>
-						<li>7 Clinton Ave, Burleigh Waters, 4220, QLD Australia</li>
-						<li>
-							<ul class="social">
-								<li><a href="#"></a></li>
-								<li><a href="#"></a></li>
-							</ul>
-						</li>
+						<li class="tel"><a href="tel:+61-0410 491 080">0410 491 080</a></li>
+						<li class="mail"><a href="mailto:mtbcarpentry@outlook.com">mtbcarpentry@outlook.com</a></li>
+						<li class="adr">7 Clinton Ave, Burleigh Waters, 4220, QLD Australia</li>
+					</ul>
+					<ul class="social">
+						<li><a href="#"><img src="img/icons/facebook.png" width="20" height="20" alt=""></a></li>
+						<li><a href="#"><img src="img/icons/google-plus.png" width="20" height="20" alt=""></a></li>
 					</ul>
 				</div>
 				<form action="#" method="post" class="form-feedback">
 					<fieldset>
 						<div class="form-group">
-							<label for="">Name</label>
-							<input type="text" value="John Smit|">
+							<label class="form-label" for="name">Name</label>
+							<input id="name" type="text" value="John Smit|">
 						</div>
 						<div class="form-group">
-							<label for="">Email</label>
-							<input type="text">
+							<label class="form-label" for="email">Email</label>
+							<input id="email" type="text">
 						</div>
 						<div class="form-group">
-							<label for="">Contact Number</label>
-							<input type="text">
+							<label class="form-label" for="tel">Contact Number</label>
+							<input id="tel" type="text">
 						</div>
 						<div class="form-group">
-							<label for="">Inquiry</label>
-							<input type="text">
+							<label class="form-label" for="inquiry">Inquiry</label>
+							<textarea id="inquiry"></textarea>
 						</div>
-						<button type="submit"></button>
+						<button class="button" type="submit">send</button>
 					</fieldset>
 				</form>
 			</div>
