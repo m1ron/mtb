@@ -3,86 +3,226 @@
    ========================================================================== */
 .footer {
     max-width: @max-width;
+    padding: 20px 15px;
     border-top: 1px solid @color-cadet-gray;
-    margin: 30px auto 0;
-    padding: 0 15px;
+    margin: 0 auto;
+    &:after {
+        .clearfix;
+    }
+
+    .col {
+        float: left;
+        &:nth-child(1) {
+            width: 100%;
+            float: none;
+        }
+        &:nth-child(3) {
+            display: none;
+        }
+        @media @tablet-sm {
+            &:nth-child(2) {
+                width: 280px;
+            }
+            &:nth-child(4) {
+                width: 275px;
+                float: right;
+            }
+        }
+        @media @tablet-md {
+            &:nth-child(2) {
+                width: 330px;
+                padding-right: 30px;
+            }
+            &:nth-child(3) {
+                width: 360px;
+                display: block;
+            }
+            &:nth-child(4) {
+                padding-top: 5px;
+            }
+        }
+    }
 
     .links {
-        margin: 0 0 26px;
         padding: 0;
+        margin: 0 -5px 30px;
         list-style: none;
-        font: bold 12px/12px @font-bebas;
+        font: bold 12px/20px @font-bebas;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        cursor: default;
         display: flex;
         justify-content: space-between;
-        letter-spacing: .1em;
+        a {
+            padding: 5px;
+            display: block;
+            color: @color-cadet-gray;
+            &:hover {
+                text-decoration: none;
+                color: @color-space-cadet;
+            }
+        }
+
+        @media @tablet-sm {
+            margin-left: 5px;
+            margin-right: 5px;
+            font-size: 16px;
+        }
+        @media @tablet-md {
+            margin-left: 20px;
+            margin-right: 20px;
+            font-size: 24px;
+            line-height: 30px;
+        }
+    }
+
+    .social {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
         li {
-            a {
-                color: @color-cadet-gray;
+            padding-right: 14px;
+            &:last-child {
+                padding-left: 5px;
+                padding-right: 0;
+            }
+        }
+        .link {
+            width: 43px;
+            height: 43px;
+            border-radius: 50%;
+            display: block;
+            position: relative;
+            background-color: @color-space-cadet;
+            transition: background-color @duration;
+            &:hover {
+                background-color: @color-cadet-gray;
+            }
+            &:before {
+                .pseudo;
+                width: 25px;
+                height: 25px;
+                margin: auto;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                .sprite;
+                background-position: 0 -25px;
+            }
+            &.fb:before {
+                background-position: 0 -25px;
+            }
+            &.gplus:before {
+                background-position: -25px -25px;
             }
         }
     }
 
     .contacts {
-        margin: 0;
         padding: 0;
+        margin: 0 0 34px;
         list-style: none;
         font-size: 14px;
         line-height: 18px;
         font-weight: bold;
+
         li {
-            margin-bottom: 18px;
             padding-left: 50px;
             position: relative;
+            &:not(:last-child) {
+                margin-bottom: 18px;
+            }
+
             &:before {
                 .pseudo;
-                width: 23px;
-                height: 23px;
-                background-position: center center;
-                background-size: cover;
-                background-repeat: no-repeat;
+                width: 25px;
+                height: 25px;
+                margin: auto;
                 position: absolute;
-                left: 0;
                 top: 0;
+                left: 0;
+                bottom: 0;
+                .sprite;
             }
-            &.adr {
-                &:before {
-                    background-image: url('@{images}/icons/pin.png');
-                    top: 4px;
-                }
+            &.adr:before {
+                background-position: 0 0;
             }
-            &.tel {
-                &:before {
-                    background-image: url('@{images}/icons/tel.png');
-                    top: -2px;
-                }
+            &.tel:before {
+                background-position: -25px 0;
             }
-            &.mail {
-                &:before {
-                    background-image: url('@{images}/icons/mail.png');
-                }
+            &.mail:before {
+                background-position: -50px 0;
             }
         }
         a {
-            &[href^='mailto:'],
+            color: @color-space-cadet;
             &[href^='tel:'] {
+                cursor: text;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+            &[href^='mailto:'] {
+                border-bottom: 1px solid transparent;
                 color: @color-space-cadet;
-                &[href^='tel:'] {
-                    cursor: default;
-                    &,
-                    &:hover {
-                        text-decoration: none;
-                    }
+                transition: border-bottom-color @duration;
+                &:hover {
+                    border-bottom-color: @color-space-cadet;
+                    text-decoration: none;
                 }
             }
         }
     }
+
     .fb-widget {
+        padding-top: 5px;
         display: none;
+        @media @tablet-md {
+            display: block;
+        }
     }
-    .copyright {
+
+    .qbcc {
         margin: 0;
-        font-size: 10px;
-        .lic {}
+        display: none;
+        @media @tablet-sm {
+            display: block;
+        }
+        img {
+            display: block;
+        }
     }
-    .social {}
+
+    .copyright {
+        margin: 26px 0 0;
+        font-size: 10px;
+        line-height: 18px;
+        @media @tablet-sm {
+            margin-top: 28px;
+            font-size: 14px;
+            line-height: 18px;
+        }
+        a {
+            border-bottom: 1px solid transparent;
+            transition: border-bottom-color @duration;
+            &:hover {
+                border-bottom-color: @color-space-cadet;
+                text-decoration: none;
+            }
+        }
+        br {
+            display: none;
+            &:nth-child(4) {
+                display: inline;
+            }
+            @media @tablet-sm {
+                display: inline;
+            }
+        }
+    }
 }
