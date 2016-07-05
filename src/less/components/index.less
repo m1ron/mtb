@@ -2,9 +2,18 @@
    INDEX
    ========================================================================== */
 .index {
-  margin: 0 -15px;
+    margin: 0 -15px;
     .image {
-      width: 100%;
-      height: auto;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+    @media @tablet-sm {
+        margin-left: -50vw;
+        margin-right: -50vw;
+        .image {
+            width: 100vw;
+        }
     }
 }

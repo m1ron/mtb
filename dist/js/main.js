@@ -45,7 +45,8 @@ $(document).ready(function() {
 
     /* Features carousel */
     $('.features').each(function() {
-        $('.list', this).slick({
+      var w = $(window), carousel, refresh = false;
+      carousel = $('.list', this).slick({
             infinite: true,
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -56,13 +57,30 @@ $(document).ready(function() {
             customPaging: function(slider, i) {
                 return '<span class="dot"></span>';
             },
-            responsive: [{
-                breakpoint: 768,
-                settings: {
-                    unslick: true
-                }
-            }]
+            responsive: [
+              {
+                    breakpoint: 767,
+                    settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                  }
+              },
+              {
+                    breakpoint: 1023,
+                    settings: 'unslick'
+              }
+            ]
         });
+        w.resize(function () {
+    			if (w.width() >= 1024) {
+    				if (refresh) {
+    					carousel[0].slick.refresh();
+    					refresh = false;
+    				}
+    			} else if (!refresh) {
+    				refresh = true;
+    			}
+    		}).trigger('resize');
     });
 
     /* Services images type */
