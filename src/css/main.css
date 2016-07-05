@@ -683,7 +683,7 @@ textarea {
    CALL-TO-ACTION
    ========================================================================== */
 .call-to-action {
-  margin: 50px -15px 0;
+  margin: 0 -15px;
   margin-right: -15px;
   margin-left: -15px;
   padding: 0 15px;
@@ -912,9 +912,6 @@ textarea {
 .services {
   margin: 0 -15px;
 }
-.services + .call-to-action {
-  margin-top: 0;
-}
 .services .item:nth-of-type(3n+2) .text {
   background: #183955;
   color: #fff;
@@ -956,6 +953,287 @@ textarea {
 }
 .services .title + p {
   margin-top: 0;
+}
+/* ==========================================================================
+   INDEX
+   ========================================================================== */
+.index {
+  margin: 0 -15px;
+}
+.index .image {
+  width: 100%;
+  height: auto;
+}
+/* ==========================================================================
+   FEATURES
+   ========================================================================== */
+.features {
+  margin: 0 -15px;
+  padding: 22px 15px 35px;
+  text-align: center;
+  background: #eee;
+}
+.features .heading {
+  margin-top: 0;
+  margin-bottom: 26px;
+}
+.features .list {
+  margin-bottom: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.features .list.slick-initialized .slick-slide {
+  margin-bottom: 18px;
+}
+.features .list.slick-initialized .slick-dots {
+  margin: 0;
+  padding: 0;
+}
+.features .list.slick-initialized .slick-dots li {
+  padding: 0 8px;
+  display: inline-block;
+}
+.features .list.slick-initialized .slick-dots li .dot {
+  width: 15px;
+  height: 15px;
+  display: block;
+  border-radius: 50%;
+  background: #183955;
+}
+.features .list.slick-initialized .slick-dots li.slick-active .dot {
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid #183955;
+}
+.features .list .item {
+  margin: 0 10px 40px;
+}
+.features .list .icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto -36px;
+  background: #fff;
+  border: 3px solid #183955;
+  position: relative;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+}
+.features .list .icon:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 84px;
+  height: 84px;
+  background: url('../img/icons/circle.png') center center no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+  z-index: 1;
+}
+.features .list .icon:after {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  border: 1px solid #677c8d;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  right: 2px;
+  z-index: 2;
+}
+.features .list .icon img {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  z-index: 3;
+}
+.features .list .image {
+  margin: 0;
+}
+.features .list .image img {
+  width: 100%;
+  height: auto;
+}
+.features .list .text {
+  padding: 22px 24px 34px;
+  background: #fff;
+  box-shadow: 0 1px 3px 0 rgba(10, 10, 10, 0.1);
+}
+.features .list .text p:last-of-type {
+  margin-bottom: 0;
+}
+.features .list .title {
+  margin-top: 30px;
+  margin-bottom: 0;
+  font: 300 18px/21px Helvetica, Arial, sans-serif;
+  color: #183955;
+  font-family: 'Bebas Neue', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .1em;
+  margin: 0 0 14px;
+}
+.features .list .title + p {
+  margin-top: 0;
+}
+.features .button {
+  width: 100%;
+  max-width: 242px;
+  margin: 0 auto;
+  display: block;
+}
+/* ==========================================================================
+   ABOUT-US
+   ========================================================================== */
+.about-us {
+  margin-bottom: 20px;
+}
+.about-us .heading {
+  margin-top: 22px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.about-us .photos {
+  margin: 0 0 22px;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+.about-us .photos.slick-initialized {
+  display: block;
+  overflow: visible;
+}
+.about-us .photos.slick-initialized .entry {
+  max-width: none;
+  min-width: 0;
+}
+.about-us .photos.slick-initialized .slick-dots {
+  padding: 0;
+  text-align: center;
+}
+.about-us .photos.slick-initialized .slick-dots li {
+  padding: 0 8px;
+  display: inline-block;
+}
+.about-us .photos.slick-initialized .slick-dots li .dot {
+  width: 15px;
+  height: 15px;
+  display: block;
+  border-radius: 50%;
+  background: #183955;
+}
+.about-us .photos.slick-initialized .slick-dots li.slick-active .dot {
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid #183955;
+}
+.about-us .photos .entry {
+  min-width: 100%;
+  max-width: 100%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+.about-us .photos .entry img {
+  width: 100%;
+  height: auto;
+}
+.about-us .text {
+  margin-top: 62px;
+  padding: 36px 22px 28px;
+  box-shadow: 0 1px 3px 0 rgba(10, 10, 10, 0.1);
+  border: 1px solid rgba(10, 10, 10, 0.1);
+  text-align: center;
+  position: relative;
+}
+.about-us .text .icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto;
+  background: #fff;
+  border: 3px solid #183955;
+  position: absolute;
+  top: -36px;
+  left: 0;
+  right: 0;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+}
+.about-us .text .icon:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 84px;
+  height: 84px;
+  background: url('../img/icons/circle.png') center center no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+  z-index: 1;
+}
+.about-us .text .icon:after {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  border: 1px solid #677c8d;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  right: 2px;
+  z-index: 2;
+}
+.about-us .text .icon img {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  z-index: 3;
+}
+.about-us .text .title {
+  margin-top: 30px;
+  margin-bottom: 0;
+  font: 300 18px/21px Helvetica, Arial, sans-serif;
+  color: #183955;
+  font-family: 'Bebas Neue', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .1em;
+  margin: 23px 0 15px;
+}
+.about-us .text .title + p {
+  margin-top: 0;
+}
+.about-us .text p:last-of-type {
+  margin-bottom: 0;
 }
 /* ==========================================================================
    RESPONSIVE
@@ -1360,6 +1638,35 @@ textarea {
   .services .title {
     margin-top: 0;
     margin-bottom: 20px;
+  }
+  .features .list.slick-initialized .slick-dots {
+    margin: 22px -9px 0;
+  }
+  .features .list.slick-initialized .slick-dots li {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+  .features .list .title {
+    margin-top: 46px;
+    margin-bottom: 30px;
+    font-size: 28px;
+    line-height: 32px;
+  }
+  .about-us .photos {
+    margin-bottom: 44px;
+  }
+  .about-us .photos.slick-initialized .slick-dots {
+    margin: 22px -9px 0;
+  }
+  .about-us .photos.slick-initialized .slick-dots li {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+  .about-us .text .title {
+    margin-top: 46px;
+    margin-bottom: 30px;
+    font-size: 28px;
+    line-height: 32px;
   }
 }
 @media (min-width: 990px) {

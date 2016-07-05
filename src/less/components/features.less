@@ -1,0 +1,125 @@
+/* ==========================================================================
+   FEATURES
+   ========================================================================== */
+.features {
+    margin: 0 -15px;
+    padding: 22px 15px 35px;
+    text-align: center;
+    background: @color-gray-light;
+    .heading {
+        margin-top: 0;
+        margin-bottom: 26px;
+    }
+    .list {
+      margin-bottom: 24px;
+        padding-left: 24px;
+        padding-right: 24px;
+        &.slick-initialized {
+          .slick-slide {
+            margin-bottom: 18px;
+          }
+            .slick-dots {
+              margin: 0;
+                padding: 0;
+                @media @tablet-sm {
+                    margin: 22px -9px 0;
+                }
+                li {
+                    padding: 0 8px;
+                    display: inline-block;
+                    @media @tablet-sm {
+                        padding-left: 9px;
+                        padding-right: 9px;
+                    }
+                    .dot {
+                        width: 15px;
+                        height: 15px;
+                        display: block;
+                        border-radius: 50%;
+                        background: @color-space-cadet;
+                    }
+                    &.slick-active {
+                        .dot {
+                            cursor: pointer;
+                            background: transparent;
+                            border: 2px solid @color-space-cadet;
+                        }
+                    }
+                }
+            }
+        }
+        .item {
+          margin: 0 10px 40px;
+        }
+        .icon {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto -36px;
+            background: @color-white;
+            border: 3px solid @color-space-cadet;
+            position: relative;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            &:before {
+                .pseudo;
+                width: 84px;
+                height: 84px;
+                background: url('@{images}/icons/circle.png') center center no-repeat;
+                background-size: cover;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate3d(-50%,-50%,0);
+                z-index: 1;
+            }
+            &:after {
+                .pseudo;
+                border: 1px solid @color-gray-slate;
+                border-radius: 50%;
+                position: absolute;
+                top: 2px;
+                bottom: 2px;
+                left: 2px;
+                right: 2px;
+                z-index: 2;
+            }
+            img {
+                width: 40px;
+                height: 40px;
+                position: relative;
+                z-index: 3;
+            }
+        }
+        .image {
+            margin: 0;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .text {
+            padding: 22px 24px 34px;
+            background: @color-white;
+            box-shadow: 0 1px 3px 0 rgba(10, 10, 10, .1);
+            p {
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .title {
+            .h4;
+            .h-up;
+            margin: 0 0 14px;
+        }
+    }
+    .button {
+        width: 100%;
+        max-width: 242px;
+        margin: 0 auto;
+        display: block;
+    }
+}
