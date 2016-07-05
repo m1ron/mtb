@@ -963,6 +963,8 @@ textarea {
 .index .image {
   width: 100%;
   height: auto;
+  margin: 0 auto;
+  display: block;
 }
 /* ==========================================================================
    FEATURES
@@ -1121,6 +1123,10 @@ textarea {
   margin-bottom: 30px;
   text-align: center;
 }
+.about-us .space {
+  max-width: 450px;
+  margin: 0 auto;
+}
 .about-us .photos {
   margin: 0 0 22px;
   padding: 0;
@@ -1171,6 +1177,7 @@ textarea {
 .about-us .text {
   margin-top: 62px;
   padding: 36px 22px 28px;
+  background: #fff;
   box-shadow: 0 1px 3px 0 rgba(10, 10, 10, 0.1);
   border: 1px solid rgba(10, 10, 10, 0.1);
   text-align: center;
@@ -1270,6 +1277,14 @@ textarea {
     padding-top: 15px;
     padding-bottom: 15px;
     border-radius: 24px;
+  }
+}
+@media (min-width: 414px) {
+  .features .list,
+  .features .list.slick-initialized {
+    max-width: 498px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 @media (min-width: 667px) {
@@ -1515,10 +1530,10 @@ textarea {
     padding-right: 50vw;
   }
   .call-to-action .space {
-    padding: 104px 74px;
+    padding: 74px 74px 90px;
   }
   .call-to-action .text {
-    margin-bottom: 44px;
+    margin-bottom: 36px;
     font-size: 48px;
     line-height: 52px;
   }
@@ -1653,6 +1668,26 @@ textarea {
     margin-top: 0;
     margin-bottom: 20px;
   }
+  .index {
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+  .index .image {
+    width: 100vw;
+  }
+  .features {
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 52px 50vw 80px;
+  }
+  .features .heading {
+    margin-bottom: 64px;
+  }
+  .features .list,
+  .features .list.slick-initialized {
+    max-width: none;
+    margin: 0 -14px 34px;
+  }
   .features .list.slick-initialized .slick-dots {
     margin: 22px -9px 0;
   }
@@ -1660,27 +1695,116 @@ textarea {
     padding-left: 9px;
     padding-right: 9px;
   }
+  .features .list .item {
+    min-width: 0;
+    margin: 0 14px 14px;
+  }
+  .features .list .icon {
+    width: 110px;
+    height: 110px;
+    margin-bottom: -55px;
+    border-width: 5px;
+  }
+  .features .list .icon:before {
+    width: 126px;
+    height: 126px;
+  }
+  .features .list .icon:after {
+    top: 3px;
+    bottom: 3px;
+    left: 3px;
+    right: 3px;
+  }
+  .features .list .icon img {
+    width: 60px;
+    height: 60px;
+  }
+  .features .list .text {
+    min-height: 282px;
+    padding: 34px 34px 26px;
+    font-size: 16px;
+    line-height: 24px;
+  }
   .features .list .title {
     margin-top: 46px;
     margin-bottom: 30px;
     font-size: 28px;
     line-height: 32px;
   }
+  .features .list .title {
+    margin-top: 0;
+    margin-bottom: 22px;
+  }
+  .features .button {
+    width: auto;
+    max-width: none;
+    min-width: 490px;
+  }
+  .about-us {
+    margin-top: 70px;
+  }
+  .about-us .heading {
+    margin-bottom: 76px;
+  }
+  .about-us .space {
+    max-width: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   .about-us .photos {
-    margin-bottom: 44px;
+    max-width: 60%;
+    min-width: 60%;
+    margin-bottom: 0;
+    -ms-flex-preferred-size: 60%;
+    flex-basis: 60%;
   }
   .about-us .photos.slick-initialized .slick-dots {
-    margin: 22px -9px 0;
+    margin: 30px -9px 0;
+    text-align: left;
   }
   .about-us .photos.slick-initialized .slick-dots li {
     padding-left: 9px;
     padding-right: 9px;
+  }
+  .about-us .text {
+    margin-top: 65px;
+    margin-left: -170px;
+    padding: 85px 34px 40px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .about-us .text .icon {
+    width: 110px;
+    height: 110px;
+    top: -56px;
+    border-width: 5px;
+  }
+  .about-us .text .icon:before {
+    width: 126px;
+    height: 126px;
+  }
+  .about-us .text .icon:after {
+    top: 3px;
+    bottom: 3px;
+    left: 3px;
+    right: 3px;
+  }
+  .about-us .text .icon img {
+    width: 74px;
+    height: 74px;
   }
   .about-us .text .title {
     margin-top: 46px;
     margin-bottom: 30px;
     font-size: 28px;
     line-height: 32px;
+  }
+  .about-us .text .title {
+    margin: 0 0 22px;
+  }
+  .about-us .text p {
+    margin-bottom: 22px;
   }
 }
 @media (min-width: 990px) {
@@ -1716,6 +1840,15 @@ textarea {
   }
   .page {
     overflow-x: visible;
+  }
+  .about-us .photos {
+    max-width: 74.4%;
+    min-width: 74.4%;
+    -ms-flex-preferred-size: 74.4%;
+    flex-basis: 74.4%;
+  }
+  .about-us .text {
+    margin-left: -70px;
   }
 }
 @media (min-width: 1280px) {
