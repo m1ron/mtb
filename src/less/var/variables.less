@@ -30,19 +30,20 @@
 
 @color-black: #000;
 @color-white: #fff;
-@color-space-cadet: #183955;
-@color-cadet-gray: #91aabf;
+@color-light: #eee;
+@color-navy: #183955;
+@color-blue: #677c8d;
+@color-gray: #91aabf;
 @color-orange: #f16c00;
-@color-gray-light: #eee;
-@color-gray-slate: #677c8d;
 
 @margin-sm: 16px;
 @margin-md: 30px;
 @margin-lg: 40px;
 
-@duration-s: .1s cubic-bezier(.645, .045, .355, 1.000);
-@duration: .2s cubic-bezier(.645, .045, .355, 1.000);
-@duration-l: .4s cubic-bezier(.645, .045, .355, 1.000);
+@easing: cubic-bezier(.645, .045, .355, 1);
+@duration-s: .1s @easing;
+@duration: .2s @easing;
+@duration-l: .4s @easing;
 
 @images: '../img';
 @fonts: '../fonts';
