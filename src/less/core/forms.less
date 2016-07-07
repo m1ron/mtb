@@ -19,14 +19,14 @@ form, fieldset, legend {
     white-space: nowrap;
     display: inline-block;
     background: @color-space-cadet;
-    border: 1px solid @color-space-cadet;
     border-radius: 14px;
-    transition: background @duration, color @duration;
+    transition: background @duration, color @duration, box-shadow @duration;
     user-select: none;
     cursor: pointer;
     &:hover, &:focus, &:active {
         text-decoration: none;
-        background: @color-white;
+        background: @color-orange;
+        box-shadow: 0 -5px 5px 0 rgba(10, 10, 10, 0.25);
     }
     &.button-bordered-white {
         background: transparent;
@@ -145,12 +145,9 @@ textarea {
         background-repeat: no-repeat;
         background-size: 24px 24px;
         float: right;
-        margin-top: -14px;
+        margin-top: -12px;
         position: relative;
         z-index: 2;
-        &:hover, &:focus, &:active {
-            background-image: url('@{images}/icons/letter.png');
-        }
         @media @tablet-sm {
           width: 100px;
           height: 100px;

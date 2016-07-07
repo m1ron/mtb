@@ -2,6 +2,7 @@
    WORKS
    ========================================================================== */
 .works {
+    margin-bottom: 48px;
     @media @tablet-sm {
         margin-bottom: 100px;
     }
@@ -10,6 +11,9 @@
         text-align: center;
         padding-bottom: 18px;
         border-bottom: 1px solid @color-cadet-gray;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
         @media @tablet-sm {
             margin: 80px 0;
             padding-bottom: 24px;

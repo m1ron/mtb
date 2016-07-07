@@ -3,4 +3,122 @@
    ========================================================================== */
 .nav {
     display: none;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    overflow: auto;
+    overflow-x: hidden;
+    background: @color-space-cadet;
+    .color-black(.2);
+    box-shadow: 0 0 15px @color;
+
+    .nav-visible & {
+        display: block;
+        transform: translate3d(0, -100%, 0);
+        transition: transform @duration-l;
+        backface-visibility: hidden;
+    }
+    .nav-open & {
+        transform: translate3d(0, 0, 0);
+    }
+
+    &:before {
+        .pseudo;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 50;
+        .nav-done & {
+            display: none;
+        }
+    }
+
+    .heading {
+        display: none;
+    }
+
+    .menu {
+        width: 100%;
+        height: 100%;
+        padding: 10px 10%;
+        margin: 0;
+        list-style: none;
+        font: bold 24px/28px @font-bebas;
+        letter-spacing: .09em;
+        color: @color-white;
+        text-align: center;
+        text-transform: uppercase;
+        display: flex;
+        flex-flow: row wrap;
+        align-content: center;
+
+        li {
+            width: 100%;
+            flex: 0 0 100%;
+            &.active a {
+                color: @color-white;
+                cursor: default;
+            }
+        }
+
+        a {
+            padding: 10px;
+            display: block;
+            position: relative;
+            z-index: 3;
+            color: @color-cadet-gray;
+            text-decoration: none;
+            transition: color @duration;
+
+            &:hover, &:focus {
+                color: @color-white;
+            }
+
+            &.close {
+                &:after {
+                    margin-left: 4px;
+                    display: inline;
+                    content: 'x';
+                }
+            }
+        }
+    }
+
+    @media @tablet-sm {
+        top: 80px;
+        ul {
+            font-size: 30px;
+            line-height: 36px;
+            letter-spacing: .2em;
+            a.close {
+                font-size: 26px;
+                letter-spacing: .175em;
+            }
+        }
+    }
+    @media @desktop-sm {
+        top: 183px;
+        ul {
+            font-size: 56px;
+            line-height: 84px;
+            li {
+                margin: 16px 0;
+            }
+            a {
+                padding: 20px;
+                transition: color @duration, background-color @duration;
+                &.close {
+                    font-size: 44px;
+                    &:after {
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+    }
 }

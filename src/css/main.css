@@ -179,23 +179,6 @@ h6 + p,
   display: none;
 }
 /* ==========================================================================
-   CONTAINERS
-   ========================================================================== */
-/*** .PAGE ***/
-.page {
-  width: 100%;
-  max-width: 1170px;
-  margin-left: auto;
-  margin-right: auto;
-  overflow-x: hidden;
-  padding: 0 15px;
-}
-.page:after {
-  display: table;
-  content: '\0020';
-  clear: both;
-}
-/* ==========================================================================
    FORMS
    ========================================================================== */
 form,
@@ -222,10 +205,9 @@ button,
   white-space: nowrap;
   display: inline-block;
   background: #183955;
-  border: 1px solid #183955;
   border-radius: 14px;
-  -webkit-transition: background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transition: background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -253,7 +235,8 @@ button:active,
 button:focus,
 .button:focus {
   text-decoration: none;
-  background: #fff;
+  background: #f16c00;
+  box-shadow: 0 -5px 5px 0 rgba(10, 10, 10, 0.25);
 }
 [type='submit'].button-bordered-white,
 [type='reset'].button-bordered-white,
@@ -374,59 +357,37 @@ textarea {
   background-repeat: no-repeat;
   background-size: 24px 24px;
   float: right;
-  margin-top: -14px;
+  margin-top: -12px;
   position: relative;
   z-index: 2;
-}
-.form-feedback .button:hover,
-.form-feedback .button:focus,
-.form-feedback .button:active,
-.form-feedback .button:focus {
-  background-image: url('../img/icons/letter.png');
 }
 /* ==========================================================================
    HEADER
    ========================================================================== */
 .header {
+  width: 100%;
+  min-width: 320px;
   max-width: 1170px;
   height: 60px;
+  padding: 0 15px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 15px;
   color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: #183955;
-  display: none;
-}
-.header:after {
-  display: table;
-  content: '\0020';
-  clear: both;
-}
-.header:before {
-  display: block;
-  content: '\0020';
-  overflow: hidden;
-  height: inherit;
-  background: #183955;
-  position: absolute;
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
-  z-index: 0;
-}
-.header > * {
-  position: relative;
-  z-index: 1;
+  z-index: 199;
+  background: #183955;
 }
 .header .logo {
   width: 108px;
   height: 46px;
-  margin: 0;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 14px;
+  bottom: 0;
 }
 .header .logo a,
 .header .logo img {
@@ -435,39 +396,87 @@ textarea {
   display: block;
 }
 .header .toggle {
-  width: 24px;
-  height: 20px;
-  margin: 0;
-  display: block;
-  text-indent: -1000px;
+  width: 40px;
+  height: 40px;
+  margin: auto;
   overflow: hidden;
-  border-top: 4px solid #91aabf;
-  border-bottom: 4px solid #91aabf;
-  position: relative;
-  left: 50px;
+  text-indent: -1000px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 115px;
 }
-.header .toggle:before {
+.header .toggle:before,
+.header .toggle:after {
   display: block;
   content: '\0020';
   overflow: hidden;
+  width: 24px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.header .toggle:before {
+  height: 12px;
+  border-top: 4px solid #91aabf;
+  border-bottom: 4px solid #91aabf;
+  -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.nav-visible .header .toggle:before {
+  border-color: #fff;
+}
+.header .toggle:after {
   height: 4px;
   background: #91aabf;
-  position: absolute;
-  top: 4px;
-  left: 0;
-  right: 0;
+  -webkit-transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.nav-visible .header .toggle:after {
+  background-color: #fff;
 }
 .header .tel {
-  width: 22px;
-  height: 22px;
-  margin: 0;
-  text-indent: -1000px;
+  width: 40px;
+  height: 40px;
+  margin: auto;
   overflow: hidden;
-  display: block;
+  text-indent: -1000px;
+  position: absolute;
+  top: 0;
+  right: 75px;
+  bottom: 0;
   background: url('../img/icons/phone.png') center center no-repeat;
   background-size: 22px 22px;
-  position: relative;
-  left: 66px;
+}
+.header .tel a {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+.header .enquire {
+  width: 54px;
+  height: 54px;
+  padding: 16px 10px 10px;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  top: 11px;
+  right: 15px;
+  font: 14px/14px 'Bebas Neue', Helvetica, Arial, sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  background: #f16c00;
+  box-shadow: 0 -5px 5px 0 rgba(10, 10, 10, 0.25);
+  -webkit-transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.header .enquire:hover, .header .enquire:focus {
+  text-decoration: none;
+  background: #183955;
 }
 /* ==========================================================================
    FOOTER
@@ -475,8 +484,9 @@ textarea {
 .footer {
   max-width: 1170px;
   padding: 20px 15px;
-  border-top: 1px solid #91aabf;
   margin: 0 auto;
+  border-top: 1px solid #91aabf;
+  position: relative;
 }
 .footer:after {
   display: table;
@@ -495,7 +505,7 @@ textarea {
 }
 .footer .links {
   padding: 0;
-  margin: 0 -5px 30px;
+  margin: 0 -5px 18px;
   list-style: none;
   font: bold 12px/20px 'Bebas Neue', Helvetica, Arial, sans-serif;
   letter-spacing: .1em;
@@ -511,7 +521,7 @@ textarea {
 }
 .footer .links a {
   padding: 5px;
-  display: block;
+  display: inline-block;
   color: #91aabf;
 }
 .footer .links a:hover, .footer .links a:focus {
@@ -547,7 +557,7 @@ textarea {
   transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .footer .social .link:hover, .footer .social .link:focus {
-  background-color: #91aabf;
+  background-color: #f16c00;
 }
 .footer .social .link:before {
   display: block;
@@ -573,7 +583,7 @@ textarea {
 }
 .footer .contacts {
   padding: 0;
-  margin: 0 0 34px;
+  margin: 0 0 33px;
   list-style: none;
   font-size: 14px;
   line-height: 18px;
@@ -664,6 +674,113 @@ textarea {
    ========================================================================== */
 .nav {
   display: none;
+  position: fixed;
+  top: 60px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  overflow: auto;
+  overflow-x: hidden;
+  background: #183955;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+.nav-visible .nav {
+  display: block;
+  -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.nav-open .nav {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.nav:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+}
+.nav-done .nav:before {
+  display: none;
+}
+.nav .heading {
+  display: none;
+}
+.nav .menu {
+  width: 100%;
+  height: 100%;
+  padding: 10px 10%;
+  margin: 0;
+  list-style: none;
+  font: bold 24px/28px 'Bebas Neue', Helvetica, Arial, sans-serif;
+  letter-spacing: .09em;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+.nav .menu li {
+  width: 100%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+}
+.nav .menu li.active a {
+  color: #fff;
+  cursor: default;
+}
+.nav .menu a {
+  padding: 10px;
+  display: block;
+  position: relative;
+  z-index: 3;
+  color: #91aabf;
+  text-decoration: none;
+  -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.nav .menu a:hover,
+.nav .menu a:focus,
+.nav .menu a:focus {
+  color: #fff;
+}
+.nav .menu a.close:after {
+  margin-left: 4px;
+  display: inline;
+  content: 'x';
+}
+/* ==========================================================================
+   PAGE
+   ========================================================================== */
+.page {
+  width: 100%;
+  max-width: 1170px;
+  padding: 60px 15px 0;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: hidden;
+}
+.page:after {
+  display: table;
+  content: '\0020';
+  clear: both;
 }
 /* ==========================================================================
    PAGE-HEADER
@@ -746,6 +863,7 @@ textarea {
 }
 .text-block .image {
   margin: 0;
+  overflow: hidden;
 }
 .text-block .text {
   padding: 15px 30px;
@@ -763,6 +881,7 @@ textarea {
    ABOUT
    ========================================================================== */
 .about {
+  margin-bottom: 50px;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -833,11 +952,17 @@ textarea {
 /* ==========================================================================
    WORKS
    ========================================================================== */
+.works {
+  margin-bottom: 48px;
+}
 .works .item {
   margin: 36px 0;
   text-align: center;
   padding-bottom: 18px;
   border-bottom: 1px solid #91aabf;
+}
+.works .item:last-of-type {
+  margin-bottom: 0;
 }
 .works .title {
   margin-top: 30px;
@@ -934,12 +1059,12 @@ textarea {
 }
 .contact-us .info {
   margin-bottom: 34px;
-  padding: 15px 35px 35px;
+  padding: 20px 35px 35px;
   background: #183955;
   color: #fff;
 }
 .contact-us .info .list {
-  margin: 0 0 18px;
+  margin: 0 0 14px;
   padding: 0;
   list-style: none;
   text-align: center;
@@ -1008,7 +1133,7 @@ textarea {
   transition: box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .contact-us .info .social li a:hover, .contact-us .info .social li a:focus {
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 -5px 5px 0 rgba(255, 255, 255, 0.2);
 }
 .contact-us .info .social li a img {
   width: 20px;
@@ -1121,6 +1246,7 @@ textarea {
   display: block;
   border-radius: 50%;
   background: #183955;
+  cursor: pointer;
 }
 .features .list.slick-initialized .slick-dots li.slick-active .dot {
   cursor: pointer;
@@ -1267,6 +1393,7 @@ textarea {
   display: block;
   border-radius: 50%;
   background: #183955;
+  cursor: pointer;
 }
 .about-us .photos.slick-initialized .slick-dots li.slick-active .dot {
   cursor: pointer;
@@ -1396,7 +1523,30 @@ textarea {
     margin-right: auto;
   }
 }
-@media (min-width: 667px) {
+@media (min-width: 568px) {
+  .text-block .image {
+    max-width: 50%;
+    min-width: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    position: relative;
+  }
+  .text-block .image img {
+    max-width: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+  }
+  .text-block .image img.portrait {
+    width: 101%;
+    height: auto;
+  }
+  .text-block .image img.landscape {
+    width: auto;
+    height: 101%;
+  }
   .text-block {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1407,16 +1557,39 @@ textarea {
     -ms-flex-order: 20;
     order: 20;
   }
+  .text-block .text {
+    min-height: 270px;
+  }
   .text-block .image,
   .text-block .text {
     width: 50%;
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
   }
+}
+@media (min-width: 667px) {
+  .footer .col:nth-child(2) {
+    width: 50%;
+    padding: 0 10px;
+    margin-left: -10px;
+  }
+  .footer .col:nth-child(4) {
+    width: 50%;
+    padding: 0 10px;
+    margin-right: -10px;
+  }
+  .footer .qbcc {
+    display: block;
+  }
   .services .item {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  .services .item:nth-of-type(2n) .image {
+    -webkit-box-ordinal-group: 21;
+    -ms-flex-order: 20;
+    order: 20;
   }
   .services .image {
     max-width: 50%;
@@ -1516,9 +1689,6 @@ textarea {
   .mobile-hidden-inline {
     display: inline;
   }
-  .page {
-    padding-top: 24px;
-  }
   [type='submit'],
   [type='reset'],
   [type='button'],
@@ -1563,27 +1733,28 @@ textarea {
     background-size: 44px 44px;
     background-position: 40% 50%;
   }
-  .header {
-    height: 126px;
-  }
   .header .logo {
     width: 230px;
     height: 98px;
   }
+  .footer {
+    padding-bottom: 35px;
+  }
   .footer .col:nth-child(2) {
     width: 280px;
+    padding: 0;
+    margin: 0;
   }
   .footer .col:nth-child(4) {
-    width: 275px;
+    width: 300px;
+    padding: 5px 0 0 25px;
+    margin: 0;
     float: right;
   }
   .footer .links {
     margin-left: 5px;
     margin-right: 5px;
     font-size: 16px;
-  }
-  .footer .qbcc {
-    display: block;
   }
   .footer .copyright {
     margin-top: 28px;
@@ -1592,6 +1763,21 @@ textarea {
   }
   .footer .copyright br {
     display: inline;
+  }
+  .nav {
+    top: 80px;
+  }
+  .nav ul {
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: .2em;
+  }
+  .nav ul a.close {
+    font-size: 26px;
+    letter-spacing: .175em;
+  }
+  .page {
+    padding-top: 24px;
   }
   .page-header {
     height: 300px;
@@ -1637,9 +1823,12 @@ textarea {
     font-size: 28px;
     line-height: 32px;
   }
+  .text-block .text {
+    min-height: 400px;
+  }
   .about {
     max-width: 940px;
-    margin: 80px auto;
+    margin: 80px auto 94px;
     padding-left: 0;
     padding-right: 0;
   }
@@ -1782,11 +1971,6 @@ textarea {
     margin-left: auto;
     margin-right: auto;
   }
-  .services .item:nth-of-type(2n) .image {
-    -webkit-box-ordinal-group: 21;
-    -ms-flex-order: 20;
-    order: 20;
-  }
   .services .text {
     min-height: 496px;
   }
@@ -1901,7 +2085,7 @@ textarea {
   }
   .about-us .text {
     margin-top: 65px;
-    margin-left: -170px;
+    margin-left: -120px;
     padding: 85px 34px 40px;
     font-size: 16px;
     line-height: 24px;
@@ -1945,11 +2129,8 @@ textarea {
     padding-right: 30px;
   }
   .footer .col:nth-child(3) {
-    width: 360px;
+    width: 340px;
     display: block;
-  }
-  .footer .col:nth-child(4) {
-    padding-top: 5px;
   }
   .footer .links {
     margin-left: 20px;
@@ -1959,6 +2140,14 @@ textarea {
   }
   .footer .fb-widget {
     display: block;
+  }
+  .text-block .image img.portrait {
+    width: 105% !important;
+    height: auto !important;
+  }
+  .text-block .image img.landscape {
+    width: auto !important;
+    height: 105% !important;
   }
   .works .item {
     padding-left: 94px;
@@ -1989,6 +2178,57 @@ textarea {
 @media (min-width: 1170px) {
   body {
     overflow-x: hidden;
+  }
+  .footer {
+    padding-top: 48px;
+  }
+  .footer:before {
+    display: block;
+    content: '\0020';
+    overflow: hidden;
+    height: 1px;
+    position: absolute;
+    top: -1px;
+    left: -50vw;
+    right: -50vw;
+    background: #91aabf;
+  }
+  .footer .col:nth-child(1) {
+    width: 154px;
+    float: left;
+  }
+  .footer .col:nth-child(2) {
+    width: 334px;
+    padding-right: 40px;
+  }
+  .footer .col:nth-child(4) {
+    width: 260px;
+    padding-left: 0;
+  }
+  .footer .links {
+    margin: -5px 0 0 -6px;
+    display: block;
+  }
+  .nav {
+    top: 183px;
+  }
+  .nav ul {
+    font-size: 56px;
+    line-height: 84px;
+  }
+  .nav ul li {
+    margin: 16px 0;
+  }
+  .nav ul a {
+    padding: 20px;
+    -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  .nav ul a.close {
+    font-size: 44px;
+  }
+  .nav ul a.close:after {
+    margin-left: 20px;
   }
   .page {
     overflow-x: visible;

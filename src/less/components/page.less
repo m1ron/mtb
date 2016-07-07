@@ -1,0 +1,21 @@
+/* ==========================================================================
+   PAGE
+   ========================================================================== */
+.page {
+    width: 100%;
+    max-width: @max-width;
+    padding: 60px 15px 0;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: hidden;
+    &:after {
+        .clearfix;
+    }
+
+    @media @tablet-sm {
+        padding-top: 24px;
+    }
+    @media @desktop-sm {
+        overflow-x: visible;
+    }
+}

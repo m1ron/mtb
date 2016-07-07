@@ -8,6 +8,40 @@
     text-align: center;
     .image {
         margin: 0;
+        overflow: hidden;
+        @media @mobile-md {
+            max-width: 50%;
+            min-width: 50%;
+            flex-basis: 50%;
+            position: relative;
+            img {
+              max-width: none;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate3d(-50%,-50%,0);
+                &.portrait {
+                    width: 101%;
+                    height: auto;
+                }
+                &.landscape {
+                    width: auto;
+                    height: 101%;
+                }
+            }
+        }
+        @media @tablet-md {
+            img {
+                &.portrait {
+                    width: 105% !important;
+                    height: auto !important;
+                }
+                &.landscape {
+                    width: auto !important;
+                    height: 105% !important;
+                }
+            }
+        }
     }
     .text {
         padding: 15px 30px;
@@ -17,10 +51,13 @@
         letter-spacing: .1em;
         background: @color-space-cadet;
     }
-    @media @mobile-lg {
+    @media @mobile-md {
         display: flex;
         .image {
             order: 20;
+        }
+        .text {
+            min-height: 270px;
         }
         .image, .text {
             width: 50%;
@@ -31,5 +68,8 @@
         margin: 30px 0 30px;
         font-size: 28px;
         line-height: 32px;
+        .text {
+            min-height: 400px;
+        }
     }
 }

@@ -173,24 +173,3 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
         display: inline;
     }
 }
-/* ==========================================================================
-   CONTAINERS
-   ========================================================================== */
-/*** .PAGE ***/
-.page {
-    width: 100%;
-    max-width: @max-width;
-    margin-left: auto;
-    margin-right: auto;
-    overflow-x: hidden;
-    padding: 0 15px;
-    &:after {
-        .clearfix;
-    }
-    @media @tablet-sm {
-        padding-top: 24px;
-    }
-    @media @desktop-sm {
-      overflow-x: visible;
-    }
-}

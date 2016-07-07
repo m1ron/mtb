@@ -27,17 +27,17 @@
       }
         @media @mobile-lg {
             display: flex;
+            &:nth-of-type(2n) {
+              .image {
+                order: 20;
+              }
+            }
         }
         @media @tablet-sm {
             width: 100vw;
             max-width: 1400px;
             margin-left: auto;
             margin-right: auto;
-            &:nth-of-type(2n) {
-              .image {
-                order: 20;
-              }
-            }
         }
     }
     .image {

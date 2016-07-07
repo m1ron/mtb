@@ -2,41 +2,29 @@
    HEADER
    ========================================================================== */
 .header {
+    width: 100%;
+    min-width: @w-mobile-xxs;
     max-width: @max-width;
     height: 60px;
+    padding: 0 15px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 15px;
     color: @color-white;
-    display: flex;
-    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 199;
     background: @color-space-cadet;
-    display: none;
 
-    @media @tablet-sm {
-        height: 126px;
-    }
-
-    &:after {
-        .clearfix;
-    }
-    &:before {
-        .pseudo;
-        height: inherit;
-        background: @color-space-cadet;
-        position: absolute;
-        left: 0;
-        right: 0;
-        z-index: 0;
-    }
-    > * {
-        position: relative;
-        z-index: 1;
-    }
     .logo {
         width: 108px;
         height: 46px;
-        margin: 0;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 14px;
+        bottom: 0;
         a, img {
             width: 100%;
             height: auto;
@@ -47,37 +35,85 @@
             height: 98px;
         }
     }
+
     .toggle {
-        width: 24px;
-        height: 20px;
-        margin: 0;
-        display: block;
-        text-indent: -1000px;
+        width: 40px;
+        height: 40px;
+        margin: auto;
         overflow: hidden;
-        border-top: 4px solid @color-cadet-gray;
-        border-bottom: 4px solid @color-cadet-gray;
-        position: relative;
-        left: 50px;
-        &:before {
+        text-indent: -1000px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 115px;
+
+        &:before, &:after {
             .pseudo;
+            width: 24px;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        &:before {
+            height: 12px;
+            border-top: 4px solid @color-cadet-gray;
+            border-bottom: 4px solid @color-cadet-gray;
+            transition: border-color @duration;
+            .nav-visible & {
+                border-color: @color-white;
+            }
+        }
+        &:after {
             height: 4px;
             background: @color-cadet-gray;
-            position: absolute;
-            top: 4px;
-            left: 0;
-            right: 0;
+            transition: background-color @duration;
+            .nav-visible & {
+                background-color: @color-white;
+            }
         }
     }
+
     .tel {
-        width: 22px;
-        height: 22px;
-        margin: 0;
-        text-indent: -1000px;
+        width: 40px;
+        height: 40px;
+        margin: auto;
         overflow: hidden;
-        display: block;
+        text-indent: -1000px;
+        position: absolute;
+        top: 0;
+        right: 75px;
+        bottom: 0;
         background: url('@{images}/icons/phone.png') center center no-repeat;
         background-size: 22px 22px;
-        position: relative;
-        left: 66px;
+        a {
+            width: 40px;
+            height: 40px;
+            display: block;
+        }
+    }
+
+    .enquire {
+        width: 54px;
+        height: 54px;
+        padding: 16px 10px 10px;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        top: 11px;
+        right: 15px;
+        font: 14px/14px @font-bebas;
+        color: @color-white;
+        text-transform: uppercase;
+        text-align: center;
+        background: @color-orange;
+        box-shadow: 0 -5px 5px 0 rgba( 10, 10, 10, .25);
+        transition: background-color @duration;
+        &:hover {
+            text-decoration: none;
+            background: @color-space-cadet;
+        }
     }
 }
