@@ -17,13 +17,10 @@
         padding-left: 50vw;
         padding-right: 50vw;
     }
+
     &:before {
         .pseudo;
         height: inherit;
-        background-image: inherit;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
         opacity: .25;
         position: absolute;
         left: 0;
@@ -31,23 +28,25 @@
         top: 0;
         bottom: 0;
         z-index: 1;
+        background: url('@{images}/cta.jpg') center center no-repeat;
+        background-size: cover;
     }
+
     .space {
         padding: 44px 15px 54px;
         position: relative;
         z-index: 2;
+        @media @tablet-sm {
+            padding: 74px 74px 90px;
+        }
     }
+
     .text {
         margin: 0 0 24px 0;
         font-size: 28px;
         line-height: 30px;
         font-weight: 300;
-    }
-    @media @tablet-sm {
-        .space {
-            padding: 74px 74px 90px;
-        }
-        .text {
+        @media @tablet-sm {
             margin-bottom: 36px;
             font-size: 48px;
             line-height: 52px;

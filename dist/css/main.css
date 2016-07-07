@@ -792,37 +792,16 @@ textarea {
   height: 184px;
   margin: 0 -15px;
   padding: 0 15px;
-  background-color: #91aabf;
-  background-repeat: no-repeat;
-  background-position: -500px -500px;
-  background-size: 1px 1px;
   color: #fff;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  position: relative;
-}
-.page-header.page-about {
-  background-image: url('../img/page-header/about-us.jpg');
-}
-.page-header.page-work {
-  background-image: url('../img/page-header/our-work.jpg');
-}
-.page-header.page-contacts {
-  background-image: url('../img/page-header/contacts.jpg');
-}
-.page-header.page-services {
-  background-image: url('../img/page-header/services.jpg');
-}
-.page-header .heading {
-  margin: 0;
-  color: #fff;
-  position: relative;
-  bottom: 5px;
-  z-index: 2;
+  background: #91aabf;
+  cursor: default;
 }
 .page-header:before {
   display: block;
@@ -841,8 +820,27 @@ textarea {
   bottom: 0;
   z-index: 1;
 }
+.page-about.page-header:before {
+  background-image: url('../img/page-header/about-us.jpg');
+}
+.page-work.page-header:before {
+  background-image: url('../img/page-header/our-work.jpg');
+}
+.page-contacts.page-header:before {
+  background-image: url('../img/page-header/contact.jpg');
+}
+.page-services.page-header:before {
+  background-image: url('../img/page-header/services.jpg');
+}
 .page-header > * {
   position: relative;
+  z-index: 2;
+}
+.page-header .heading {
+  margin: 0;
+  color: #fff;
+  position: relative;
+  bottom: 5px;
   z-index: 2;
 }
 /* ==========================================================================
@@ -929,10 +927,6 @@ textarea {
   content: '\0020';
   overflow: hidden;
   height: inherit;
-  background-image: inherit;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
   opacity: .25;
   position: absolute;
   left: 0;
@@ -940,6 +934,8 @@ textarea {
   top: 0;
   bottom: 0;
   z-index: 1;
+  background: url('../img/cta.jpg') center center no-repeat;
+  background-size: cover;
 }
 .call-to-action .space {
   padding: 44px 15px 54px;

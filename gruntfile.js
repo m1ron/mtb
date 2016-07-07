@@ -36,7 +36,7 @@ module.exports = function (grunt) {
 
 		clean: {
 			pre: [dist.root, src.css, src.js + 'vendor'],
-			after: [src.js + 'vendor/fastclick.js', src.css + 'temp'],
+			after: [src.js + 'vendor/fastclick.js', src.css + 'content'],
 			dist: [dist.js + 'custom.js']
 		},
 		copy: {
@@ -60,7 +60,7 @@ module.exports = function (grunt) {
 							src.vendor + 'slick-carousel/slick/slick.css',
 							src.vendor + 'magnific-popup/dist/magnific-popup.css'
 						],
-						dest: src.css + 'temp'
+						dest: src.css + 'content'
 					}, {
 						expand: true,
 						flatten: true,
@@ -121,7 +121,7 @@ module.exports = function (grunt) {
 					{
 						expand: true,
 						flatten: true,
-						src: src.css + 'temp/*.css',
+						src: src.css + 'content/*.css',
 						dest: src.css + 'vendor',
 						ext: '.min.css'
 					}
