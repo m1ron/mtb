@@ -2,7 +2,7 @@
    HEADER
    ========================================================================== */
 .header {
-    width: 100%;
+    width: 100vw;
     min-width: @w-mobile-xxs;
     max-width: @max-width;
     height: 60px;
@@ -13,9 +13,27 @@
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
     z-index: 199;
     background: @color-navy;
+    user-select: none;
+    @media @tablet-sm {
+        height: 105px;
+    }
+    @media @desktop-sm {
+        position: absolute;
+        right: 0;
+    }
+
+    &:before {
+        .pseudo;
+        position: absolute;
+        top: 0;
+        right: -50vw;
+        bottom: 0;
+        left: -50vw;
+        z-index: 0;
+        background: @color-navy;
+    }
 
     .logo {
         width: 108px;
@@ -23,16 +41,17 @@
         margin: auto;
         position: absolute;
         top: 0;
-        left: 14px;
+        left: 15px;
         bottom: 0;
+        @media @tablet-sm {
+            width: 195px;
+            height: 83px;
+        }
+
         a, img {
             width: 100%;
             height: auto;
             display: block;
-        }
-        @media @tablet-sm {
-            width: 230px;
-            height: 98px;
         }
     }
 
@@ -46,6 +65,13 @@
         top: 0;
         bottom: 0;
         right: 115px;
+
+        @media @tablet-sm {
+            right: 300px;
+        }
+        @media @tablet-md {
+            display: none;
+        }
 
         &:before, &:after {
             .pseudo;
@@ -86,12 +112,44 @@
         top: 0;
         right: 75px;
         bottom: 0;
-        background: url('@{images}/icons/phone.png') center center no-repeat;
-        background-size: 22px 22px;
+        @media @tablet-sm {
+            width: auto;
+            padding-left: 37px;
+            right: 110px;
+            font: bold 24px/44px @font-bebas;
+            letter-spacing: .1em;
+            text-indent: 0;
+        }
+
+        &:before {
+            .pseudo;
+            .sprite;
+            width: 25px;
+            height: 25px;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 0;
+            background-position: -50px -25px;
+            @media @tablet-sm {
+                right: auto;
+            }
+        }
+
         a {
-            width: 40px;
-            height: 40px;
+            width: inherit;
+            height: inherit;
             display: block;
+            position: relative;
+            z-index: 1;
+            text-decoration: none;
+            @media @tablet-sm {
+                color: @color-white;
+                cursor: default;
+            }
         }
     }
 
@@ -110,10 +168,53 @@
         text-align: center;
         background: @color-orange;
         box-shadow: 0 -5px 5px 0 rgba( 10, 10, 10, .25);
-        transition: background-color @duration;
+        transition: background-color @duration, color @duration, box-shadow @duration;
+
         &:hover {
             text-decoration: none;
-            background: @color-navy;
+            color: @color-navy;
+            background: @color-white;
+        }
+
+        @media @tablet-sm {
+            width: 68px;
+            height: 68px;
+            padding-top: 21px;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            font-size: 16px;
+            line-height: 16px;
+            font-weight: bold;
+            color: @color-navy;
+            background: @color-white;
+            transition: color @duration, background-color @duration;
+            box-shadow:none;
+
+            &:hover {
+                color: @color-white;
+                background: @color-orange;
+                box-shadow: 0 -5px 5px 0 rgba( 10, 10, 10, .25);
+                &:before {
+                    opacity: 0;
+                }
+            }
+
+            &:before {
+                .pseudo;
+                width: 58px;
+                height: 58px;
+                border: 1px solid @color-navy;
+                border-radius: 50%;
+                margin: auto;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 0;
+                transition: opacity @duration;
+            }
         }
     }
 }

@@ -148,9 +148,10 @@
             display: block;
             position: relative;
             background-color: @color-navy;
-            transition: background-color @duration;
+            transition: background-color @duration, box-shadow @duration;
             &:hover {
                 background-color: @color-orange;
+                box-shadow: 0 -3px 3px 0 rgba( 10, 10, 10, .25);
             }
             &:before {
                 .pseudo;

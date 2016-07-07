@@ -368,7 +368,7 @@ textarea {
    HEADER
    ========================================================================== */
 .header {
-  width: 100%;
+  width: 100vw;
   min-width: 320px;
   max-width: 1170px;
   height: 60px;
@@ -379,8 +379,23 @@ textarea {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
   z-index: 199;
+  background: #183955;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.header:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: -50vw;
+  bottom: 0;
+  left: -50vw;
+  z-index: 0;
   background: #183955;
 }
 .header .logo {
@@ -389,7 +404,7 @@ textarea {
   margin: auto;
   position: absolute;
   top: 0;
-  left: 14px;
+  left: 15px;
   bottom: 0;
 }
 .header .logo a,
@@ -451,13 +466,31 @@ textarea {
   top: 0;
   right: 75px;
   bottom: 0;
-  background: url('../img/icons/phone.png') center center no-repeat;
-  background-size: 22px 22px;
+}
+.header .tel:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  background: url('../img/sprite.png') no-repeat 0 0;
+  background-size: 75px 50px;
+  width: 25px;
+  height: 25px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background-position: -50px -25px;
 }
 .header .tel a {
-  width: 40px;
-  height: 40px;
+  width: inherit;
+  height: inherit;
   display: block;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
 }
 .header .enquire {
   width: 54px;
@@ -474,12 +507,13 @@ textarea {
   text-align: center;
   background: #f16c00;
   box-shadow: 0 -5px 5px 0 rgba(10, 10, 10, 0.25);
-  -webkit-transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .header .enquire:hover, .header .enquire:focus {
   text-decoration: none;
-  background: #183955;
+  color: #183955;
+  background: #fff;
 }
 /* ==========================================================================
    FOOTER
@@ -556,11 +590,12 @@ textarea {
   display: block;
   position: relative;
   background-color: #183955;
-  -webkit-transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .footer .social .link:hover, .footer .social .link:focus {
   background-color: #f16c00;
+  box-shadow: 0 -3px 3px 0 rgba(10, 10, 10, 0.25);
 }
 .footer .social .link:before {
   display: block;
@@ -676,9 +711,10 @@ textarea {
    NAV
    ========================================================================== */
 .nav {
+  padding: 60px 10px 10px;
   display: none;
   position: fixed;
-  top: 60px;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
@@ -686,7 +722,6 @@ textarea {
   overflow: auto;
   overflow-x: hidden;
   background: #183955;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 .nav-visible .nav {
   display: block;
@@ -723,11 +758,12 @@ textarea {
 .nav .menu {
   width: 100%;
   height: 100%;
-  padding: 10px 10%;
+  padding: 0;
   margin: 0;
   list-style: none;
   font: bold 24px/28px 'Bebas Neue', Helvetica, Arial, sans-serif;
-  letter-spacing: .09em;
+  letter-spacing: .095em;
+  white-space: nowrap;
   color: #fff;
   text-align: center;
   text-transform: uppercase;
@@ -744,12 +780,10 @@ textarea {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 100%;
           flex: 0 0 100%;
+  position: relative;
 }
-.nav .menu li.active a {
-  color: #fff;
-  cursor: default;
-}
-.nav .menu a {
+.nav .menu li a {
+  height: 100%;
   padding: 10px;
   display: block;
   position: relative;
@@ -759,15 +793,19 @@ textarea {
   -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-.nav .menu a:hover,
-.nav .menu a:focus,
-.nav .menu a:focus {
+.nav .menu li a:hover,
+.nav .menu li a:focus,
+.nav .menu li a:focus {
   color: #fff;
 }
-.nav .menu a.close:after {
+.nav .menu li a.close:after {
   margin-left: 4px;
   display: inline;
   content: 'x';
+}
+.nav .menu li.active a {
+  color: #fff;
+  cursor: default;
 }
 /* ==========================================================================
    PAGE
@@ -1340,9 +1378,8 @@ textarea {
 .features .list .title + p {
   margin-top: 0;
 }
-.features .button {
-  width: 100%;
-  max-width: 242px;
+.features .button.view {
+  width: 242px;
   margin: 0 auto;
   display: block;
 }
@@ -1732,9 +1769,72 @@ textarea {
     background-size: 44px 44px;
     background-position: 40% 50%;
   }
+  .header {
+    height: 105px;
+  }
   .header .logo {
-    width: 230px;
-    height: 98px;
+    width: 195px;
+    height: 83px;
+  }
+  .header .toggle {
+    right: 300px;
+  }
+  .header .tel {
+    width: auto;
+    padding-left: 37px;
+    right: 110px;
+    font: bold 24px/44px 'Bebas Neue', Helvetica, Arial, sans-serif;
+    letter-spacing: .1em;
+    text-indent: 0;
+  }
+  .header .tel:before {
+    right: auto;
+  }
+  .header .tel a {
+    color: #fff;
+    cursor: default;
+  }
+  .header .enquire {
+    width: 68px;
+    height: 68px;
+    padding-top: 21px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: bold;
+    color: #183955;
+    background: #fff;
+    -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    box-shadow: none;
+  }
+  .header .enquire:hover, .header .enquire:focus {
+    color: #fff;
+    background: #f16c00;
+    box-shadow: 0 -5px 5px 0 rgba(10, 10, 10, 0.25);
+  }
+  .header .enquire:hover:before, .header .enquire:focus:before {
+    opacity: 0;
+  }
+  .header .enquire:before {
+    display: block;
+    content: '\0020';
+    overflow: hidden;
+    width: 58px;
+    height: 58px;
+    border: 1px solid #183955;
+    border-radius: 50%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
   .footer {
     padding-bottom: 35px;
@@ -1764,19 +1864,10 @@ textarea {
     display: inline;
   }
   .nav {
-    top: 80px;
-  }
-  .nav ul {
-    font-size: 30px;
-    line-height: 36px;
-    letter-spacing: .2em;
-  }
-  .nav ul a.close {
-    font-size: 26px;
-    letter-spacing: .175em;
+    padding-top: 125px 10% 20px;
   }
   .page {
-    padding-top: 24px;
+    padding-top: 105px;
   }
   .page-header {
     height: 300px;
@@ -2050,10 +2141,9 @@ textarea {
     margin-top: 0;
     margin-bottom: 22px;
   }
-  .features .button {
-    width: auto;
+  .features .button.view {
+    width: 490px;
     max-width: none;
-    min-width: 490px;
   }
   .about-us {
     margin-top: 70px;
@@ -2123,6 +2213,9 @@ textarea {
   }
 }
 @media (min-width: 990px) {
+  .header .toggle {
+    display: none;
+  }
   .footer .col:nth-child(2) {
     width: 330px;
     padding-right: 30px;
@@ -2139,6 +2232,60 @@ textarea {
   }
   .footer .fb-widget {
     display: block;
+  }
+  .nav {
+    height: 105px;
+    padding: 0;
+    right: 300px;
+    bottom: auto;
+    left: 250px;
+    display: block;
+    overflow: hidden;
+    z-index: 300;
+    background: none;
+  }
+  .nav:before {
+    display: none;
+  }
+  .nav .menu {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+  .nav .menu li.active:before,
+  .nav .menu li.active:after {
+    display: block;
+    content: '\0020';
+    overflow: hidden;
+    width: 1px;
+    height: 35px;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 0;
+    background: #fff;
+  }
+  .nav .menu li.active:before {
+    width: 1px;
+    height: 34px;
+    top: 0;
+  }
+  .nav .menu li.active:after {
+    width: 5px;
+    bottom: 0;
+  }
+  .nav .menu li {
+    width: auto;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 0%;
+    flex: 0 0 0%;
+  }
+  .nav .menu li:first-child,
+  .nav .menu li:last-child {
+    display: none;
+  }
+  .nav .menu li a {
+    padding-top: 41px;
   }
   .text-block .image img.portrait {
     width: 105% !important;
@@ -2178,6 +2325,10 @@ textarea {
   body {
     overflow-x: hidden;
   }
+  .header {
+    position: absolute;
+    right: 0;
+  }
   .footer {
     padding-top: 48px;
   }
@@ -2209,25 +2360,14 @@ textarea {
     display: block;
   }
   .nav {
-    top: 183px;
+    margin: 0 0 0 -295px;
+    position: absolute;
+    left: 50%;
+    right: auto;
   }
-  .nav ul {
-    font-size: 56px;
-    line-height: 84px;
-  }
-  .nav ul li {
-    margin: 16px 0;
-  }
-  .nav ul a {
-    padding: 20px;
-    -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-    transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-  }
-  .nav ul a.close {
-    font-size: 44px;
-  }
-  .nav ul a.close:after {
-    margin-left: 20px;
+  .nav .menu li a {
+    padding-left: 19px;
+    padding-right: 19px;
   }
   .page {
     overflow-x: visible;
