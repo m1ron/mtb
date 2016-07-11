@@ -20,9 +20,22 @@
         height: 105px;
     }
     @media @desktop-sm {
-        height: 125px;
-        position: absolute;
-        right: 0;
+        & {
+            right: 0;
+            transition: transform @duration-s;
+            transform: translate3d(0, 0, 0);
+        }
+        html.nav-sticky & {
+            top: -105px;
+        }
+        html.nav-sticky-animate & {
+            transform: translate3d(0, 105px, 0);
+            transition: transform @duration;
+        }
+        html:not(.nav-sticky) & {
+            height: 125px;
+            position: absolute;
+        }
     }
 
     &:before {
@@ -45,6 +58,9 @@
             left: -50vw;
             background: @color-white;
             z-index: 1;
+            .nav-sticky & {
+                display: none;
+            }
         }
     }
 
@@ -64,8 +80,11 @@
             height: 83px;
         }
         @media @desktop-sm {
-            width: 230px;
-            height: 98px;
+            html:not(.nav-sticky) & {
+                width: 230px;
+                height: 98px;
+                background: none;
+            }
         }
 
         a {
@@ -80,6 +99,9 @@
             display: none;
             @media @desktop-sm {
                 display: block;
+                .nav-sticky & {
+                    display: none;
+                }
             }
         }
     }
@@ -151,7 +173,9 @@
             text-indent: 0;
         }
         @media @desktop-sm {
-            right: 145px;
+            html:not(.nav-sticky) & {
+                right: 145px;
+            }
         }
 
         &:before {
@@ -221,7 +245,7 @@
             font-weight: bold;
             color: @color-navy;
             background: @color-white;
-            transition: color @duration, background-color @duration;
+            transition: color @duration-s, background-color @duration-s;
             box-shadow: none;
 
             &:hover {
@@ -246,23 +270,25 @@
                 bottom: 0;
                 left: 0;
                 z-index: 0;
-                transition: opacity @duration;
+                transition: opacity @duration-s;
             }
         }
 
         @media @desktop-sm {
-            width: 124px;
-            height: 124px;
-            padding-top: 41px;
-            top: 120px;
-            font-size: 28px;
-            line-height: 28px;
-            color: @color-orange;
-            &:before {
-                width: 106px;
-                height: 106px;
-                border-width: 2px;
-                border-color: @color-orange;
+            html:not(.nav-sticky) & {
+                width: 124px;
+                height: 124px;
+                padding-top: 41px;
+                top: 120px;
+                font-size: 28px;
+                line-height: 28px;
+                color: @color-orange;
+                &:before {
+                    width: 106px;
+                    height: 106px;
+                    border-width: 2px;
+                    border-color: @color-orange;
+                }
             }
         }
     }

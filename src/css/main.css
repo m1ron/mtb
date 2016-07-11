@@ -1826,8 +1826,8 @@ textarea {
     font-weight: bold;
     color: #183955;
     background: #fff;
-    -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-    transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-transition: color 0.1s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: color 0.1s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
     box-shadow: none;
   }
   .header .enquire:hover, .header .enquire:focus {
@@ -1853,8 +1853,8 @@ textarea {
     bottom: 0;
     left: 0;
     z-index: 0;
-    -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-    transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-transition: opacity 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: opacity 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
   .footer {
     padding-bottom: 35px;
@@ -2345,9 +2345,28 @@ textarea {
     overflow-x: hidden;
   }
   .header {
+    right: 0;
+    -webkit-transition: -webkit-transform 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: -webkit-transform 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: transform 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: transform 0.1s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  html.nav-sticky .header {
+    top: -105px;
+  }
+  html.nav-sticky-animate .header {
+    -webkit-transform: translate3d(0, 105px, 0);
+    transform: translate3d(0, 105px, 0);
+    -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: -webkit-transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  html:not(.nav-sticky) .header {
     height: 125px;
     position: absolute;
-    right: 0;
   }
   .header:after {
     display: block;
@@ -2361,17 +2380,24 @@ textarea {
     background: #fff;
     z-index: 1;
   }
-  .header .logo {
+  .nav-sticky .header:after {
+    display: none;
+  }
+  html:not(.nav-sticky) .header .logo {
     width: 230px;
     height: 98px;
+    background: none;
   }
   .header .logo img {
     display: block;
   }
-  .header .tel {
+  .nav-sticky .header .logo img {
+    display: none;
+  }
+  html:not(.nav-sticky) .header .tel {
     right: 145px;
   }
-  .header .enquire {
+  html:not(.nav-sticky) .header .enquire {
     width: 124px;
     height: 124px;
     padding-top: 41px;
@@ -2380,7 +2406,7 @@ textarea {
     line-height: 28px;
     color: #f16c00;
   }
-  .header .enquire:before {
+  html:not(.nav-sticky) .header .enquire:before {
     width: 106px;
     height: 106px;
     border-width: 2px;
@@ -2417,13 +2443,35 @@ textarea {
     display: block;
   }
   .nav {
+    -webkit-transition: -webkit-transform 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: -webkit-transform 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: transform 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: transform 0.1s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  html.nav-sticky .nav {
+    margin: 0 0 0 -295px;
+    left: 50%;
+    right: auto;
+    top: -105px;
+  }
+  html.nav-sticky-animate .nav {
+    -webkit-transform: translate3d(0, 105px, 0);
+    transform: translate3d(0, 105px, 0);
+    -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: -webkit-transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  html:not(.nav-sticky) .nav {
     height: 126px;
     margin: 0 0 0 -280px;
     position: absolute;
     left: 50%;
     right: auto;
   }
-  .nav .menu li a {
+  html:not(.nav-sticky) .nav .menu li a {
     padding-top: 51px;
     padding-left: 19px;
     padding-right: 19px;
