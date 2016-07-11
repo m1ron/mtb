@@ -2,15 +2,15 @@
    CONTACT-US
    ========================================================================== */
 .contact-us {
-  max-width: 450px;
-  margin-left: auto;
-  margin-right: auto;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
     @media @tablet-sm {
-      max-width: none;
-      margin-bottom: 46px;
-      padding-bottom: 100px;
+        max-width: none;
+        padding-bottom: 80px;
         display: flex;
     }
+
     .info {
         margin-bottom: 34px;
         padding: 20px 35px 35px;
@@ -26,13 +26,14 @@
             flex-basis: 50%;
         }
         @media @tablet-md {
-          min-width: 425px;
-          max-width: 425px;
-          margin-right: 64px;
-          flex-basis: 425px;
-          padding-left: 50px;
-          padding-right: 50px;
+            min-width: 425px;
+            max-width: 425px;
+            margin-right: 64px;
+            flex-basis: 425px;
+            padding-left: 50px;
+            padding-right: 50px;
         }
+
         .list {
             margin: 0 0 14px;
             padding: 0;
@@ -42,10 +43,11 @@
             line-height: 16px;
             font-weight: bold;
             @media @tablet-sm {
-              margin-bottom: 28px;
-              font-size: 21px;
-              line-height: 23px;
+                margin-bottom: 28px;
+                font-size: 21px;
+                line-height: 23px;
             }
+
             li {
                 padding: 18px;
                 border-bottom: 1px solid @color-gray;
@@ -57,7 +59,6 @@
                     background-position: center center;
                     background-size: cover;
                     background-repeat: no-repeat;
-
                 }
                 &.adr {
                     &:before {
@@ -72,23 +73,23 @@
                 }
                 &.mail {
                     &:before {
-                      margin-bottom: 8px;
+                        margin-bottom: 8px;
                         background-image: url('@{images}/icons/mail-white.png');
                     }
                 }
                 @media @tablet-sm {
-                  padding: 23px 10px;
-                  &:before {
-                    width: 30px;
-                    height: 30px;
-                  }
-                  &:before, &.mail:before, &.adr::before {
-                      margin-bottom: 14px;
-                  }
+                    padding: 23px 10px;
+                    &:before {
+                        width: 30px;
+                        height: 30px;
+                    }
+                    &:before, &.mail:before, &.adr::before {
+                        margin-bottom: 14px;
+                    }
                 }
                 @media @tablet-md {
-                  padding-left: 23px;
-                  padding-right: 23px;
+                    padding-left: 23px;
+                    padding-right: 23px;
                 }
                 a {
                     color: @color-white;
@@ -98,6 +99,14 @@
                 &[href^='tel:'] {
                     cursor: default;
                     text-decoration: none;
+                }
+                &[href^='mailto:'] {
+                    border-bottom: 1px solid transparent;
+                    text-decoration: none;
+                    transition: border-color @duration;
+                    &:hover {
+                        border-color: @color-white;
+                    }
                 }
             }
         }
@@ -110,8 +119,8 @@
                 padding: 0 4px;
                 display: inline-block;
                 @media @tablet-sm {
-                  padding-left: 8px;
-                  padding-right: 8px;
+                    padding-left: 8px;
+                    padding-right: 8px;
                 }
                 a {
                     width: 36px;
@@ -123,8 +132,8 @@
                     align-items: center;
                     transition: box-shadow @duration;
                     &:hover {
-                      .color-white(.2);
-                      box-shadow: 0 -5px 5px 0 @color;
+                        .color-white(.2);
+                        box-shadow: 0 -5px 5px 0 @color;
                     }
                     img {
                         width: 20px;
@@ -132,12 +141,12 @@
                         display: block;
                     }
                     @media @tablet-sm {
-                      width: 52px;
-                      height: 52px;
-                      img {
-                          width: 28px;
-                          height: 28px;
-                      }
+                        width: 52px;
+                        height: 52px;
+                        img {
+                            width: 28px;
+                            height: 28px;
+                        }
                     }
                 }
             }
@@ -148,9 +157,9 @@
             flex-grow: 1;
             position: relative;
             .button {
-              position: absolute;
-              float: none;
-              right: 0;
+                position: absolute;
+                float: none;
+                right: 0;
             }
         }
     }

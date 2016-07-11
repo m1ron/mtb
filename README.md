@@ -15,7 +15,6 @@ _Responsive markup_
 - Normalize.css
 - Fastclick
 - jQuery
-- Font Awesome
 - Slick Carousel
 - Magnific Popup
 

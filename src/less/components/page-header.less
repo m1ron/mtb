@@ -25,7 +25,7 @@
         background-image: inherit;
         background-position: center center;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: auto 100%;
         opacity: .15;
         position: absolute;
         left: 0;
@@ -44,6 +44,9 @@
         }
         .page-services& {
             background-image: url('@{images}/page-header/services.jpg');
+        }
+        @media @desktop-md {
+            background-size: 100vw auto;
         }
     }
 

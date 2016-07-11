@@ -6,6 +6,7 @@
     @media @tablet-sm {
         margin-bottom: 100px;
     }
+
     .item {
         margin: 36px 0;
         text-align: center;
@@ -20,10 +21,11 @@
             text-align: left;
         }
         @media @tablet-md {
-          padding-left: 94px;
-          padding-right: 94px;
+            padding-left: 94px;
+            padding-right: 94px;
         }
     }
+
     .title {
         .h4;
         .h-up;
@@ -35,6 +37,7 @@
             text-align: center;
         }
     }
+
     .photos {
         margin: 0 0 22px;
         padding: 0;
@@ -44,6 +47,7 @@
         @media @tablet-sm {
             margin-bottom: 44px;
         }
+
         &.slick-initialized {
             display: block;
             overflow: visible;
@@ -69,6 +73,7 @@
                         display: block;
                         border-radius: 50%;
                         background: @color-navy;
+                        cursor: pointer;
                     }
                     &.slick-active {
                         .dot {
@@ -78,7 +83,6 @@
                         }
                     }
                 }
-
             }
         }
         .entry {
@@ -91,34 +95,41 @@
             }
         }
     }
+
     .quote {
+        padding-top: 32px;
         margin: 16px 0;
         position: relative;
         @media @tablet-sm {
+            padding: 0;
             margin: 44px 0;
             padding-left: 108px;
             font-size: 16px;
             line-height: 24px;
         }
+
         p {
             color: @color-gray;
             font-style: italic;
         }
+
         &:before {
             .pseudo;
-            content: '\201C';
-            height: 32px;
-            font-size: 82px;
-            line-height: 75px;
-            font-weight: bold;
-            color: @color-orange;
+            width: 31px;
+            height: 23px;
+            margin: auto;
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 0;
+            right: 0;
+            background: url('@{images}/quote.png') no-repeat 50% 50%;
+            background-size: auto 100%;
             @media @tablet-sm {
-                height: 60px;
-                font-size: 175px;
-                line-height: 142px;
-                position: absolute;
-                left: -14px;
-                top: 0;
+                width: 67px;
+                height: 50px;
+                margin: 0;
+                right: auto;
             }
         }
         .author {

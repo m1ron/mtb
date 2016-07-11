@@ -406,12 +406,19 @@ textarea {
   top: 0;
   left: 15px;
   bottom: 0;
+  z-index: 5;
+  background: url('../img/logo-white.png') no-repeat 0 0;
+  background-size: 100% auto;
 }
-.header .logo a,
+.header .logo a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 .header .logo img {
   width: 100%;
   height: auto;
-  display: block;
+  display: none;
 }
 .header .toggle {
   width: 40px;
@@ -595,7 +602,7 @@ textarea {
 }
 .footer .social .link:hover, .footer .social .link:focus {
   background-color: #f16c00;
-  box-shadow: 0 -3px 3px 0 rgba(10, 10, 10, 0.25);
+  box-shadow: 0 -3px 3px 0 rgba(10, 10, 10, 0.2);
 }
 .footer .social .link:before {
   display: block;
@@ -823,6 +830,14 @@ textarea {
   content: '\0020';
   clear: both;
 }
+.page-excerpt {
+  margin: 30px 0 30px;
+  padding: 0 20px;
+  font: 300 18px/24px 'Bebas Neue', Helvetica, Arial, sans-serif;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  text-align: center;
+}
 /* ==========================================================================
    PAGE-HEADER
    ========================================================================== */
@@ -849,7 +864,7 @@ textarea {
   background-image: inherit;
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto 100%;
   opacity: .15;
   position: absolute;
   left: 0;
@@ -880,16 +895,6 @@ textarea {
   position: relative;
   bottom: 5px;
   z-index: 2;
-}
-/* ==========================================================================
-   PAGE-EXCERPT
-   ========================================================================== */
-.page-excerpt {
-  margin: 30px 0 30px;
-  padding: 0 20px;
-  font: 300 18px/24px 'Bebas Neue', Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  text-align: center;
 }
 /* ==========================================================================
    TEXT-BLOCK
@@ -1046,6 +1051,7 @@ textarea {
   display: block;
   border-radius: 50%;
   background: #183955;
+  cursor: pointer;
 }
 .works .photos.slick-initialized .slick-dots li.slick-active .dot {
   cursor: pointer;
@@ -1063,6 +1069,7 @@ textarea {
   height: auto;
 }
 .works .quote {
+  padding-top: 32px;
   margin: 16px 0;
   position: relative;
 }
@@ -1074,12 +1081,16 @@ textarea {
   display: block;
   content: '\0020';
   overflow: hidden;
-  content: '\201C';
-  height: 32px;
-  font-size: 82px;
-  line-height: 75px;
-  font-weight: bold;
-  color: #f16c00;
+  width: 31px;
+  height: 23px;
+  margin: auto;
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 0;
+  right: 0;
+  background: url('../img/quote.png') no-repeat 50% 50%;
+  background-size: auto 100%;
 }
 .works .quote .author {
   color: #f16c00;
@@ -1141,6 +1152,15 @@ textarea {
 .contact-us .info .list a[href^='tel:'] {
   cursor: default;
   text-decoration: none;
+}
+.contact-us .info .list a[href^='mailto:'] {
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
+  -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.contact-us .info .list a[href^='mailto:']:hover, .contact-us .info .list a[href^='mailto:']:focus {
+  border-color: #fff;
 }
 .contact-us .info .social {
   margin: 0;
@@ -1845,7 +1865,7 @@ textarea {
     margin: 0;
   }
   .footer .col:nth-child(4) {
-    width: 300px;
+    width: 290px;
     padding: 5px 0 0 25px;
     margin: 0;
     float: right;
@@ -1867,17 +1887,8 @@ textarea {
     padding-top: 125px 10% 20px;
   }
   .page {
-    padding-top: 105px;
-  }
-  .page-header {
-    height: 300px;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    padding-left: 50vw;
-    padding-right: 50vw;
-  }
-  .page-header .heading {
-    bottom: 34px;
+    padding-top: 120px;
+    padding-bottom: 50px;
   }
   .page-excerpt {
     margin-top: 80px;
@@ -1907,6 +1918,16 @@ textarea {
   }
   .page-excerpt:after {
     right: 0;
+  }
+  .page-header {
+    height: 300px;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding-left: 50vw;
+    padding-right: 50vw;
+  }
+  .page-header .heading {
+    bottom: 34px;
   }
   .text-block {
     margin: 30px 0 30px;
@@ -1978,26 +1999,24 @@ textarea {
     padding-right: 9px;
   }
   .works .quote {
+    padding: 0;
     margin: 44px 0;
     padding-left: 108px;
     font-size: 16px;
     line-height: 24px;
   }
   .works .quote:before {
-    height: 60px;
-    font-size: 175px;
-    line-height: 142px;
-    position: absolute;
-    left: -14px;
-    top: 0;
+    width: 67px;
+    height: 50px;
+    margin: 0;
+    right: auto;
   }
   .works .quote .author {
     margin-top: 24px;
   }
   .contact-us {
     max-width: none;
-    margin-bottom: 46px;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2057,7 +2076,7 @@ textarea {
   }
   .services .item {
     width: 100vw;
-    max-width: 1400px;
+    max-width: 1680px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -2317,8 +2336,8 @@ textarea {
     height: auto !important;
   }
   .services .image img.landscape {
-    width: auto !important;
-    height: 105% !important;
+    width: 50vw !important;
+    height: auto !important;
   }
 }
 @media (min-width: 1170px) {
@@ -2326,8 +2345,46 @@ textarea {
     overflow-x: hidden;
   }
   .header {
+    height: 125px;
     position: absolute;
     right: 0;
+  }
+  .header:after {
+    display: block;
+    content: '\0020';
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 892px;
+    bottom: 0;
+    left: -50vw;
+    background: #fff;
+    z-index: 1;
+  }
+  .header .logo {
+    width: 230px;
+    height: 98px;
+  }
+  .header .logo img {
+    display: block;
+  }
+  .header .tel {
+    right: 145px;
+  }
+  .header .enquire {
+    width: 124px;
+    height: 124px;
+    padding-top: 41px;
+    top: 120px;
+    font-size: 28px;
+    line-height: 28px;
+    color: #f16c00;
+  }
+  .header .enquire:before {
+    width: 106px;
+    height: 106px;
+    border-width: 2px;
+    border-color: #f16c00;
   }
   .footer {
     padding-top: 48px;
@@ -2360,17 +2417,24 @@ textarea {
     display: block;
   }
   .nav {
-    margin: 0 0 0 -295px;
+    height: 126px;
+    margin: 0 0 0 -280px;
     position: absolute;
     left: 50%;
     right: auto;
   }
   .nav .menu li a {
+    padding-top: 51px;
     padding-left: 19px;
     padding-right: 19px;
   }
   .page {
+    padding-top: 150px;
+    padding-bottom: 80px;
     overflow-x: visible;
+  }
+  .call-to-action:before {
+    background-size: 100vw auto;
   }
   .about-us .photos {
     max-width: 74.4%;
@@ -2382,10 +2446,18 @@ textarea {
     margin-left: -70px;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1380px) {
+  .page-header:before {
+    background-size: 100vw auto;
+  }
   .services .text {
     padding-left: 100px;
     padding-right: 100px;
+  }
+}
+@media (min-width: 1680px) {
+  .services .image img.landscape {
+    width: 840px !important;
   }
 }
 
