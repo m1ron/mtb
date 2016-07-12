@@ -47,6 +47,7 @@ module.exports = function(grunt) {
                     src: [
                         src.vendor + 'html5shiv/dist/html5shiv.min.js',
                         src.vendor + 'jquery/dist/jquery.min.js',
+                        src.vendor + 'jquery/dist/jquery.min.map',
                         src.vendor + 'fastclick/lib/fastclick.js',
                         src.vendor + 'slick-carousel/slick/slick.min.js',
                         src.vendor + 'magnific-popup/dist/jquery.magnific-popup.min.js'
@@ -77,7 +78,7 @@ module.exports = function(grunt) {
                     src: [
                         'css/{,*/}*.*',
                         'img/**/*',
-                        'js/{,*/}*.js',
+                        'js/{,*/}*.*',
                         'fonts/{,*/}*.*',
                         'video/{,*/}*.*',
                         '{,*/}*.html'
@@ -87,7 +88,7 @@ module.exports = function(grunt) {
         },
         concat: {
             options: {
-                separator: '\n\n\n'
+                separator: '\n\n'
             },
             dist: {
                 files: [{
@@ -107,9 +108,6 @@ module.exports = function(grunt) {
             }
         },
         cssmin: {
-            options: {
-                separator: '\n\n\n'
-            },
             dist: {
                 files: [{
                     expand: true,
@@ -117,6 +115,12 @@ module.exports = function(grunt) {
                     src: src.css + 'content/*.css',
                     dest: src.css + 'vendor',
                     ext: '.min.css'
+                }, {
+                    expand: true,
+                    flatten: true,
+                    src: src.css + 'normalize.css',
+                    dest: src.css,
+                    ext: '.css'
                 }]
             }
         },

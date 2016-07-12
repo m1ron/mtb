@@ -29,19 +29,19 @@ $(document).ready(function() {
     /** Sticky header */
     (function() {
         function stick() {
-            html.addClass('nav-sticky');
+            body.addClass('nav-sticky');
             setTimeout(function() {
-                html.addClass('nav-sticky-animate');
+                body.addClass('nav-sticky-animate');
                 sticked = true;
             }, 20);
         }
 
         function unstick() {
-            html.removeClass('nav-sticky-animate');
+            body.removeClass('nav-sticky-animate');
             setTimeout(function() {
-                html.removeClass('nav-sticky');
+                body.removeClass('nav-sticky');
                 sticked = false;
-            }, 200);
+            }, 20);
         }
 
         function check() {
@@ -65,7 +65,7 @@ $(document).ready(function() {
         function uninit() {
 
             inited = false;
-            html.removeClass('nav-sticky');
+            body.removeClass('nav-sticky');
             w.off('scroll touchmove', check);
         }
 
@@ -81,12 +81,12 @@ $(document).ready(function() {
             }
         }
 
-        var html = $('html'),
+        var body = $('body'),
             w = $(window),
             sticked = false,
             inited = false,
             minWidth = 1170,
-            minHeight = 300;
+            minHeight = 250;
 
         w.on('resize', onResize);
         onResize();

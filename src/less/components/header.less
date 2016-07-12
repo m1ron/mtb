@@ -22,17 +22,17 @@
     @media @desktop-sm {
         & {
             right: 0;
-            transition: transform @duration;
             transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
         }
-        html.nav-sticky & {
+        body.nav-sticky & {
             top: -105px;
         }
-        html.nav-sticky-animate & {
+        body.nav-sticky-animate & {
             transform: translate3d(0, 105px, 0);
             transition: transform @duration;
         }
-        html:not(.nav-sticky) & {
+        body:not(.nav-sticky) & {
             height: 125px;
             position: absolute;
         }
@@ -47,6 +47,9 @@
         left: -50vw;
         z-index: 0;
         background: @color-navy;
+        body.nav-sticky & {
+            box-shadow: 0 0 10px 0 rgba( 10, 10, 10, .25);
+        }
     }
     @media @desktop-sm {
         &:after {
@@ -80,7 +83,7 @@
             height: 83px;
         }
         @media @desktop-sm {
-            html:not(.nav-sticky) & {
+            body:not(.nav-sticky) & {
                 width: 230px;
                 height: 98px;
                 background: none;
@@ -173,7 +176,7 @@
             text-indent: 0;
         }
         @media @desktop-sm {
-            html:not(.nav-sticky) & {
+            body:not(.nav-sticky) & {
                 right: 145px;
             }
         }
@@ -275,7 +278,7 @@
         }
 
         @media @desktop-sm {
-            html:not(.nav-sticky) & {
+            body:not(.nav-sticky) & {
                 width: 124px;
                 height: 124px;
                 padding-top: 41px;
