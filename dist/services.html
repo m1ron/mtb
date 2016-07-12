@@ -17,7 +17,7 @@
 	<link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32">
 	<link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
 	<link rel="manifest" href="img/favicon/manifest.json">
-	<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#183955">
+	<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg">
 	<link rel="shortcut icon" href="img/favicon/favicon.ico">
 	<meta name="msapplication-config" content="img/favicon/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
@@ -36,7 +36,7 @@
 		</div>
 		<p class="tel"><a href="tel:+61-0410-491-080">0410 491 080</a></p>
 		<a href="#nav" class="toggle">Navigation</a>
-		<a href="#enquire" class="enquire popup">Enquire Now</a>
+		<a href="#enquire" class="enquire open-popup">Enquire Now</a>
 	</header>
 	<!-- /Header -->
 
@@ -196,6 +196,34 @@
 		</div>
 	</footer>
 	<!-- /Footer -->
+
+
+	<!-- Popup -->
+	<div id="enquire" class="popup">
+		<p class="heading">Let’s talk about how we can make your dreams a reality&hellip;</p>
+		<form action="#" method="post" class="form-contact form-enquire">
+			<fieldset>
+				<div class="form-group">
+					<label class="form-label" for="enquire-name">Name</label>
+					<input id="enquire-name" type="text" value="John Smith">
+				</div>
+				<div class="form-group">
+					<label class="form-label" for="enquire-email">Email</label>
+					<input id="enquire-email" type="email" value="">
+				</div>
+				<div class="form-group">
+					<label class="form-label" for="enquire-tel">Contact Number</label>
+					<input id="enquire-tel" type="tel" value="">
+				</div>
+				<div class="form-group">
+					<label class="form-label" for="enquire-inquiry">Inquiry</label>
+					<textarea id="enquire-inquiry"></textarea>
+				</div>
+				<button class="button" type="submit">send</button>
+			</fieldset>
+		</form>
+	</div>
+	<!-- /Popup -->
 
 
 	<script src="js/vendor/jquery.min.js"></script>

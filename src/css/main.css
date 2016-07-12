@@ -345,10 +345,10 @@ textarea {
   letter-spacing: .1em;
 }
 /*** FORM-FEEDBACK ***/
-.form-feedback .form-group:last-of-type {
+.form-contact .form-group:last-of-type {
   margin-bottom: 0;
 }
-.form-feedback .button {
+.form-contact .button {
   width: 54px;
   height: 54px;
   padding: 0;
@@ -1254,6 +1254,7 @@ textarea {
 .index .image {
   width: 100%;
   height: auto;
+  min-height: 250px;
   margin: 0 auto;
   display: block;
 }
@@ -1549,6 +1550,155 @@ textarea {
   margin-bottom: 0;
 }
 /* ==========================================================================
+   MAGNIFIC POPUP
+   ========================================================================== */
+/* ZOOM-IN EFFECT */
+.mfp-slide-in .mfp-content {
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transform: translate3d(0, -200%, 0);
+          transform: translate3d(0, -200%, 0);
+}
+.mfp-slide-in.mfp-bg {
+  opacity: 0;
+  -webkit-transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.mfp-slide-in.mfp-ready .mfp-content {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
+}
+.mfp-slide-in.mfp-ready.mfp-bg {
+  opacity: .95;
+}
+.mfp-slide-in.mfp-removing .mfp-content {
+  -webkit-transform: translate3d(0, -200%, 0);
+          transform: translate3d(0, -200%, 0);
+  -webkit-transition-delay: 0;
+          transition-delay: 0;
+}
+.mfp-slide-in.mfp-removing.mfp-bg {
+  opacity: 0;
+  -webkit-transition-delay: .4s;
+          transition-delay: .4s;
+}
+.mfp-wrap {
+  min-width: 320px;
+  -webkit-overflow-scrolling: touch;
+}
+.mfp-container {
+  padding: 0 15px;
+}
+.mfp-content {
+  max-width: 450px;
+  padding: 15px 0;
+  position: relative;
+}
+.mfp-bg {
+  background: #f16c00;
+}
+.mfp-close,
+.mfp-close:active {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #fff;
+  padding: 0;
+  border-radius: 50%;
+  display: block;
+  overflow: hidden;
+  top: -30px;
+  right: 12px;
+  line-height: normal;
+  text-indent: -1000px;
+  opacity: 1 !important;
+  cursor: pointer;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px #f16c00;
+}
+.mfp-close:before,
+.mfp-close:after {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 20px;
+  height: 1px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #f16c00;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.mfp-close:before {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.mfp-close:after {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+/* ==========================================================================
+   POPUP
+   ========================================================================== */
+.popup {
+  padding: 0;
+  margin: 0 auto;
+  position: relative;
+  background: none;
+  cursor: default;
+}
+.popup:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+.popup .heading {
+  display: none;
+}
+.popup .form-enquire {
+  position: relative;
+}
+.popup .form-enquire .form-group {
+  margin-bottom: 10px;
+}
+.popup .form-enquire .form-group:last-child {
+  margin-bottom: 0;
+}
+.popup .form-enquire .form-label {
+  margin-bottom: 3px;
+  font-size: 12px;
+  line-height: 14px;
+  color: #fff;
+}
+.popup .form-enquire [type='text'],
+.popup .form-enquire [type='tel'],
+.popup .form-enquire [type='email'],
+.popup .form-enquire textarea {
+  padding: 7px;
+  border-color: #fff;
+  font-size: 12px;
+  color: #fff;
+  background: none;
+}
+.popup .form-enquire textarea {
+  height: 90px;
+}
+.popup .form-enquire .button {
+  margin: 0;
+  position: absolute;
+  right: 0;
+  bottom: -30px;
+}
+/* ==========================================================================
    RESPONSIVE
    ========================================================================== */
 @media (min-width: 375px) {
@@ -1782,7 +1932,7 @@ textarea {
     margin-bottom: 5px;
     font-size: 21px;
   }
-  .form-feedback .button {
+  .form-contact .button {
     width: 100px;
     height: 100px;
     margin: -18px 16px 0 0;
@@ -2060,13 +2210,13 @@ textarea {
     width: 28px;
     height: 28px;
   }
-  .contact-us .form-feedback {
+  .contact-us .form-contact {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
     position: relative;
   }
-  .contact-us .form-feedback .button {
+  .contact-us .form-contact .button {
     position: absolute;
     float: none;
     right: 0;
@@ -2230,6 +2380,42 @@ textarea {
   .about-us .text p {
     margin-bottom: 22px;
   }
+  .mfp-content {
+    max-width: 650px;
+  }
+  .mfp-close,
+  .mfp-close:active {
+    width: 68px;
+    height: 68px;
+    border-width: 4px;
+    top: -50px;
+    right: -35px;
+  }
+  .mfp-close:before,
+  .mfp-close:after {
+    width: 45px;
+  }
+  .popup .form-enquire .form-group {
+    margin-bottom: 28px;
+  }
+  .popup .form-enquire .form-label {
+    font-size: 21px;
+    line-height: 24px;
+  }
+  .popup .form-enquire [type='text'],
+  .popup .form-enquire [type='tel'],
+  .popup .form-enquire [type='email'],
+  .popup .form-enquire textarea {
+    padding: 18px;
+    font-size: 18px;
+  }
+  .popup .form-enquire textarea {
+    height: 180px;
+  }
+  .popup .form-enquire .button {
+    right: 15px;
+    bottom: -55px;
+  }
 }
 @media (min-width: 990px) {
   .header .toggle {
@@ -2295,9 +2481,9 @@ textarea {
   }
   .nav .menu li {
     width: auto;
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 0%;
-    flex: 0 0 0%;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 0%;
+    flex: 1 0 0%;
   }
   .nav .menu li:first-child,
   .nav .menu li:last-child {
@@ -2346,10 +2532,10 @@ textarea {
   }
   .header {
     right: 0;
-    -webkit-transition: -webkit-transform 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-    transition: -webkit-transform 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-    transition: transform 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
-    transition: transform 0.1s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: -webkit-transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
@@ -2411,6 +2597,13 @@ textarea {
     height: 106px;
     border-width: 2px;
     border-color: #f16c00;
+  }
+  html:not(.nav-sticky) .header .enquire:hover, html:not(.nav-sticky) .header .enquire:focus {
+    color: #fff;
+    background: #f16c00;
+  }
+  html:not(.nav-sticky) .header .enquire:hover:before, html:not(.nav-sticky) .header .enquire:focus:before {
+    opacity: 0;
   }
   .footer {
     padding-top: 48px;
@@ -2493,6 +2686,74 @@ textarea {
   .about-us .text {
     margin-left: -70px;
   }
+  .mfp-content {
+    max-width: 1140px;
+  }
+  .mfp-bg {
+    background: none;
+  }
+  .mfp-bg:before,
+  .mfp-bg:after {
+    display: block;
+    content: '\0020';
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .mfp-bg:before {
+    margin-right: 240px;
+    right: 50%;
+    background: #183955;
+  }
+  .mfp-bg:after {
+    margin-left: -240px;
+    left: 50%;
+    background: #f16c00;
+  }
+  .mfp-close,
+  .mfp-close:active {
+    width: 74px;
+    height: 74px;
+    top: -105px;
+    right: 25px;
+  }
+  .popup .heading {
+    width: 325px;
+    padding-right: 30px;
+    padding-top: 40px;
+    float: left;
+    display: block;
+    position: relative;
+    font-size: 48px;
+    line-height: 54px;
+    color: #fff;
+    font-weight: 300;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .popup .heading:before {
+    display: block;
+    content: '\0020';
+    overflow: hidden;
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    top: -125px;
+    left: 0;
+    background: url('../img/logo-white.png') no-repeat 0 0;
+    background-size: auto 100%;
+  }
+  .popup .form-enquire {
+    width: 710px;
+    padding-left: 60px;
+    margin-right: 100px;
+    float: right;
+  }
 }
 @media (min-width: 1380px) {
   .page-header:before {
@@ -2506,6 +2767,28 @@ textarea {
 @media (min-width: 1680px) {
   .services .image img.landscape {
     width: 840px !important;
+  }
+}
+@media (max-width: 468px) {
+  .index .image {
+    width: auto;
+    height: 250px;
+  }
+}
+@media (orientation: landscape) and (max-width: 667px) {
+  .nav .menu {
+    font-size: 20px;
+  }
+  .nav .menu li a {
+    padding: 5px;
+  }
+  .mfp-close,
+  .mfp-close:active {
+    top: -20px;
+    right: -40px;
+  }
+  .popup .form-enquire textarea {
+    height: 60px;
   }
 }
 

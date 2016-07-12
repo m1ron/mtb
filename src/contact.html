@@ -17,7 +17,7 @@
 	<link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32">
 	<link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
 	<link rel="manifest" href="img/favicon/manifest.json">
-	<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#183955">
+	<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg">
 	<link rel="shortcut icon" href="img/favicon/favicon.ico">
 	<meta name="msapplication-config" content="img/favicon/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
@@ -36,7 +36,7 @@
 		</div>
 		<p class="tel"><a href="tel:+61-0410-491-080">0410 491 080</a></p>
 		<a href="#nav" class="toggle">Navigation</a>
-		<a href="#enquire" class="enquire popup">Enquire Now</a>
+		<a href="#enquire" class="enquire open-popup">Enquire Now</a>
 	</header>
 	<!-- /Header -->
 
@@ -59,7 +59,7 @@
 			<div class="contact-us">
 				<div class="info">
 					<ul class="list">
-						<li class="tel"><a href="tel:+61-0410 491 080">0410 491 080</a></li>
+						<li class="tel"><a href="tel:+61-0410-491-080">0410 491 080</a></li>
 						<li class="mail"><a href="mailto:mtbcarpentry@outlook.com">mtbcarpentry@outlook.com</a></li>
 						<li class="adr">7 Clinton Ave, Burleigh Waters, 4220, QLD Australia</li>
 					</ul>
@@ -72,23 +72,23 @@
 						</li>
 					</ul>
 				</div>
-				<form action="#" method="post" class="form-feedback">
+				<form action="#" method="post" class="form-contact">
 					<fieldset>
 						<div class="form-group">
-							<label class="form-label" for="name">Name</label>
-							<input id="name" type="text" value="John Smit|">
+							<label class="form-label" for="contact-name">Name</label>
+							<input id="contact-name" type="text" value="John Smit|">
 						</div>
 						<div class="form-group">
-							<label class="form-label" for="email">Email</label>
-							<input id="email" type="text">
+							<label class="form-label" for="contact-email">Email</label>
+							<input id="contact-email" type="email">
 						</div>
 						<div class="form-group">
-							<label class="form-label" for="tel">Contact Number</label>
-							<input id="tel" type="text">
+							<label class="form-label" for="contact-tel">Contact Number</label>
+							<input id="contact-tel" type="tel">
 						</div>
 						<div class="form-group">
-							<label class="form-label" for="inquiry">Inquiry</label>
-							<textarea id="inquiry"></textarea>
+							<label class="form-label" for="contact-inquiry">Inquiry</label>
+							<textarea id="contact-inquiry"></textarea>
 						</div>
 						<button class="button" type="submit">send</button>
 					</fieldset>
@@ -167,6 +167,34 @@
 		</div>
 	</footer>
 	<!-- /Footer -->
+
+
+	<!-- Popup -->
+	<div id="enquire" class="popup">
+		<p class="heading">Let’s talk about how we can make your dreams a reality&hellip;</p>
+		<form action="#" method="post" class="form-contact form-enquire">
+			<fieldset>
+				<div class="form-group">
+					<label class="form-label" for="enquire-name">Name</label>
+					<input id="enquire-name" type="text" value="John Smith">
+				</div>
+				<div class="form-group">
+					<label class="form-label" for="enquire-email">Email</label>
+					<input id="enquire-email" type="email" value="">
+				</div>
+				<div class="form-group">
+					<label class="form-label" for="enquire-tel">Contact Number</label>
+					<input id="enquire-tel" type="tel" value="">
+				</div>
+				<div class="form-group">
+					<label class="form-label" for="enquire-inquiry">Inquiry</label>
+					<textarea id="enquire-inquiry"></textarea>
+				</div>
+				<button class="button" type="submit">send</button>
+			</fieldset>
+		</form>
+	</div>
+	<!-- /Popup -->
 
 
 	<script src="js/vendor/jquery.min.js"></script>

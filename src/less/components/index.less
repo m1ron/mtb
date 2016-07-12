@@ -3,15 +3,23 @@
    ========================================================================== */
 .index {
     margin: 0 -15px;
+
     .image {
         width: 100%;
         height: auto;
+        min-height: 250px;
         margin: 0 auto;
         display: block;
+        @media (max-width: 468px) {
+            width: auto;
+            height: 250px;
+        }
     }
+
     @media @tablet-sm {
         margin-left: -50vw;
         margin-right: -50vw;
+
         .image {
             width: 100vw;
         }

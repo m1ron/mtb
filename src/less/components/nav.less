@@ -96,6 +96,9 @@
         display: flex;
         flex-flow: row wrap;
         align-content: center;
+        @media @mobile-landscape {
+            font-size: 20px;
+        }
         @media @tablet-md {
             flex-wrap: nowrap;
         }
@@ -114,6 +117,10 @@
                 color: @color-gray;
                 text-decoration: none;
                 transition: color @duration;
+                @media @mobile-landscape {
+                    padding: 5px;
+                }
+
                 &:hover, &:focus {
                     color: @color-white;
                 }
@@ -157,7 +164,7 @@
 
             @media @tablet-md {
                 width: auto;
-                flex: 0 0;
+                flex: 1 0;
                 &:first-child, &:last-child {
                     display: none;
                 }
