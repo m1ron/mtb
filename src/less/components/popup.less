@@ -4,7 +4,6 @@
 @duration-popup: @duration-l;
 /* ZOOM-IN EFFECT */
 .mfp {
-    @pre: .mfp;
     &-slide-in {
         .mfp-content {
             transition: transform @duration-popup;
@@ -225,6 +224,9 @@
                 height: 60px;
             }
             @media @tablet-sm {
+                height: 120px;
+            }
+            @media @desktop-sm {
                 height: 180px;
             }
         }

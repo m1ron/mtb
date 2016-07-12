@@ -27,7 +27,7 @@ form, fieldset, legend {
     &:hover, &:focus, &:active {
         text-decoration: none;
         background: @color-orange;
-        box-shadow: 0 -5px 5px 0 rgba(10, 10, 10, 0.25);
+        box-shadow: 0 -5px 5px 0 rgba(10, 10, 10, .25);
     }
     &.button-bordered-white {
         background: transparent;
@@ -50,6 +50,7 @@ form, fieldset, legend {
         padding: 18px 70px 10px;
         border-radius: 26px;
         border-width: 2px;
+
         &.button-bordered-white {
             border-width: 3px;
         }
@@ -69,24 +70,27 @@ form, fieldset, legend {
     max-width: 200px;
     padding: 10px 12px;
     border: 1px solid @color-gray;
+    border-radius: 0;
     display: inline-block;
     vertical-align: middle;
     font: 14px/14px @font-default;
     color: @color-navy;
     background: @color-white;
     transition: border-color @duration;
-    /*user-select: none;*/
-    &:focus {
-      border-color: @color-navy;
+    appearance: none;
+    @media @tablet-sm {
+        font-size: 18px;
+        line-height: 18px;
+        padding: 18px;
     }
+
+    &:focus {
+        border-color: @color-navy;
+    }
+
     .form-group & {
         width: 100%;
         max-width: 100%;
-    }
-    @media @tablet-sm {
-      font-size: 18px;
-      line-height: 18px;
-      padding: 18px;
     }
 }
 textarea {
@@ -94,7 +98,7 @@ textarea {
     height: 118px;
     resize: none;
     @media @tablet-sm {
-      height: 180px;
+        height: 180px;
     }
 }
 /* noinspection CssInvalidPseudoSelector */
@@ -113,7 +117,7 @@ textarea {
             margin-bottom: 0;
         }
         @media @tablet-sm {
-          margin-bottom: 30px;
+            margin-bottom: 30px;
         }
     }
     &-label {
@@ -122,8 +126,8 @@ textarea {
         color: @color-gray;
         letter-spacing: .1em;
         @media @tablet-sm {
-          margin-bottom: 5px;
-          font-size: 21px;
+            margin-bottom: 5px;
+            font-size: 21px;
         }
     }
 }
@@ -150,11 +154,11 @@ textarea {
         position: relative;
         z-index: 2;
         @media @tablet-sm {
-          width: 100px;
-          height: 100px;
-          margin: -18px 16px 0 0;
-          background-size: 44px 44px;
-          background-position: 40% 50%;
+            width: 100px;
+            height: 100px;
+            margin: -18px 16px 0 0;
+            background-size: 44px 44px;
+            background-position: 40% 50%;
         }
     }
 }
